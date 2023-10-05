@@ -1,0 +1,698 @@
+/* HELPER ******************************************************* */
+/*@media(max-width:767px){}s
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
+*/
+
+.white{
+  color:#f4f5f0;
+}
+
+.black{
+  color:#1a1a1a;
+}
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+@mixin gradient($from,$to,$deg:180deg) {
+  background-color: $from;
+  background-image: -moz-linear-gradient($deg, $from 0%, $to 100%);
+  background-image: -webkit-linear-gradient($deg, $from 0%, $to 100%);
+  background-image: -o-linear-gradient($deg, $from 0%, $to 100%);
+  background-image: -ms-linear-gradient($deg, $from 0%, $to 100%);
+  background-image: linear-gradient($deg, $from 0%, $to 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+// breakpoints for media query (big, medium, small)
+@mixin bp($point) {
+  @if $point == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+  @else if $point == md {
+    @media (min-width:992px) { @content; }
+  }
+  @else if $point == sm {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == xs {
+    @media (max-width: 767px)  { @content; }
+  }
+}
+
+a{
+  span{
+    color: #EEC532;
+    font-size: 14px;
+  }
+}
+/* TYPOGRAPHY ******************************************************* */
+
+$font: 'Montserrat', 'Verdana', sans-serif;
+$font-light:300;
+$font-regular:300;
+$font-bold:700;
+
+$blackish: #1a1a1a;
+$darkgray: #696969;
+$whitish: #f5f4f0;
+
+$margin_md: 70px;
+$margin_lg: 100px;
+$margin_sm: 50px;
+
+
+
+/* GENERIC ******************************************************* */
+body {
+  background-color:$whitish;
+  font-size:16px!important;
+}
+.lightBG{
+  *{
+      color: $whitish;
+  }
+}
+
+* {
+  font-family: $font;
+  color: $whitish;
+}
+
+h2{
+  font-family: $font;
+  font-weight: bold;
+  display:block;
+  margin: 20px auto;
+  color: $blackish;
+  font-size:20px;
+  text-align: center;
+
+
+  span{
+    color:$darkgray;
+    font-size: 32px;
+    vertical-align: middle;
+    font-weight: $font-light;
+  }
+}
+
+h3{
+    color: $blackish;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+h3 span {
+  font-size: 68px;
+  font-weight: light;
+  opacity:0.3;
+}
+
+p{
+  letter-spacing: 1px;
+  line-height: 30px;
+  color:$darkgray;
+}
+
+
+/* INTRO AND MENU ******************************************************* */
+
+
+div.topline{
+  @include gradient(#CD57F2, #F0696C,270deg);
+  height: 1px;
+}
+
+nav {
+  margin-top:20px;
+
+  ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline;
+
+      a{
+        color: $darkgray;
+        font-size: 12px;
+      }
+    }
+
+    li:nth-child(2n){
+      margin-left:60px;
+      margin-right:60px;
+    }
+  }
+}
+
+.intro{
+    padding-bottom: 90px;
+    background-color:$blackish;
+    text-align:center;
+    position:relative;
+
+    h2, p {
+      color:$whitish;
+    }
+
+    /*  
+    .appstore {
+      width:147px;
+      height:42px;
+      display:block;
+      float:left;
+    }
+
+    .googleplay {
+      width:147px;
+      height:42px;
+      display:block;
+      float:right;
+    }*/
+
+    .appstore {
+      width:225px;
+      height:75px;
+      display:block;
+      float:left;
+      &:hover{
+          opacity:0.8;
+        }
+    }
+
+    .googleplay {
+      width:252px;
+      height:75px;
+      display:block;
+      float:right;
+      &:hover{
+          opacity:0.8;
+        }
+    }
+
+    p {
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .tasklist{
+      margin-top: 20px;
+      padding-top: 50px;
+    }
+
+    .downloadbottom{
+      height: 100px;
+    }
+
+    h1{
+      margin:0px auto 0 auto;
+      padding-bottom: 100px;
+      width: 346px;
+      height: 81px;
+      background-image: image-set(
+        url(https://blackrobotgames.com/liniasuper/lp/images/liniasuper@1x.png) 1x,
+        url(https://blackrobotgames.com/liniasuper/lp/images/liniasuper@2x.png) 2x,
+        url(https://blackrobotgames.com/liniasuper/lp/images/liniasuper@2x.png) 3x
+        );
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size:contain;
+    }
+
+    #icon{
+      margin:80px auto 20px auto;
+      width: 160px;
+      height: 160px;
+      background-image: image-set(
+        url(https://blackrobotgames.com/liniasuper/lp/images/liniasuper_icon_rounded@1x.png) 1x,
+        url(https://blackrobotgames.com/liniasuper/lp/images/liniasuper_icon_rounded@2x.png) 2x,
+        url(https://blackrobotgames.com/liniasuper/lp/images/liniasuper_icon_rounded@2x.png) 3x
+        );
+      background-size:contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    p.quote {
+      text-align: center;
+      font-size:23px;
+      line-height: 45px;
+      font-weight: $font-light;
+      letter-spacing: 1px;
+    }
+
+}
+
+
+/* SECTION 1 ******************************************************* */
+
+.section1{
+
+  background-color: $blackish;
+  overflow: visible!important;
+  position: relative;
+  min-height: 500px;
+
+  .screen_intro{
+      position: absolute;
+      z-index:4;
+      left:0;
+      right:0;
+      top: -380px;
+      margin:0 auto;
+      max-width: 300px;
+
+      img{
+        width: 100%;
+      }
+  }
+
+  p.quote{
+    margin-top:60px;
+  }
+
+  .detail{
+
+    text-align: left;
+    margin-top: 0;
+
+    @include bp(xs){
+      margin-top:30px;
+    }
+
+    div{
+
+      padding-top: 50px;
+      margin-top: 20px;
+
+      /*&.easy{ background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_temp.png) no-repeat top center}
+      &.safe{ background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_temp.png) no-repeat top center }
+      &.complete{ background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_temp.png) no-repeat top center }
+*/
+
+      @include bp(xs){
+        margin-top:10px;
+        padding-top:20px;
+      }
+
+      p{
+        font-size: 15px;
+        font-weight: $font-light;
+      }
+    }
+  }
+}
+
+
+
+/* SECTION 2  ******************************************************* */
+
+.section2{
+  background-color: $whitish;
+
+  .detail {
+    margin-top:$margin_md;
+    @include bp(xs){
+      margin-top:0px;
+    }
+  }
+
+  .left,.right{
+    color:$darkgray;
+
+    p{
+      color:$darkgray;
+    }
+
+    h3{
+      margin-top:60px;
+    }
+
+    h3:nth-child(3){
+      margin-top:100px;
+    }
+
+    @include bp(xs){
+        h3:nth-child(3){
+          margin-top:20px;
+        }
+    }
+
+    @include bp(xs){
+        h3:nth-child(1){
+          margin-top:0px;
+        }
+    }
+  }
+
+  .left {
+    text-align: right;
+
+    h3{
+      //padding-right:30px;
+    }
+
+    @include bp(xs){
+      text-align: center;
+
+      h3{
+        text-align: center;
+        padding:30px 0 0 0;
+      }
+    }
+
+  }
+
+  .right {
+    text-align: left;
+
+    h3{
+      //padding-left:30px;
+    }
+
+    @include bp(xs){
+      text-align: center;
+
+      h3{
+        text-align: center;
+        padding:30px 0 0 0;
+      }
+    }
+  }
+
+  .duedate{
+  //background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_tempblk.png) no-repeat left center;
+    @include bp(xs){
+      background-position:center top;
+    }
+  }
+  .countdown{
+  //background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_tempblk.png) no-repeat left center;
+    @include bp(xs){
+      background-position:center top;
+    }
+  }
+  .priority{
+    //background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/list.png) no-repeat right center;
+    @include bp(xs){
+      background-position:center top;
+    }
+  }
+  .alarm{
+  //background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_tempblk.png) no-repeat right center;
+    @include bp(xs){
+      background-position:center top;
+    }
+  }
+
+  .center{
+    text-align: center;
+  }
+}
+
+.section2{
+  position:relative;
+}
+
+/* SECTION 3 ****************************************************** */
+
+.section3 {
+  background-color:#247ba0;
+  .detail {
+
+    text-align: left;
+    margin-top: $margin_md;
+
+    @include bp(xs){
+      margin-top:100px;
+    }
+
+    div{
+      text-align:center;
+      margin-top: 20px;
+
+      /*&.tasklist{ background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_temp.png) no-repeat top center}
+      &.taskorder{ background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_temp.png) no-repeat top center }
+      &.donelist{ background:url(https://blackrobotgames.ams3.digitaloceanspaces.com/press-images/icon_temp.png) no-repeat top center }
+      */
+      @include bp(xs){
+        margin-top:50px;
+      }
+
+      p{
+        font-size: 15px;
+        font-weight: $font-light;
+      }
+    }
+  }
+}
+
+
+
+/* SECTION 4 ******************************************************** */
+
+.section4{
+
+  p.quote{
+    color: $darkgray;
+    font-size: 20px;
+  }
+
+  img{
+    margin:$margin_md auto 0 auto;
+  }
+}
+
+
+
+/* SECTION 5 ******************************************************** */
+
+.section5{
+  background-color:$blackish;
+  text-align: center;
+
+  h2{
+    color: #fff;
+  }
+
+  p.quote {
+
+    font-size:16px;
+  }
+
+  p.mini{
+      line-height: 18px;
+      font-size: 14px;
+      font-weight:$font-light;
+      text-align: center;
+  }
+
+  ul{
+
+    margin: $margin_sm auto;
+
+    padding:0;
+    list-style: none;
+    text-align: center;
+
+    li{
+
+      position:relative;
+      display: inline;
+      text-align: center;
+      height: 50px;
+
+      a.twitter{
+        position:absolute;
+        right:10px;
+        display:block;
+        width:51px;
+        height:42px;
+        opacity:0.8;
+        &:hover{
+          opacity:1.0;
+        }
+      }
+
+      a.email{
+        position:absolute;
+        left:10px;
+        display: block;
+        width:73px;
+        height:42px;
+        opacity:0.8;
+        &:hover{
+          opacity:1.0;
+        }
+      }
+    }
+  }
+
+  a.press{
+
+    width: 150px;
+    height: auto;
+    color: #fff;
+    background-color:rgba(255,255,255,0.2);
+    border-radius:50px;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding:10px;
+
+    &:hover{
+      text-decoration: none;
+      background-color: rgba(255,255,255,0.7);
+      color:#905488;
+
+      span{
+        color:#905488;
+      }
+    }
+
+    span{
+      font-size:20px;
+      vertical-align: top;
+    }
+  }
+
+  .iHateSpacers{
+    height:$margin_lg;
+  }
+
+  p.credits{
+    margin-top:100px;
+    font-weight: $font-light;
+    font-size: 12px;
+    a{
+      color:#fff;
+    }
+  }
+}
+
+.divider{
+  position:absolute;
+  left:50%;
+  margin-left:-27px;
+  right:0;
+  bottom:-7px;
+  z-index:0
+}
+
+/* PRESS *************/
+  
+a {
+  color:#EEC532!important;
+}
+
+.screenshots{
+  margin-top:50px!important;
+  margin-bottom:30px!important;
+}
+
+/* CONTACTS **********/
+
+.sectioncontacts{
+  p{
+    margin-top:20px!important;
+  }
+  padding-top:10px!important;
+
+}
+
+.contacts {
+  p {
+    margin-bottom: 20px!important;
+    font-size:18px;
+  }
+
+  p.mini {
+    font-size: 13px;
+  }
+  ul{
+    margin: $margin_sm auto;
+
+    padding:0;
+    list-style: none;
+    text-align: center;
+
+    li{
+
+      position:relative;
+      display: inline;
+      text-align: center;
+      height: 50px;
+
+      a.twitter{
+        position:absolute;
+        right:10px;
+        display:block;
+        width:51px;
+        height:42px;
+        opacity:0.8;
+        &:hover{
+          opacity:1.0;
+        }
+      }
+
+      a.email{
+        position:absolute;
+        left:10px;
+        display: block;
+        width:73px;
+        height:42px;
+        opacity:0.8;
+        &:hover{
+          opacity:1.0;
+        }
+      }
+    }
+  }
+}
+
+
+/* PARALLAX INFO ******************************************************* */
+
+.parallax [class*="section"] {
+  position: relative;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  padding: $margin_md 0 $margin_lg 0;
+}
+
+.parallax [class*="section"] {
+  box-shadow: 0 0 1px rgba(255.0,255.0,255.0,0.3);
+  z-index:0;
+  position:relative;
+}
+
+.parallax .section1 {
+  //@include gradient(#471B6D,#FF7E7E);
+
+  //@include gradient(#1c99aa,#28ab75);
+}
+
+.parallax .section3 {
+  //@include gradient(#FFC400, #bb3f3f);
+}
+
+.parallax .section4 {
+}
+
+.parallax .section5 {
+  padding-bottom:5px;
+  margin-bottom:5px!important;
+  box-shadow: 0 0 1px rgba(255.0,255.0,255.0,0.3);
+
+}

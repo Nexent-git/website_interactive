@@ -1,0 +1,631 @@
+/* HELPER ******************************************************* */
+/*@media(max-width:767px){}s
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
+*/
+.white {
+  color: #f4f5f0;
+}
+
+.black {
+  color: #1a1a1a;
+}
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+a span {
+  color: #EEC532;
+  font-size: 14px;
+}
+
+/* TYPOGRAPHY ******************************************************* */
+/* GENERIC ******************************************************* */
+body {
+  background-color: #f5f4f0;
+  font-size: 16px !important;
+}
+
+.lightBG * {
+  color: #f5f4f0;
+}
+
+* {
+  font-family: "Montserrat", "Verdana", sans-serif;
+  color: #f5f4f0;
+}
+
+h2 {
+  font-family: "Montserrat", "Verdana", sans-serif;
+  font-weight: bold;
+  display: block;
+  margin: 20px auto;
+  color: #1a1a1a;
+  font-size: 20px;
+  text-align: center;
+}
+
+h2 span {
+  color: #696969;
+  font-size: 32px;
+  vertical-align: middle;
+  font-weight: 300;
+}
+
+h3 {
+  color: #1a1a1a;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+h3 span {
+  font-size: 68px;
+  font-weight: light;
+  opacity: 0.3;
+}
+
+p {
+  letter-spacing: 1px;
+  line-height: 30px;
+  color: #696969;
+}
+
+/* INTRO AND MENU ******************************************************* */
+div.topline {
+  background-color: #CD57F2;
+  background-image: -webkit-gradient(linear, right top, left top, from(#CD57F2), to(#F0696C));
+  background-image: linear-gradient(270deg, #CD57F2 0%, #F0696C 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+  height: 1px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #696969;
+  font-size: 12px;
+}
+
+nav ul li:nth-child(2n) {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.intro {
+  padding-bottom: 90px;
+  background-color: #1d1d1d;
+  text-align: center;
+  position: relative;
+  /*  
+    .appstore {
+      width:147px;
+      height:42px;
+      display:block;
+      float:left;
+    }
+
+    .googleplay {
+      width:147px;
+      height:42px;
+      display:block;
+      float:right;
+    }*/
+}
+
+.intro h2,
+.intro p {
+  color: #f5f4f0;
+}
+
+.intro .appstore {
+  width: 225px;
+  height: 75px;
+  display: block;
+  float: left;
+}
+
+.intro .appstore:hover {
+  opacity: 0.8;
+}
+
+.intro .googleplay {
+  width: 252px;
+  height: 75px;
+  display: block;
+  float: right;
+}
+
+.intro .googleplay:hover {
+  opacity: 0.8;
+}
+
+.intro .steam {
+  width: 252px;
+  height: 75px;
+  display: block;
+  float: right;
+}
+
+.intro .steam:hover {
+  opacity: 0.8;
+}
+
+.intro p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro .tasklist {
+  margin-top: 20px;
+  padding-top: 50px;
+}
+
+.intro .downloadbottom {
+  height: 100px;
+}
+
+.intro h1 {
+  margin: 0px auto 0 auto;
+  padding-bottom: 200px;
+  width: 300px;
+
+  background-image: -webkit-image-set(url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes@1x.png) 1x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes@2x.png) 2x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes@2x.png) 3x);
+  background-image: image-set(url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes@1x.png) 1x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes@2x.png) 2x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes@2x.png) 3x);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.intro #icon {
+  margin: 80px auto 20px auto;
+  width: 160px;
+  height: 160px;
+  background-image: -webkit-image-set(url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes_icon_rounded@1x.png) 1x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes_icon_rounded@2x.png) 2x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes_icon_rounded@2x.png) 3x);
+  background-image: image-set(url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes_icon_rounded@1x.png) 1x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes_icon_rounded@2x.png) 2x, url(https://nexentwebsites.s3.amazonaws.com/liniastripes/liniastripes_icon_rounded@2x.png) 3x);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.intro p.quote {
+  text-align: center;
+  font-size: 23px;
+  line-height: 45px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.stores {
+  padding-top: 50px;
+}
+
+/* SECTION 1 ******************************************************* */
+.section1 {
+  background-color: #1a1a1a;
+  overflow: visible !important;
+  position: relative;
+  min-height: 500px;
+}
+
+.section1 .screen_intro {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  top: -380px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.section1 .screen_intro img {
+  width: 100%;
+}
+
+.section1 p.quote {
+  margin-top: 60px;
+}
+
+.section1 .detail {
+  text-align: left;
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .section1 .detail {
+    margin-top: 30px;
+  }
+}
+
+.section1 .detail div {
+  padding-top: 50px;
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .section1 .detail div {
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+}
+
+.section1 .detail div p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* SECTION 2  ******************************************************* */
+.section2 {
+  background-color: #f5f4f0;
+}
+
+.section2 .detail {
+  margin-top: 70px;
+}
+
+@media (max-width: 767px) {
+  .section2 .detail {
+    margin-top: 0px;
+  }
+}
+
+.section2 .left,
+.section2 .right {
+  color: #696969;
+}
+
+.section2 .left p,
+.section2 .right p {
+  color: #696969;
+}
+
+.section2 .left h3,
+.section2 .right h3 {
+  margin-top: 60px;
+}
+
+.section2 .left h3:nth-child(3),
+.section2 .right h3:nth-child(3) {
+  margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+
+  .section2 .left h3:nth-child(3),
+  .section2 .right h3:nth-child(3) {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .section2 .left h3:nth-child(1),
+  .section2 .right h3:nth-child(1) {
+    margin-top: 0px;
+  }
+}
+
+.section2 .left {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .section2 .left {
+    text-align: center;
+  }
+
+  .section2 .left h3 {
+    text-align: center;
+    padding: 30px 0 0 0;
+  }
+}
+
+.section2 .right {
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .section2 .right {
+    text-align: center;
+  }
+
+  .section2 .right h3 {
+    text-align: center;
+    padding: 30px 0 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section2 .duedate {
+    background-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  .section2 .countdown {
+    background-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  .section2 .priority {
+    background-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  .section2 .alarm {
+    background-position: center top;
+  }
+}
+
+.section2 .center {
+  text-align: center;
+}
+
+.section2 {
+  position: relative;
+}
+
+/* SECTION 3 ****************************************************** */
+.section3 {
+  background-color: #247ba0;
+}
+
+.section3 .detail {
+  text-align: left;
+  margin-top: 70px;
+}
+
+@media (max-width: 767px) {
+  .section3 .detail {
+    margin-top: 100px;
+  }
+}
+
+.section3 .detail div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .section3 .detail div {
+    margin-top: 50px;
+  }
+}
+
+.section3 .detail div p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* SECTION 4 ******************************************************** */
+.section4 p.quote {
+  color: #696969;
+  font-size: 20px;
+}
+
+.section4 img {
+  margin: 70px auto 0 auto;
+}
+
+/* SECTION 5 ******************************************************** */
+.section5 {
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.section5 h2 {
+  color: #fff;
+}
+
+.section5 p.quote {
+  font-size: 16px;
+}
+
+.section5 p.mini {
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.section5 ul {
+  margin: 50px auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.section5 ul li {
+  position: relative;
+  display: inline;
+  text-align: center;
+  height: 50px;
+}
+
+.section5 ul li a.twitter {
+  position: absolute;
+  right: 10px;
+  display: block;
+  width: 51px;
+  height: 42px;
+  opacity: 0.8;
+}
+
+.section5 ul li a.twitter:hover {
+  opacity: 1.0;
+}
+
+.section5 ul li a.email {
+  position: absolute;
+  left: 10px;
+  display: block;
+  width: 73px;
+  height: 42px;
+  opacity: 0.8;
+}
+
+.section5 ul li a.email:hover {
+  opacity: 1.0;
+}
+
+.section5 a.press {
+  width: 150px;
+  height: auto;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.section5 a.press:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #905488;
+}
+
+.section5 a.press:hover span {
+  color: #905488;
+}
+
+.section5 a.press span {
+  font-size: 20px;
+  vertical-align: top;
+}
+
+.section5 .iHateSpacers {
+  height: 100px;
+}
+
+.section5 p.credits {
+  margin-top: 100px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.section5 p.credits a {
+  color: #fff;
+}
+
+.divider {
+  position: absolute;
+  left: 50%;
+  margin-left: -27px;
+  right: 0;
+  bottom: -7px;
+  z-index: 0;
+}
+
+/* PRESS *************/
+a {
+  color: #EEC532 !important;
+}
+
+.screenshots {
+  margin-top: 50px !important;
+  margin-bottom: 30px !important;
+}
+
+/* CONTACTS **********/
+.sectioncontacts {
+  padding-top: 10px !important;
+}
+
+.sectioncontacts p {
+  margin-top: 20px !important;
+}
+
+.contacts p {
+  margin-bottom: 20px !important;
+  font-size: 18px;
+}
+
+.contacts p.mini {
+  font-size: 13px;
+}
+
+.contacts ul {
+  margin: 50px auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.contacts ul li {
+  position: relative;
+  display: inline;
+  text-align: center;
+  height: 50px;
+}
+
+.contacts ul li a.twitter {
+  position: absolute;
+  right: 10px;
+  display: block;
+  width: 51px;
+  height: 42px;
+  opacity: 0.8;
+}
+
+.contacts ul li a.twitter:hover {
+  opacity: 1.0;
+}
+
+.contacts ul li a.email {
+  position: absolute;
+  left: 10px;
+  display: block;
+  width: 73px;
+  height: 42px;
+  opacity: 0.8;
+}
+
+.contacts ul li a.email:hover {
+  opacity: 1.0;
+}
+
+/* PARALLAX INFO ******************************************************* */
+.parallax [class*="section"] {
+  position: relative;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  padding: 70px 0 100px 0;
+}
+
+.parallax [class*="section"] {
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  z-index: 0;
+  position: relative;
+}
+
+.parallax .section5 {
+  padding-bottom: 5px;
+  margin-bottom: 5px !important;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+/*# sourceMappingURL=style.css.map */
