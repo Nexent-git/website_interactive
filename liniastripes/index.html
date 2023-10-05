@@ -1,24 +1,17 @@
-<?php
-
-require_once "Mobile_Detect.php";
-$detect = new Mobile_Detect;
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZR0FLS32Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZR0FLS32Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-9ZR0FLS32Y');
-</script>
+    gtag('config', 'G-9ZR0FLS32Y');
+  </script>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,87 +53,63 @@ $detect = new Mobile_Detect;
 
         <div style="margin:0 auto;" class="stores">
 
-          <?php if ($detect->isiOS()) { ?>
-
-            <div style="">
-
-              <a style="float: none;margin: 0 auto;" class="ir appstore" target="_blank" href="https://apps.apple.com/app/id1637430004" id="ios-button">
-                <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/ios@2x.png" />
-              </a>
-
-              <a style="float: none;margin: 20px auto;" class="ir steam" target="_blank"
-              href="https://store.steampowered.com/app/2370330/Linia_Stripes/" id="steam-button">
-                <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/steam@2x.png" />
-              </a>
-
-            </div>
-
-          <?php } elseif ($detect->isAndroidOS()) { ?>
-
-            <div style="">
-
-              <a style="float: none;margin: 0 auto;" class="ir googleplay" target="_blank" href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.stripes" id="android-button">
-                <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/android@2x.png" />
-              </a>
-
-              <a style="float: none;margin: 20px auto;" class="ir steam" target="_blank"
-              href="https://store.steampowered.com/app/2370330/Linia_Stripes/" id="steam-button">
-                <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/steam@2x.png" />
-              </a>
-
-            </div>
-
-          <?php } else { ?>
           <div style="width:500px; margin:0 auto;">
             <a class="ir appstore" target="_blank" href="https://apps.apple.com/app/id1637430004" id="ios-button">
               <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/ios@2x.png" />
             </a>
 
-            <a class="ir googleplay" target="_blank" href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.stripes" id="android-button">
+            <a class="ir googleplay" target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.stripes" id="android-button">
               <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/android@2x.png" />
             </a>
           </div>
-          
+
           <div class="clearfix"></div>
 
-            <div style="margin-top:30px;">
-              <iframe
-                src="https://store.steampowered.com/widget/2370330/?t=Linia%20Stripes%20can%20be%20played%20on%20PC!%0AGet%20Linia%20Stripes%20on%20Steam.%20%20"
-                frameborder="0" width="646" height="190"></iframe>
-            </div>
-          <?php } ?>
+          <div style="margin-top:30px;">
+            <iframe
+              src="https://store.steampowered.com/widget/2370330/?t=Linia%20Stripes%20can%20be%20played%20on%20PC!%0AGet%20Linia%20Stripes%20on%20Steam.%20%20"
+              frameborder="0" width="646" height="190"></iframe>
+          </div>
+
         </div>
 
         <div class="clearfix"></div>
         <div style="margin-top: 50px;"></div>
         <div class="row">
           <div class="detail col-md-10 col-md-offset-1 k" style="text-align: left;">
-            
+
             <h2 style="text-align: left;margin-top:60px">GAME DESCRIPTION</h2>
             <p style="text-align: left;">
-            Linia Stripes is the new compelling "clear the board" game.<br>
-            Sit down, relax and collect patterns while you discover thousands of mesmerizing colorful levels!
+              Linia Stripes is the new compelling "clear the board" game.<br>
+              Sit down, relax and collect patterns while you discover thousands of mesmerizing colorful levels!
             </p>
-            
+
             <div class="row screenshots">
               <div class="detail col-md-12">
                 <div class="col-md-2 item" style="margin-top:10px">
-                  <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/1.jpg" />
+                  <img style="margin:0 auto" class="img-responsive"
+                    src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/1.jpg" />
                 </div>
                 <div class="col-md-2 item" style="margin-top:10px">
-                  <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/2.jpg" />
+                  <img style="margin:0 auto" class="img-responsive"
+                    src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/2.jpg" />
                 </div>
                 <div class="col-md-2 item" style="margin-top:10px">
-                  <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/3.jpg" />
+                  <img style="margin:0 auto" class="img-responsive"
+                    src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/3.jpg" />
                 </div>
                 <div class="col-md-2 item" style="margin-top:10px">
-                  <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/4.jpg" />
+                  <img style="margin:0 auto" class="img-responsive"
+                    src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/4.jpg" />
                 </div>
                 <div class="col-md-2 item" style="margin-top:10px">
-                  <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/5.jpg" />
+                  <img style="margin:0 auto" class="img-responsive"
+                    src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/5.jpg" />
                 </div>
                 <div class="col-md-2 item" style="margin-top:10px">
-                  <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/6.jpg" />
+                  <img style="margin:0 auto" class="img-responsive"
+                    src="https://nexentwebsites.s3.amazonaws.com/liniastripes/store/6.jpg" />
                 </div>
               </div>
             </div>
@@ -170,34 +139,44 @@ $detect = new Mobile_Detect;
             </p>
             <h2 style="text-align: left;margin-top:30px">💡 CREATE UNIQUE WALLPAPERS 💡</h2>
             <p style="text-align: left;">
-              <b>•</b> As you play and win, you'll be able to create your exclusive and mesmerizing wallpapers - try this feature!<br>
+              <b>•</b> As you play and win, you'll be able to create your exclusive and mesmerizing wallpapers - try
+              this feature!<br>
               <b>•</b> Collect new patterns to create more unique wallpapers<br>
             </p>
 
             <br>
             <p>-----</p>
             <br>
-            
+
             <h2 style="text-align: left;">General info</h2>
             <p style="text-align: left;">
               <b>Developer:</b> Nexent<br>
-              <b>Stores:</b> <a target="_blank" href="https://apps.apple.com/app/id1637430004"><span class="glyphicon glyphicon-link"></span> iOS</a>, <a target="_blank" href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.stripes"><span class="glyphicon glyphicon-link"></span> Android</a> <br>
+              <b>Stores:</b> <a target="_blank" href="https://apps.apple.com/app/id1637430004"><span
+                  class="glyphicon glyphicon-link"></span> iOS</a>, <a target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.stripes"><span
+                  class="glyphicon glyphicon-link"></span> Android</a> <br>
               <b>Release date:</b> October 13th 2022<br>
               <b>Price:</b> Free<br>
               <b>Notes:</b> Ads and In-App Purchases<br>
-              <b>Media:</b> <a href="https://drive.google.com/drive/folders/1pVJ3Mn71J7BM1eRfvyvLm7W9f7Swcw3S?usp=sharing"><span class="glyphicon glyphicon-link"></span> Press Release Download</a>
-              <br>              
+              <b>Media:</b> <a
+                href="https://drive.google.com/drive/folders/1pVJ3Mn71J7BM1eRfvyvLm7W9f7Swcw3S?usp=sharing"><span
+                  class="glyphicon glyphicon-link"></span> Press Release Download</a>
+              <br>
             </p>
 
             <h2 style="text-align: left;">About Nexent</h2>
             <p style="text-align: left;">
-              At Nexent we craft mobile games for highly interactive experiences ranging from the relaxing to the challenging.<br>
-<br>
-The <b>Linia</b> series of mobile games is based on engaging shapes and colors.<br>
-Linia Stripes is a relaxing game of identifying progressive lengths and building collections of patterns.<br>
-Linia Super challenges the user with drawing lines through moving and changing shapes and objects.<br>
-<br>
-Founded in 2021 in Milan, Italy, by a team of passionate and experienced developers and designers, Nexent SRL is an Indie Game Studio built upon the foundation of the Blackrobot Games developer publishing games since 2016.<br>
+              At Nexent we craft mobile games for highly interactive experiences ranging from the relaxing to the
+              challenging.<br>
+              <br>
+              The <b>Linia</b> series of mobile games is based on engaging shapes and colors.<br>
+              Linia Stripes is a relaxing game of identifying progressive lengths and building collections of
+              patterns.<br>
+              Linia Super challenges the user with drawing lines through moving and changing shapes and objects.<br>
+              <br>
+              Founded in 2021 in Milan, Italy, by a team of passionate and experienced developers and designers, Nexent
+              SRL is an Indie Game Studio built upon the foundation of the Blackrobot Games developer publishing games
+              since 2016.<br>
             </p>
           </div>
         </div>
@@ -218,7 +197,8 @@ Founded in 2021 in Milan, Italy, by a team of passionate and experienced develop
         <div class="clearfix"></div>
         <div class="iHateSpacers"></div>
 
-        <p class="credits"><br><br><br>Linia Stripes is designed and developed by<br><a target="_blank" href="https://nexent.io">Nexent</a><br><br>
+        <p class="credits"><br><br><br>Linia Stripes is designed and developed by<br><a target="_blank"
+            href="https://nexent.io">Nexent</a><br><br>
           Linia is a trademark of Nexent SRL<br>All rights reserved.
         </p>
       </div>

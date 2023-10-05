@@ -1,14 +1,7 @@
-<?php
-
-require_once "Mobile_Detect.php";
-$detect = new Mobile_Detect;
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,49 +42,18 @@ $detect = new Mobile_Detect;
         </h1>
         <h2 style="margin-top: 0px;margin-bottom: 40px;">Mesmerizing color puzzles</h2>
 
-        <?php if ($detect->isiOS()) { ?>
+        <div style="width:500px; margin:0 auto;">
+          <a class="ir appstore" target="_blank" href="https://apps.apple.com/app/id1573761523" id="ios-button">
+            <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/ios@2x.png" />
 
-          <div style="">
+          </a>
 
-            <a style="float: none;margin: 0 auto;" class="ir appstore" target="_blank" href="https://apps.apple.com/app/id1573761523" id="ios-button">
+          <a class="ir googleplay" target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.linia2" id="android-button">
 
-              <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/ios@2x.png" />
-
-            </a>
-
-          </div>
-
-        <?php } elseif ($detect->isAndroidOS()) { ?>
-
-          <div style="">
-
-            <a style="float: none;margin: 0 auto;" class="ir googleplay" target="_blank" href="https://apps.apple.com/app/id1573761523" id="android-button">
-
-              <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/android@2x.png" />
-
-            </a>
-
-          </div>
-
-        <?php } else { ?>
-
-          <div style="width:500px; margin:0 auto;">
-
-            <a class="ir appstore" target="_blank" href="https://apps.apple.com/app/id1573761523" id="ios-button">
-
-              <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/ios@2x.png" />
-
-            </a>
-
-            <a class="ir googleplay" target="_blank" href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.linia2" id="android-button">
-
-              <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/android@2x.png" />
-
-            </a>
-
-          </div>
-
-        <?php } ?>
+            <img class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/android@2x.png" />
+          </a>
+        </div>
 
         <div class="clearfix"></div>
         <div class="row video" style="margin-top:50px">
@@ -110,7 +72,9 @@ $detect = new Mobile_Detect;
               In "Linia super" - the second edition of <a target="_blank" href="http://linia.blackrobotgames.com">the
                 game</a> downloaded by millions worldwide - you will once again go hunting for color
               sequences, drawing a line to create the correct connection between the different shapes on the screen.<br>
-              But this time, to make it even more engaging, you will also have to keep an eye on your ink supply while you draw lines and collect the "Liniacoins" that will help you through the exciting chapters of the game.<br>
+              But this time, to make it even more engaging, you will also have to keep an eye on your ink supply while
+              you draw lines and collect the "Liniacoins" that will help you through the exciting chapters of the
+              game.<br>
               It's easy to get carried away by this mesmerizing dance of colors that pulse, spin, hide and twirl, going
               to great lengths to avoid being caught by your line.<br>
               It will take skill, a keen eye and a sense of rhythm to get the sequence right.</p>
@@ -127,7 +91,10 @@ $detect = new Mobile_Detect;
             <h2 style="text-align: left;">General info</h2>
             <p style="text-align: left;">
               <b>Developer:</b> Nexent<br>
-              <b>Platforms:</b> <a target="_blank" href="https://apps.apple.com/app/id1573761523"><span class="glyphicon glyphicon-link"></span> iOS</a>, <a target="_blank" href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.linia2"><span class="glyphicon glyphicon-link"></span> Android</a> <br>
+              <b>Platforms:</b> <a target="_blank" href="https://apps.apple.com/app/id1573761523"><span
+                  class="glyphicon glyphicon-link"></span> iOS</a>, <a target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.blackrobotgamesdev.linia2"><span
+                  class="glyphicon glyphicon-link"></span> Android</a> <br>
               <b>Release date:</b> December 10th 2021<br>
               <b>Price:</b> Free<br>
               <b>Notes:</b> Ads and In-App Purchases<br>
@@ -135,13 +102,17 @@ $detect = new Mobile_Detect;
             </p>
             <h2 style="text-align: left;">About Nexent</h2>
             <p style="text-align: left;">
-              At Nexent we craft mobile games for highly interactive experiences ranging from the relaxing to the challenging.<br>
-<br>
-The <b>Linia</b> series of mobile games is based on engaging shapes and colors.<br>
-Linia Stripes is a relaxing game of identifying progressive lengths and building collections of patterns.<br>
-Linia Super challenges the user with drawing lines through moving and changing shapes and objects.<br>
-<br>
-Founded in 2021 in Milan, Italy, by a team of passionate and experienced developers and designers, Nexent SRL is an Indie Game Studio built upon the foundation of the Blackrobot Games developer publishing games since 2016.<br>
+              At Nexent we craft mobile games for highly interactive experiences ranging from the relaxing to the
+              challenging.<br>
+              <br>
+              The <b>Linia</b> series of mobile games is based on engaging shapes and colors.<br>
+              Linia Stripes is a relaxing game of identifying progressive lengths and building collections of
+              patterns.<br>
+              Linia Super challenges the user with drawing lines through moving and changing shapes and objects.<br>
+              <br>
+              Founded in 2021 in Milan, Italy, by a team of passionate and experienced developers and designers, Nexent
+              SRL is an Indie Game Studio built upon the foundation of the Blackrobot Games developer publishing games
+              since 2016.<br>
             </p>
           </div>
         </div>
@@ -149,22 +120,28 @@ Founded in 2021 in Milan, Italy, by a team of passionate and experienced develop
         <div class="row screenshots">
           <div class="detail col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 k">
             <div class="col-md-2 item" style="margin-top:10px">
-              <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_catchme.jpg" />
+              <img style="margin:0 auto" class="img-responsive"
+                src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_catchme.jpg" />
             </div>
             <div class="col-md-2 item" style="margin-top:10px">
-              <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_vintart.jpg" />
+              <img style="margin:0 auto" class="img-responsive"
+                src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_vintart.jpg" />
             </div>
             <div class="col-md-2 item" style="margin-top:10px">
-              <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_qubert.jpg" />
+              <img style="margin:0 auto" class="img-responsive"
+                src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_qubert.jpg" />
             </div>
             <div class="col-md-2 item" style="margin-top:10px">
-              <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_olim.jpg" />
+              <img style="margin:0 auto" class="img-responsive"
+                src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_olim.jpg" />
             </div>
             <div class="col-md-2 item" style="margin-top:10px">
-              <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_karelia.jpg" />
+              <img style="margin:0 auto" class="img-responsive"
+                src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_karelia.jpg" />
             </div>
             <div class="col-md-2 item" style="margin-top:10px">
-              <img style="margin:0 auto" class="img-responsive" src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_gravity.jpg" />
+              <img style="margin:0 auto" class="img-responsive"
+                src="https://nexentwebsites.s3.amazonaws.com/liniasuper/sc_gravity.jpg" />
             </div>
           </div>
         </div>
@@ -175,13 +152,17 @@ Founded in 2021 in Milan, Italy, by a team of passionate and experienced develop
         <div class="row">
           <h2>Media</h2>
           <p>
-            <a href="https://drive.google.com/drive/folders/1egGUTXurmA-V8zyTgsNs8LJHmjLpUakQ?usp=sharing"><span class="glyphicon glyphicon-download"></span> Icon
+            <a href="https://drive.google.com/drive/folders/1egGUTXurmA-V8zyTgsNs8LJHmjLpUakQ?usp=sharing"><span
+                class="glyphicon glyphicon-download"></span> Icon
               (0.4 MB)</a><br>
-            <a href="https://drive.google.com/drive/folders/1egGUTXurmA-V8zyTgsNs8LJHmjLpUakQ?usp=sharing"><span class="glyphicon glyphicon-download"></span>
+            <a href="https://drive.google.com/drive/folders/1egGUTXurmA-V8zyTgsNs8LJHmjLpUakQ?usp=sharing"><span
+                class="glyphicon glyphicon-download"></span>
               Screenshots (43 MB)</a> <br>
-            <a href="https://drive.google.com/drive/folders/1egGUTXurmA-V8zyTgsNs8LJHmjLpUakQ?usp=sharing"><span class="glyphicon glyphicon-download"></span> Promo
+            <a href="https://drive.google.com/drive/folders/1egGUTXurmA-V8zyTgsNs8LJHmjLpUakQ?usp=sharing"><span
+                class="glyphicon glyphicon-download"></span> Promo
               video (21 MB)</a> <br>
-            <a target="_blank" href="https://www.youtube.com/watch?v=TivvTn2YYGA"> <span class="glyphicon glyphicon-link"></span> YouTube video</a> <br>
+            <a target="_blank" href="https://www.youtube.com/watch?v=TivvTn2YYGA"> <span
+                class="glyphicon glyphicon-link"></span> YouTube video</a> <br>
           </p>
           <br>
           <h2>Contact us</h2>
@@ -195,7 +176,8 @@ Founded in 2021 in Milan, Italy, by a team of passionate and experienced develop
         <div class="clearfix"></div>
         <div class="iHateSpacers"></div>
 
-        <p class="credits"><br><br><br>Linia super is designed and developed by<br><a target="_blank" href="https://nexent.io">Nexent</a><br><br>
+        <p class="credits"><br><br><br>Linia super is designed and developed by<br><a target="_blank"
+            href="https://nexent.io">Nexent</a><br><br>
           Linia is a trademark of Nexent SRL<br>All rights reserved.
         </p>
       </div>
