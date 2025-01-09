@@ -1,10 +1,10 @@
 :root {
-    --font-global: 'Rubik', sans-serif;
+    --font-global: 'Poppins', sans-serif;
     --font-alt: 'Poppins', sans-serif;
     --container-width: 1300px;
     --section-padding-y: 160px;
     --color-dark-1: #111;
-    --color-dark-2: #202020;
+    --color-dark-2: #151515;
     --color-gray-1: #777;
 }
 
@@ -345,6 +345,15 @@ a.btn-mod {
 .work-navigation a,
 .work-navigation a:visited {
     color: var(--color-dark-1);
+}
+
+ul.focus li {
+    font-family: inherit;
+    font-size: 16px!important;
+}
+
+ul.font li b{
+    font-weight: 600!important;
 }
 
 @media only screen and (min-width: 1441px) {

@@ -810,7 +810,7 @@ body {
     color: var(--color-dark-1);
     font-family: var(--font-global);
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: normal;
     line-height: 1.67;
 }
@@ -8867,8 +8867,8 @@ img.services-image {
 
 .portfolio-1-title {
     position: relative;
-    margin-left: -105px;
-    font-size: 82px;
+    margin-left: 0;
+    font-size: 60px;/*calc(0.15rem + 5.65vw);*/
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -8876,7 +8876,7 @@ img.services-image {
 
 .portfolio-1-title a {
     display: inline-block;
-    margin-left: -4px;
+    margin-left: 0;
     color: unset;
     text-decoration: none;
     transition: letter-spacing .27s var(--ease-out-medium);
@@ -8889,6 +8889,7 @@ img.services-image {
 
 .portfolio-1-descr {
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
 

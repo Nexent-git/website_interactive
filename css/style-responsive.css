@@ -115,7 +115,7 @@
         font-size: calc(1.735rem + 3.82vw);
     }
     .section-title-large{
-        font-size: calc(0.50887rem + 5.99vw);
+        font-size: calc(1.0rem + 5.99vw);
     }    
     .section-title-repeat{
         font-size: calc(0.358rem + 8.37vw);
@@ -188,8 +188,8 @@
     }
     
     .portfolio-1-title{
-        margin-left: -7.6867vw;
-        font-size: calc(0.297rem + 5.65vw);
+        margin-left: 0;
+        font-size: calc(1.0rem + 4.0vw);
     }
     .portfolio-1-title a{
         margin-left: -0.19vw;
