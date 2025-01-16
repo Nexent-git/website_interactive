@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informazioni Aziendali</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101016;
+            color: #fefefe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #1a1a2e;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            text-align: left;
+        }
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fefefe;
+        }
+        .container p {
+            margin: 5px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #fefefe;
+        }
+        .copy-button {
+            background-color: #4caf50;
+            color: #fefefe;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copiato negli appunti: ' + text);
+            }).catch(err => {
+                alert('Errore durante la copia: ' + err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Informazioni Aziendali</h1>
+        <p>
+            <span class="highlight">Codice Destinatario (SDI):</span> USAL8PV
+            <button class="copy-button" onclick="copyToClipboard('USAL8PV')">Copia</button>
+        </p>
+        <p>
+            <span class="highlight">Partita IVA:</span> 11746860961
+            <button class="copy-button" onclick="copyToClipboard('11746860961')">Copia</button>
+        </p>
+        <p><span class="highlight">Denominazione:</span> NEXENT S.R.L.</p>
+        <p><span class="highlight">Provincia:</span> MI</p>
+        <p><span class="highlight">Comune:</span> MILANO</p>
+        <p><span class="highlight">Indirizzo:</span> VIA Alessandro Manzoni 42, 20121, Milano</p>
+        <p><span class="highlight">PEC:</span> nexent@legalmail.it</p>
+    </div>
+</body>
+</html>
