@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">TALENS — Piattaforma di Assessment HR AI-Native</title>
+  <meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="" />
+  <meta name="theme-color" content="#f8fafc" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TALENS — AI-Native HR Assessment Platform" />
+  <meta property="og:description" content="AI generates every scenario, conducts every assessment and writes every report." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            light: { bg: '#f8fafc', surface: '#f1f5f9', card: '#ffffff', elevated: '#e2e8f0' },
+            accent: { blue: '#2563EB', cyan: '#0EA5E9', green: '#10B981', orange: '#F97316', red: '#EF4444', yellow: '#FBBF24' }
+          },
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], heading: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/talens.css?v=55" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============================================================ NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="TALENS"><img src="assets/talens_logo_light.png" alt="TALENS" /></a>
+
+      <div class="nav__links">
+        <a class="nav__link" href="#problem" data-i18n="nav.problem">Il problema</a>
+        <a class="nav__link" href="#how" data-i18n="nav.how">Come funziona</a>
+        <a class="nav__link" href="#measures" data-i18n="nav.measures">Cosa misura</a>
+        <a class="nav__link" href="#apart" data-i18n="nav.apart">Cosa lo distingue</a>
+        <a class="nav__link" href="#usecases" data-i18n="nav.usecases">Casi d'uso</a>
+        <a class="nav__link" href="#business" data-i18n="nav.business">Modello</a>
+      </div>
+
+      <div class="nav__actions">
+        <div class="lang" role="group" aria-label="Language">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <a href="#" data-demo class="btn btn--primary" data-i18n="nav.cta">Richiedi una demo</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#problem" data-i18n="nav.problem">Il problema</a>
+      <a href="#how" data-i18n="nav.how">Come funziona</a>
+      <a href="#measures" data-i18n="nav.measures">Cosa misura</a>
+      <a href="#apart" data-i18n="nav.apart">Cosa lo distingue</a>
+      <a href="#usecases" data-i18n="nav.usecases">Casi d'uso</a>
+      <a href="#business" data-i18n="nav.business">Modello</a>
+      <a href="#" data-demo class="btn btn--primary" data-i18n="nav.cta">Richiedi una demo</a>
+    </div>
+  </nav>
+
+  <span id="top"></span>
+
+  <!-- ============================================================ HERO -->
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <!-- Hero background image: assets/hero.png (change --hero-bg in css/talens.css) -->
+      <div class="hero__photo" data-parallax="0.22"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__grid-overlay" data-parallax="0.10"></div>
+      <div class="blob-wrap" data-parallax="0.16"><div class="blob blob--1"></div></div>
+      <div class="blob-wrap" data-parallax="-0.22"><div class="blob blob--2"></div></div>
+      <div class="blob-wrap" data-parallax="0.30"><div class="blob blob--3"></div></div>
+    </div>
+    <div class="container hero__inner">
+      <img class="hero__logo" src="assets/talens_logo_light.png" alt="TALENS" />
+      <h1>
+        <span data-i18n="hero.title_1">HR assessment di nuova generazione</span><br />
+        <span class="grad" data-i18n="hero.title_2">sfruttando la potenza dell'AI</span>
+      </h1>
+      <p class="hero__sub" data-i18n-html="hero.subtitle">Dalla configurazione al report, l'<span class='hl'>AI</span> lavora <span class='hl'>al tuo fianco</span>: scenari su misura e valutazioni basate su evidenze. Non è AI applicata all'assessment. È un assessment <span class='hl'>progettato nativamente</span> per l'AI, fin dalle fondamenta.</p>
+      <div class="hero__cta">
+        <a href="#how" class="btn btn--ghost" data-i18n="hero.cta_secondary">Scopri come funziona</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================== PROBLEM -->
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="reveal">
+          <span class="kicker" data-i18n="problem.kicker">Il problema</span>
+          <h2 class="section-title" data-i18n-html="problem.title">L'assessment dei talenti non ha tenuto il passo</h2>
+        </div>
+        <div class="problem-grid" id="problemGrid"></div>
+
+        <!-- Solution block -->
+        <div class="solution reveal" id="solution">
+          <div class="solution__head">
+            <span class="kicker" data-i18n="solution.kicker">La soluzione TALENS</span>
+            <h2 data-i18n="solution.title">AI-native, end to end</h2>
+            <p data-i18n="solution.body">L'intera pipeline è guidata dall'AI.</p>
+          </div>
+          <div class="solution__split">
+            <div class="solution__cell human">
+              <span class="tag">WHAT</span>
+              <h4 data-i18n="solution.human_t">Tu definisci il COSA</h4>
+              <p data-i18n="solution.human_d">Settore, ruolo, seniority e competenze target.</p>
+            </div>
+            <div class="solution__cell ai">
+              <span class="tag">HOW</span>
+              <h4 data-i18n="solution.ai_t">L'AI gestisce il COME</h4>
+              <p data-i18n="solution.ai_d">Genera scenari, conduce assessment adattivi, produce report.</p>
+            </div>
+          </div>
+          <p class="solution__note" data-i18n="solution.note">Non l'AI applicata all'assessment tradizionale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== HOW -->
+    <section class="section section--tight" id="how" style="background: var(--surface);">
+      <div class="container">
+        <div class="reveal">
+          <span class="kicker" data-i18n="how.kicker">Come funziona</span>
+          <h2 class="section-title" data-i18n-html="how.title">Una pipeline in quattro fasi, completamente automatizzata</h2>
+        </div>
+        <div class="pipeline" id="pipeline"></div>
+        <div class="note-banner reveal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n-html="how.note">Setup di ~15 minuti al Day 1.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== MEASURES -->
+    <section class="section" id="measures">
+      <div class="container">
+        <div class="reveal">
+          <span class="kicker" data-i18n="measures.kicker">Cosa misura</span>
+          <h2 class="section-title" data-i18n-html="measures.title">3 gruppi di competenze su 9 moduli</h2>
+        </div>
+
+        <h3 class="reveal" style="margin-top:44px;font-size:1.1rem;color:var(--text-muted);font-weight:700;letter-spacing:.02em;" data-i18n="measures.pillars_title">Modello di competenze in 3 pilastri</h3>
+        <div class="pillars" id="pillars"></div>
+
+        <div class="modes-head reveal">
+          <h3 style="font-size:1.1rem;color:var(--text-muted);font-weight:700;letter-spacing:.02em;" data-i18n="measures.modes_title">9 moduli su 3 modalità</h3>
+        </div>
+        <div class="modes" id="modes"></div>
+
+        <div class="note-banner reveal" style="background:rgba(37,99,235,.06);border-color:rgba(37,99,235,.18);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span data-i18n="measures.note">Abilita una matrice di competenze cross-modulo.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== APART -->
+    <section class="section section--tight" id="apart" style="background: var(--surface);">
+      <div class="container">
+        <div class="reveal">
+          <span class="kicker" data-i18n="apart.kicker">Cosa lo distingue</span>
+          <h2 class="section-title" data-i18n-html="apart.title">Unico, adattivo, basato su evidenze</h2>
+        </div>
+        <div class="apart-layout">
+          <div class="produces reveal" data-anim="left" id="produces"></div>
+          <div class="apart-cards" id="apartCards"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== USE CASES -->
+    <section class="section" id="usecases">
+      <div class="container">
+        <div class="reveal">
+          <span class="kicker" data-i18n="usecases.kicker">Casi d'uso</span>
+          <h2 class="section-title" data-i18n-html="usecases.title">L'intera gamma di decisioni di hiring e promozione</h2>
+        </div>
+        <div class="usecases" id="usecasesGrid"></div>
+        <div class="note-banner reveal" style="margin-top:40px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span data-i18n="usecases.note">Combina liberamente i moduli per adattarli al ruolo.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== BUSINESS -->
+    <section class="section" id="business">
+      <div class="container">
+        <div class="reveal">
+          <span class="kicker" data-i18n="business.kicker">Modello di business</span>
+          <h2 class="section-title" data-i18n-html="business.title">Soluzioni flessibili per le aziende clienti</h2>
+        </div>
+        <div class="business" id="businessGrid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">
+        <img src="assets/talens_logo_light.png" alt="TALENS" />
+        <p class="footer__tagline" data-i18n="footer.tagline">Piattaforma di Assessment HR AI-Native</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <a href="#problem" data-i18n="nav.problem">Il problema</a>
+          <a href="#how" data-i18n="nav.how">Come funziona</a>
+          <a href="#measures" data-i18n="nav.measures">Cosa misura</a>
+          <a href="#apart" data-i18n="nav.apart">Cosa lo distingue</a>
+        </div>
+        <div class="footer__col">
+          <a href="#usecases" data-i18n="nav.usecases">Casi d'uso</a>
+          <a href="#business" data-i18n="nav.business">Modello</a>
+          <a href="#" data-demo data-i18n="nav.cta">Richiedi una demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> TALENS. <span data-i18n="footer.rights">Tutti i diritti riservati.</span></span>
+      <span class="footer__by"><span data-i18n="footer.by">Un progetto</span> <a href="https://nexent.io" target="_blank" rel="noopener"><img class="footer__nexent" src="assets/nexent_logo.png" alt="Nexent" /></a></span>
+    </div>
+  </footer>
+
+  <!-- ============================================================ DEMO MODAL -->
+  <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="demoTitle" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Chiudi" data-modal-close>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h3 class="modal__title" id="demoTitle" data-i18n="demo.title">Richiedi una demo</h3>
+      <p class="modal__sub" data-i18n="demo.sub">Lascia i tuoi dati: ti ricontatteremo per organizzare una demo personalizzata.</p>
+      <form class="modal__form" id="demoForm" novalidate>
+        <label class="field">
+          <span class="field__label" data-i18n="demo.name">Nome</span>
+          <input class="field__input" type="text" name="name" autocomplete="name" data-i18n-attr="placeholder" data-i18n="demo.name_ph" placeholder="Il tuo nome" />
+        </label>
+        <label class="field">
+          <span class="field__label" data-i18n="demo.company">Società</span>
+          <input class="field__input" type="text" name="company" autocomplete="organization" data-i18n-attr="placeholder" data-i18n="demo.company_ph" placeholder="Nome dell'azienda" />
+        </label>
+        <label class="field">
+          <span class="field__label" data-i18n="demo.email">Email</span>
+          <input class="field__input" type="email" name="email" autocomplete="email" data-i18n-attr="placeholder" data-i18n="demo.email_ph" placeholder="nome@azienda.com" />
+        </label>
+        <label class="field">
+          <span class="field__label" data-i18n="demo.message">Messaggio</span>
+          <textarea class="field__input field__textarea" name="message" rows="4" data-i18n-attr="placeholder" data-i18n="demo.message_ph" placeholder="Raccontaci le tue esigenze…"></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary modal__submit"><span data-i18n="demo.send">Invia richiesta</span><span class="arrow">→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================ SCRIPTS -->
+  <script src="https://unpkg.com/i18next@23.11.5/i18next.min.js"></script>
+  <script src="js/i18n.js?v=55"></script>
+  <script src="js/talens.js?v=55"></script>
+</body>
+</html>
