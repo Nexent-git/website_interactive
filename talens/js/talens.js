@@ -28,6 +28,12 @@
   var apartIcons = [I.unique, I.adapt, I.evidence, I.calibrate];
   var bizIcons = [I.host, I.label, I.plug];
 
+  /* ----------------------------------------------------------- contact endpoint
+     URL della DigitalOcean Function che inoltra il form a Discord.
+     Dopo il deploy: doctl serverless functions get talens/contact --url
+     (vedi function/README.md) */
+  var CONTACT_ENDPOINT = "https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-27d9aebe-17f8-40c8-a9d3-519fa3018605/talens/contact";
+
   /* ----------------------------------------------------------- helpers */
   function el(html) { var t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstElementChild; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -271,10 +277,54 @@
       $all("[data-modal-close]", modal).forEach(function (b) { b.addEventListener("click", closeModal); });
       document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) closeModal(); });
       var form = $("#demoForm");
-      if (form) form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        /* TODO: invio dati (parte dinamica da implementare) */
-      });
+      if (form) {
+        var emailInput = form.querySelector('input[name="email"]');
+        var submitBtn = form.querySelector(".modal__submit");
+        var statusEl = $("#demoFormStatus");
+        var setStatus = function (kind, msg) {
+          statusEl.hidden = !msg;
+          statusEl.textContent = msg || "";
+          statusEl.className = "form-status" + (kind ? " form-status--" + kind : "");
+        };
+        var resetFormState = function () {
+          setStatus("", "");
+          emailInput.classList.remove("is-invalid");
+          submitBtn.disabled = false;
+        };
+        $all("[data-demo]").forEach(function (b) { b.addEventListener("click", resetFormState); });
+        emailInput.addEventListener("input", function () { emailInput.classList.remove("is-invalid"); });
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var t = i18next.t.bind(i18next);
+          var email = emailInput.value.trim();
+          if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            emailInput.classList.add("is-invalid");
+            emailInput.focus();
+            setStatus("error", t("demo.email_required"));
+            return;
+          }
+          submitBtn.disabled = true;
+          setStatus("pending", t("demo.sending"));
+          fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: form.name.value.trim(),
+              company: form.company.value.trim(),
+              email: email,
+              message: form.message.value.trim(),
+              website: form.website.value /* honeypot */
+            })
+          }).then(function (r) {
+            if (!r.ok) throw new Error("http " + r.status);
+            form.reset();
+            setStatus("success", t("demo.success"));
+          }).catch(function () {
+            submitBtn.disabled = false;
+            setStatus("error", t("demo.error"));
+          });
+        });
+      }
     }
   }
 

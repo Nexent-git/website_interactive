@@ -244,7 +244,11 @@ window.TALENS_I18N = {
         email_ph: "nome@azienda.com",
         message: "Messaggio",
         message_ph: "Raccontaci le tue esigenze…",
-        send: "Invia richiesta"
+        send: "Invia richiesta",
+        email_required: "Inserisci un indirizzo email valido.",
+        sending: "Invio in corso…",
+        success: "Richiesta inviata! Ti ricontatteremo al più presto.",
+        error: "Si è verificato un errore durante l'invio. Riprova tra qualche istante."
       },
       footer: {
         tagline: "Piattaforma di Assessment HR AI-Native",
@@ -496,7 +500,11 @@ window.TALENS_I18N = {
         email_ph: "name@company.com",
         message: "Message",
         message_ph: "Tell us about your needs…",
-        send: "Send request"
+        send: "Send request",
+        email_required: "Please enter a valid email address.",
+        sending: "Sending…",
+        success: "Request sent! We'll get back to you shortly.",
+        error: "Something went wrong while sending. Please try again in a moment."
       },
       footer: {
         tagline: "AI-Native HR Assessment Platform",

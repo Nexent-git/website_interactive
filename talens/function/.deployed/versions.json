@@ -1,0 +1,18 @@
+[
+  {
+    "apihost": "https://faas-fra1-afec6ce7.doserverless.co",
+    "namespace": "fn-27d9aebe-17f8-40c8-a9d3-519fa3018605",
+    "packageVersions": {
+      "talens": {
+        "version": "0.0.2",
+        "digest": "8a56fd055b3a9810b66535040d9d253c03959e212f17d906185fcfb644719e5d"
+      }
+    },
+    "actionVersions": {
+      "talens/contact": {
+        "version": "0.0.2",
+        "digest": "679b72940b3413be12f3159ce859d1d9ffa008a9ed2497a373efd9f17ef02560"
+      }
+    }
+  }
+]

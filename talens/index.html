@@ -39,7 +39,7 @@
     };
   </script>
 
-  <link rel="stylesheet" href="css/talens.css?v=55" />
+  <link rel="stylesheet" href="css/talens.css?v=56" />
 </head>
 <body>
 
@@ -267,21 +267,23 @@
           <input class="field__input" type="text" name="company" autocomplete="organization" data-i18n-attr="placeholder" data-i18n="demo.company_ph" placeholder="Nome dell'azienda" />
         </label>
         <label class="field">
-          <span class="field__label" data-i18n="demo.email">Email</span>
-          <input class="field__input" type="email" name="email" autocomplete="email" data-i18n-attr="placeholder" data-i18n="demo.email_ph" placeholder="nome@azienda.com" />
+          <span class="field__label"><span data-i18n="demo.email">Email</span> <span class="field__req" aria-hidden="true">(<span class="field__req-star">*</span>)</span></span>
+          <input class="field__input" type="email" name="email" autocomplete="email" required data-i18n-attr="placeholder" data-i18n="demo.email_ph" placeholder="nome@azienda.com" />
         </label>
         <label class="field">
           <span class="field__label" data-i18n="demo.message">Messaggio</span>
           <textarea class="field__input field__textarea" name="message" rows="4" data-i18n-attr="placeholder" data-i18n="demo.message_ph" placeholder="Raccontaci le tue esigenze…"></textarea>
         </label>
+        <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit" class="btn btn--primary modal__submit"><span data-i18n="demo.send">Invia richiesta</span><span class="arrow">→</span></button>
+        <p class="form-status" id="demoFormStatus" role="status" hidden></p>
       </form>
     </div>
   </div>
 
   <!-- ============================================================ SCRIPTS -->
   <script src="https://unpkg.com/i18next@23.11.5/i18next.min.js"></script>
-  <script src="js/i18n.js?v=55"></script>
-  <script src="js/talens.js?v=55"></script>
+  <script src="js/i18n.js?v=56"></script>
+  <script src="js/talens.js?v=56"></script>
 </body>
 </html>

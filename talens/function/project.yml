@@ -1,0 +1,10 @@
+packages:
+  - name: talens
+    functions:
+      - name: contact
+        runtime: nodejs:18
+        web: true
+        limits:
+          timeout: 8000
+        environment:
+          DISCORD_WEBHOOK_URL: "${DISCORD_WEBHOOK_URL}"
