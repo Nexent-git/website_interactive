@@ -113,7 +113,7 @@ window.TALENS_I18N = {
         modes: [
           {
             t: "Conversazione",
-            sub: "Vocale, con personaggi AI",
+            sub: "Interazione vocale con personaggi AI",
             items: ["Colloquio Comportamentale", "Problem Dialogue", "Role Play"]
           },
           {
@@ -123,7 +123,7 @@ window.TALENS_I18N = {
           },
           {
             t: "Ragionamento",
-            sub: "Task scritti, strutturati e multi-fase",
+            sub: "Prove scritte ed esercizi su scenari multi-fase",
             items: ["Decision Canvas", "Analisi Critica", "Pensiero Sistemico"]
           }
         ],
@@ -369,7 +369,7 @@ window.TALENS_I18N = {
         modes: [
           {
             t: "Conversation",
-            sub: "Voice-based with AI characters",
+            sub: "Voice interaction with AI characters",
             items: ["Behavioral Interview", "Problem Dialogue", "Role Play"]
           },
           {
@@ -379,7 +379,7 @@ window.TALENS_I18N = {
           },
           {
             t: "Reasoning",
-            sub: "Structured multi-phase written tasks",
+            sub: "Written tests and exercises on multi-phase scenarios",
             items: ["Decision Canvas", "Critical Analysis", "Systems Thinking"]
           }
         ],
