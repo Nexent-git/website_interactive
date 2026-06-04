@@ -103,12 +103,14 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; m
 /* Dark-blue background fades in only after scrolling */
 .nav::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(160deg, rgba(15, 23, 42, 0.72) 0%, rgba(30, 41, 59, 0.72) 100%);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
   opacity: 0; transition: opacity .35s ease;
 }
 .nav.scrolled::before { opacity: 1; }
 .nav.scrolled {
-  border-bottom-color: rgba(255, 255, 255, 0.10);
+  border-bottom-color: transparent;
   box-shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.55);
 }
 .nav__inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; height: 72px; }
