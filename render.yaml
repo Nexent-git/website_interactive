@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nexent-interactive
+    name: Nexent Interactive (Website)
     runtime: static
     staticPublishPath: .
     routes:
