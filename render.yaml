@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nexent-interactive
+    runtime: static
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /talens
+        destination: /talens/index.html
+      - type: rewrite
+        source: /liniastripes
+        destination: /liniastripes/index.html
+      - type: rewrite
+        source: /liniasuper
+        destination: /liniasuper/index.html
