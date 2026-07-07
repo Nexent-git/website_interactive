@@ -299,16 +299,18 @@
 
     /* ----------------------------------------------------------- pillars */
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .pillar__head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .pillar__head h3 { margin-bottom: 0; }
     .pillar__icon {
       width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px; color: #fff;
+      color: #fff; flex: none;
     }
     .pillar--think .pillar__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
     .pillar--relate .pillar__icon { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
     .pillar--exec .pillar__icon { background: linear-gradient(135deg, #10b981, #059669); }
     .pillar__kick {
-      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: 8px;
+      display: block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 2px;
     }
     .pillar--think .pillar__kick { color: var(--blue); }
     .pillar--relate .pillar__kick { color: var(--cyan); }
@@ -724,11 +726,15 @@
         </div>
         <div class="pillars">
           <article class="card pillar pillar--think reveal" data-d="2">
-            <div class="pillar__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.1-2.6 5.4-.8.8-1.4 1.9-1.4 3.1V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1.5c0-1.2-.6-2.3-1.4-3.1C6.2 13.1 5 11.4 5 9a7 7 0 0 1 7-7z"/></svg>
+            <div class="pillar__head">
+              <div class="pillar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.1-2.6 5.4-.8.8-1.4 1.9-1.4 3.1V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1.5c0-1.2-.6-2.3-1.4-3.1C6.2 13.1 5 11.4 5 9a7 7 0 0 1 7-7z"/></svg>
+              </div>
+              <div>
+                <span class="pillar__kick" data-i18n="comp.m1">Group 1</span>
+                <h3 data-i18n="comp.think_t">Thinking</h3>
+              </div>
             </div>
-            <span class="pillar__kick" data-i18n="comp.m1">Group 1</span>
-            <h3 data-i18n="comp.think_t">Thinking</h3>
             <ul data-i18n="comp.think_l">
               <li>Analytical Reasoning</li>
               <li>Strategic Thinking</li>
@@ -739,11 +745,15 @@
             </ul>
           </article>
           <article class="card pillar pillar--relate reveal" data-d="3">
-            <div class="pillar__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="pillar__head">
+              <div class="pillar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <span class="pillar__kick" data-i18n="comp.m2">Group 2</span>
+                <h3 data-i18n="comp.relate_t">Relating</h3>
+              </div>
             </div>
-            <span class="pillar__kick" data-i18n="comp.m2">Group 2</span>
-            <h3 data-i18n="comp.relate_t">Relating</h3>
             <ul data-i18n="comp.relate_l">
               <li>Interpersonal Communication</li>
               <li>Collaborative Teamwork</li>
@@ -754,11 +764,15 @@
             </ul>
           </article>
           <article class="card pillar pillar--exec reveal" data-d="4">
-            <div class="pillar__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="pillar__head">
+              <div class="pillar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div>
+                <span class="pillar__kick" data-i18n="comp.m3">Group 3</span>
+                <h3 data-i18n="comp.exec_t">Executing</h3>
+              </div>
             </div>
-            <span class="pillar__kick" data-i18n="comp.m3">Group 3</span>
-            <h3 data-i18n="comp.exec_t">Executing</h3>
             <ul data-i18n="comp.exec_l">
               <li>Planning &amp; Organizing</li>
               <li>Priority Management</li>
