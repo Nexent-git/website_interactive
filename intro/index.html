@@ -334,6 +334,10 @@
 
     /* ------------------------------------------------------------- modes */
     .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .mode.card { padding: 0; }
+    .mode__media { overflow: hidden; line-height: 0; border-bottom: 1px solid var(--border); }
+    .mode__img { width: 100%; height: auto; display: block; }
+    .mode__body { padding: clamp(18px, 2vw, 26px); }
     .mode__head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
     .mode__icon { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
     .mode--conv .mode__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
@@ -708,7 +712,7 @@
             <p data-i18n="how.d4">Structured reports with per-competency ratings, narrative assessments, evidence quotes and clear recommendations.</p>
           </article>
         </div>
-        <div class="note-banner reveal" data-d="6" data-i18n="how.note">Human involvement: ~15 minutes on Day&nbsp;1. Everything else is fully automated.</div>
+        <div class="note-banner reveal" data-d="6" data-i18n="how.note">~15-minute setup on Day&nbsp;1. Everything else is fully automated.</div>
       </div>
     </section>
 
@@ -783,6 +787,7 @@
             </ul>
           </article>
         </div>
+        <div class="matrix-note reveal" data-d="5" data-i18n="comp.note">And it doesn't stop here: TALENS can also assess <strong>any other competency</strong> you need, even outside these groups.</div>
       </div>
     </section>
 
@@ -795,46 +800,55 @@
         </div>
         <div class="modes">
           <article class="card mode mode--conv reveal" data-d="2">
-            <div class="mode__head">
-              <div class="mode__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+            <div class="mode__media"><img class="mode__img" src="../talens/assets/conversation.png" alt="" loading="lazy" /></div>
+            <div class="mode__body">
+              <div class="mode__head">
+                <div class="mode__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+                </div>
+                <h3 data-i18n="mod.conv_t">Conversation</h3>
               </div>
-              <h3 data-i18n="mod.conv_t">Conversation</h3>
+              <p class="mode__sub" data-i18n="mod.conv_s">Voice-based sessions with AI characters</p>
+              <ul data-i18n="mod.conv_l">
+                <li>Behavioral Interview</li>
+                <li>Problem Dialogue</li>
+                <li>Role Play</li>
+              </ul>
             </div>
-            <p class="mode__sub" data-i18n="mod.conv_s">Voice-based sessions with AI characters</p>
-            <ul data-i18n="mod.conv_l">
-              <li>Behavioral Interview</li>
-              <li>Problem Dialogue</li>
-              <li>Role Play</li>
-            </ul>
           </article>
           <article class="card mode mode--msg reveal" data-d="3">
-            <div class="mode__head">
-              <div class="mode__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <div class="mode__media"><img class="mode__img" src="../talens/assets/messages.png" alt="" loading="lazy" /></div>
+            <div class="mode__body">
+              <div class="mode__head">
+                <div class="mode__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h3 data-i18n="mod.msg_t">Messaging</h3>
               </div>
-              <h3 data-i18n="mod.msg_t">Messaging</h3>
+              <p class="mode__sub" data-i18n="mod.msg_s">Multi-thread text chat under pressure</p>
+              <ul data-i18n="mod.msg_l">
+                <li>Team Dynamics</li>
+                <li>Priority Triage</li>
+                <li>Operational Coordination</li>
+              </ul>
             </div>
-            <p class="mode__sub" data-i18n="mod.msg_s">Multi-thread text chat under pressure</p>
-            <ul data-i18n="mod.msg_l">
-              <li>Team Dynamics</li>
-              <li>Priority Triage</li>
-              <li>Operational Coordination</li>
-            </ul>
           </article>
           <article class="card mode mode--reason reveal" data-d="4">
-            <div class="mode__head">
-              <div class="mode__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <div class="mode__media"><img class="mode__img" src="../talens/assets/task.png" alt="" loading="lazy" /></div>
+            <div class="mode__body">
+              <div class="mode__head">
+                <div class="mode__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <h3 data-i18n="mod.reason_t">Reasoning</h3>
               </div>
-              <h3 data-i18n="mod.reason_t">Reasoning</h3>
+              <p class="mode__sub" data-i18n="mod.reason_s">Structured multi-phase written tasks</p>
+              <ul data-i18n="mod.reason_l">
+                <li>Decision Canvas</li>
+                <li>Critical Analysis</li>
+                <li>Systems Thinking</li>
+              </ul>
             </div>
-            <p class="mode__sub" data-i18n="mod.reason_s">Structured multi-phase written tasks</p>
-            <ul data-i18n="mod.reason_l">
-              <li>Decision Canvas</li>
-              <li>Critical Analysis</li>
-              <li>Systems Thinking</li>
-            </ul>
           </article>
         </div>
         <div class="matrix-note reveal" data-d="5" data-i18n="mod.note">Together they enable a <strong>cross-module competency matrix</strong>: the same competency measured across multiple interaction modes.</div>
@@ -1075,7 +1089,7 @@
         'how.d3': "L'AI conduce sessioni adattive: approfondisce, introduce complicazioni e regola la pressione in tempo reale in base alle risposte del candidato.",
         'how.t4': 'Valuta',
         'how.d4': 'Report strutturati con valutazioni per competenza, giudizi narrativi, citazioni a supporto e raccomandazioni chiare.',
-        'how.note': 'Coinvolgimento umano: ~15 minuti il Giorno&nbsp;1. Tutto il resto è completamente automatizzato.',
+        'how.note': 'Setup di ~15 minuti al Day&nbsp;1. Tutto il resto è completamente automatizzato.',
 
         'comp.kicker': 'Cosa misura',
         'comp.title': '<span class="hl">3 gruppi</span> di competenze',
@@ -1085,6 +1099,7 @@
         'comp.m1': 'Gruppo 1',
         'comp.m2': 'Gruppo 2',
         'comp.m3': 'Gruppo 3',
+        'comp.note': 'E non finisce qui: TALENS può inoltre valutare <strong>qualsiasi altra competenza</strong> di cui hai bisogno, anche non presente in questi gruppi.',
         'comp.think_t': 'Pensiero',
         'comp.think_l': '<li>Ragionamento analitico</li><li>Pensiero strategico</li><li>Qualità decisionale</li><li>Pensiero sistemico</li><li>Analisi critica</li><li>Agilità di apprendimento</li>',
         'comp.relate_t': 'Relazione',
