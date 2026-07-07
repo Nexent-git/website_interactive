@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALENS · Executive Overview</title>
+  <meta name="description" content="TALENS, the AI-native HR assessment platform. Executive overview deck." />
+  <meta name="theme-color" content="#070b16" />
+
+  <!-- Favicon (reuse talens) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../talens/favicon/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../talens/favicon/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../talens/favicon/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ======================================================================
+       TALENS Executive Overview deck
+       Full-screen scroll deck. Design tokens mirrored from talens/css/talens.css
+       ====================================================================== */
+    :root {
+      /* dark theme */
+      --bg: #0b1120;
+      --surface: #0d1526;
+      --card: #101a30;
+      --elevated: #1e293b;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+
+      --text-primary: #f1f5f9;
+      --text-secondary: #c3cede;
+      --text-muted: #8fa0b8;
+
+      --blue: #60a5fa;
+      --blue-soft: #3b82f6;
+      --cyan: #38bdf8;
+      --green: #34d399;
+      --orange: #fb923c;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --violet: #a78bfa;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 8px 24px -6px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 24px 60px -16px rgba(0, 0, 0, 0.5);
+
+      --radius: 18px;
+      --maxw: 1180px;
+
+      --hero-bg: url("../talens/assets/hero2.png");
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-feature-settings: "ss01" 1, "cv01" 1;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+    ::selection { background: rgba(37, 99, 235, 0.18); }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+
+    /* ------------------------------------------------------------- deck */
+    .deck {
+      height: 100vh; height: 100dvh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      overscroll-behavior: contain;
+    }
+    .deck::-webkit-scrollbar { width: 0; height: 0; }
+
+    .slide {
+      position: relative;
+      height: 100vh; height: 100dvh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 64px 0;
+      background: radial-gradient(ellipse 60% 55% at 12% 0%, rgba(37, 99, 235, 0.12), transparent 62%), var(--bg);
+    }
+    .slide--surface {
+      background: radial-gradient(ellipse 60% 55% at 88% 100%, rgba(124, 58, 237, 0.10), transparent 62%), var(--surface);
+    }
+
+    .slide__inner {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 clamp(22px, 4vw, 48px);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ------------------------------------------------------- dark slides */
+    .slide--dark { color: #fff; background: #070b16; }
+    .slide__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+    .slide__photo {
+      position: absolute; inset: 0;
+      background-image: var(--hero-bg);
+      background-size: cover; background-position: center 28%;
+      opacity: .9;
+    }
+    .slide__overlay {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 78% 58% at 50% 38%, rgba(7,11,22,.74) 0%, rgba(7,11,22,.42) 52%, rgba(7,11,22,.12) 82%, transparent 100%),
+        linear-gradient(180deg, rgba(7,11,22,.6) 0%, rgba(7,11,22,.45) 45%, rgba(7,11,22,.5) 100%);
+    }
+    .slide__overlay--deep {
+      background:
+        radial-gradient(ellipse 90% 70% at 50% 40%, rgba(7,11,22,.86) 0%, rgba(7,11,22,.68) 55%, rgba(7,11,22,.45) 85%, rgba(7,11,22,.4) 100%),
+        linear-gradient(180deg, rgba(7,11,22,.7) 0%, rgba(7,11,22,.62) 50%, rgba(7,11,22,.7) 100%);
+    }
+    .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; }
+    .blob--1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(37,99,235,.32), transparent 65%); top: -160px; right: -120px; animation: float1 16s ease-in-out infinite; }
+    .blob--2 { width: 460px; height: 460px; background: radial-gradient(circle, rgba(14,165,233,.26), transparent 65%); top: 120px; left: -160px; animation: float2 19s ease-in-out infinite; }
+    .blob--3 { width: 380px; height: 380px; background: radial-gradient(circle, rgba(16,185,129,.18), transparent 65%); bottom: -120px; left: 38%; animation: float1 22s ease-in-out infinite reverse; }
+    @keyframes float1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-30px, 24px); } }
+    @keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(26px, -20px); } }
+
+    .grid-overlay {
+      position: absolute; inset: 0; opacity: .5;
+      background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 78%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 78%);
+    }
+
+    /* ------------------------------------------------------------ kicker */
+    .kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #93c5fd;
+      padding: 7px 14px; border-radius: 999px;
+      background: rgba(147, 197, 253, 0.10);
+      border: 1px solid rgba(147, 197, 253, 0.22);
+    }
+    .kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #93c5fd; box-shadow: 0 0 10px #93c5fd; }
+
+    .slide-title { font-size: clamp(1.6rem, 3.4vw, 2.6rem); margin-top: 18px; }
+    .slide-lead { color: var(--text-secondary); font-size: clamp(.98rem, 1.4vw, 1.12rem); margin: 14px 0 0; }
+    .slide--dark .slide-lead { color: rgba(255,255,255,.82); }
+
+    .grad {
+      background: linear-gradient(100deg, #2563eb 0%, #6366f1 28%, #a855f7 54%, #8b5cf6 78%, #2563eb 100%);
+      background-size: 220% auto;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: gradShift 7s ease-in-out infinite;
+    }
+    @keyframes gradShift { 0%,100% { background-position: 0% center; } 50% { background-position: 100% center; } }
+
+    .hl {
+      font-weight: 800; white-space: nowrap;
+      background: linear-gradient(100deg, #60a5fa 0%, #a78bfa 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* ------------------------------------------------------------- intro */
+    .intro__inner { text-align: center; max-width: none; margin: 0 auto; }
+    .intro__logo {
+      height: clamp(56px, 8vw, 96px); width: auto; display: block; margin: 0 auto 34px;
+      filter: drop-shadow(0 8px 26px rgba(0, 0, 0, 0.5));
+    }
+    .intro h1 {
+      /* Sized against the viewport so each sentence always fits on one line */
+      font-size: min(4.6vw, 4rem); letter-spacing: -0.035em; color: #fff;
+      text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+      white-space: nowrap;
+    }
+    .intro__sub {
+      font-size: clamp(1rem, 1.8vw, 1.25rem); color: rgba(255,255,255,.85);
+      margin: 26px auto 0; max-width: 56ch; text-shadow: 0 1px 16px rgba(0,0,0,.4);
+    }
+    .intro__tags { margin-top: 26px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .intro__tag {
+      font-size: .84rem; font-weight: 600; color: #e2e8f0;
+      padding: 8px 16px; border-radius: 999px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+
+    .scroll-hint {
+      position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(255,255,255,.7); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      z-index: 2; cursor: pointer; border: 0; background: transparent; font-family: inherit;
+    }
+    .scroll-hint svg { animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+
+    /* ------------------------------------------------------ architecture */
+    .arch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .arch-card {
+      position: relative;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: clamp(22px, 2.6vw, 34px);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.55);
+      transition: transform .3s ease, border-color .3s ease, background .3s ease;
+      overflow: hidden;
+    }
+    .arch-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.24); background: rgba(15, 23, 42, 0.62); }
+    .arch-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--ac1), var(--ac2));
+    }
+    .arch-card--skills { --ac1: #2563eb; --ac2: #7c3aed; }
+    .arch-card--avatar { --ac1: #0ea5e9; --ac2: #2563eb; }
+    .arch-card--systems { --ac1: #10b981; --ac2: #0ea5e9; }
+    .arch-card__head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
+    .arch-card__logo { height: 22px; width: auto; display: block; opacity: .95; }
+    .arch-card__tag {
+      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      color: #fff; padding: 4px 11px; border-radius: 999px;
+      background: linear-gradient(90deg, var(--ac1), var(--ac2));
+      white-space: nowrap;
+    }
+    .arch-card p { color: rgba(255,255,255,.78); font-size: clamp(.88rem, 1.1vw, .97rem); margin: 0; }
+
+    .arch-foot { margin-top: 34px; text-align: center; color: rgba(255,255,255,.65); font-size: .92rem; }
+    .arch-foot .plus { color: #93c5fd; font-weight: 700; }
+
+    /* -------------------------------------------------------------- card */
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: clamp(20px, 2.4vw, 30px); box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      position: relative; overflow: hidden;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+    .card h3 { font-size: clamp(1.05rem, 1.5vw, 1.18rem); margin-bottom: 10px; }
+    .card p { color: var(--text-secondary); font-size: clamp(.88rem, 1.1vw, .97rem); margin: 0; }
+
+    /* ----------------------------------------------------------- problem */
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .problem-card .num {
+      font-size: .85rem; font-weight: 800; letter-spacing: .1em; color: var(--red);
+      background: rgba(239, 68, 68, .09); border: 1px solid rgba(239, 68, 68, .18);
+      padding: 5px 12px; border-radius: 999px; display: inline-block; margin-bottom: 14px;
+    }
+
+    /* ---------------------------------------------------------- solution */
+    .solution__split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
+    .solution__cell { border-radius: var(--radius); padding: clamp(24px, 3vw, 38px); position: relative; overflow: hidden; }
+    .solution__cell .tag {
+      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .14em;
+      padding: 5px 13px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .solution__cell h4 { font-size: clamp(1.15rem, 1.8vw, 1.45rem); margin-bottom: 10px; }
+    .solution__cell p { margin: 0; font-size: clamp(.92rem, 1.2vw, 1.02rem); }
+    .solution__cell.human { background: var(--card); border: 1px solid var(--border-strong); }
+    .solution__cell.human .tag { color: var(--text-secondary); background: var(--elevated); }
+    .solution__cell.human p { color: var(--text-secondary); }
+    .solution__cell.ai {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 55%, #4f46e5 100%);
+      color: #fff; border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 24px 60px -20px rgba(37, 99, 235, .55);
+    }
+    .solution__cell.ai .tag { color: #fff; background: rgba(255,255,255,.16); }
+    .solution__cell.ai p { color: rgba(255,255,255,.85); }
+    .solution__note { margin: 30px 0 0; text-align: center; color: var(--text-muted); font-size: .95rem; font-style: italic; }
+
+    /* ------------------------------------------------------------ phases */
+    .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px; }
+    .phase { position: relative; }
+    .phase::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--pc), transparent 90%);
+      border-radius: 3px 3px 0 0;
+    }
+    .phase--1 { --pc: #60a5fa; } .phase--2 { --pc: #38bdf8; } .phase--3 { --pc: #fb923c; } .phase--4 { --pc: #34d399; }
+    .phase .phase__label {
+      font-size: .72rem; font-weight: 800; letter-spacing: .14em; color: var(--pc);
+      display: inline-block; margin-bottom: 10px;
+    }
+    .note-banner {
+      margin: 36px auto 0; max-width: 720px; text-align: center;
+      padding: 16px 26px; border-radius: 999px;
+      background: rgba(16, 185, 129, .10); border: 1px solid rgba(52, 211, 153, .28);
+      color: #6ee7b7; font-weight: 600; font-size: clamp(.9rem, 1.2vw, 1rem);
+    }
+
+    /* ----------------------------------------------------------- pillars */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .pillar__icon {
+      width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; color: #fff;
+    }
+    .pillar--think .pillar__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
+    .pillar--relate .pillar__icon { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
+    .pillar--exec .pillar__icon { background: linear-gradient(135deg, #10b981, #059669); }
+    .pillar__kick {
+      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pillar--think .pillar__kick { color: var(--blue); }
+    .pillar--relate .pillar__kick { color: var(--cyan); }
+    .pillar--exec .pillar__kick { color: var(--green); }
+    .pillar ul { list-style: none; margin: 0; padding: 0; }
+    .pillar li {
+      color: var(--text-secondary); font-size: clamp(.85rem, 1.05vw, .93rem);
+      padding: 7px 0 7px 20px; position: relative; border-bottom: 1px dashed var(--border);
+    }
+    .pillar li:last-child { border-bottom: 0; }
+    .pillar li::before { content: ""; position: absolute; left: 0; top: 15px; width: 7px; height: 7px; border-radius: 50%; }
+    .pillar--think li::before { background: var(--blue); }
+    .pillar--relate li::before { background: var(--cyan); }
+    .pillar--exec li::before { background: var(--green); }
+
+    .count-chips { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    .chip {
+      font-size: .85rem; font-weight: 700; padding: 7px 16px; border-radius: 999px;
+      background: rgba(147,197,253,.10); border: 1px solid rgba(147,197,253,.22); color: #93c5fd;
+    }
+
+    /* ------------------------------------------------------------- modes */
+    .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .mode__head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .mode__icon { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
+    .mode--conv .mode__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
+    .mode--msg .mode__icon { background: linear-gradient(135deg, #f97316, #f59e0b); }
+    .mode--reason .mode__icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+    .mode__sub { color: var(--text-muted); font-size: .86rem; margin: 0 0 14px; }
+    .mode ul { list-style: none; margin: 0; padding: 0; }
+    .mode li {
+      font-size: clamp(.85rem, 1.05vw, .93rem); font-weight: 600; color: var(--text-primary);
+      background: rgba(255, 255, 255, .05); border: 1px solid var(--border);
+      border-radius: 10px; padding: 9px 14px; margin-top: 8px;
+    }
+    .matrix-note {
+      margin: 36px auto 0; max-width: 760px; text-align: center;
+      padding: 16px 26px; border-radius: var(--radius);
+      background: rgba(96, 165, 250, .08); border: 1px solid rgba(96, 165, 250, .2);
+      color: var(--text-secondary); font-size: clamp(.9rem, 1.2vw, 1rem);
+    }
+    .matrix-note strong { color: #93c5fd; }
+
+    /* -------------------------------------------------------------- edge */
+    .edge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
+    .edge-card { display: flex; gap: 18px; align-items: flex-start; }
+    .edge-card__icon {
+      flex: none; width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; color: #fff;
+    }
+    .edge--1 .edge-card__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
+    .edge--2 .edge-card__icon { background: linear-gradient(135deg, #f97316, #f59e0b); }
+    .edge--3 .edge-card__icon { background: linear-gradient(135deg, #10b981, #059669); }
+    .edge--4 .edge-card__icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+
+    /* ----------------------------------------------------------- outputs */
+    .outputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+    .output-card { padding: clamp(18px, 2vw, 24px); }
+    .output-card .diamond { color: var(--blue); font-size: 1em; }
+    .output-card h3 { font-size: clamp(.98rem, 1.3vw, 1.08rem); display: flex; align-items: baseline; gap: 9px; }
+    .output-card p { font-size: clamp(.84rem, 1vw, .92rem); }
+
+    /* ---------------------------------------------------------- business */
+    .biz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .biz-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--bc1), var(--bc2));
+    }
+    .biz--1 { --bc1: #60a5fa; --bc2: #818cf8; }
+    .biz--2 { --bc1: #38bdf8; --bc2: #22d3ee; }
+    .biz--3 { --bc1: #34d399; --bc2: #2dd4bf; }
+    .biz-card .biz__kick {
+      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--bc1); margin-bottom: 12px;
+    }
+
+    /* ----------------------------------------------------------- closing */
+    .closing__inner { text-align: center; max-width: 860px; margin: 0 auto; }
+    .closing__logo { height: clamp(48px, 6.5vw, 78px); width: auto; display: block; margin: 0 auto 30px; filter: drop-shadow(0 8px 26px rgba(0,0,0,.5)); }
+    .closing h2 { font-size: clamp(1.8rem, 4.2vw, 3.1rem); color: #fff; letter-spacing: -0.03em; }
+    .closing p { color: rgba(255,255,255,.82); font-size: clamp(1rem, 1.6vw, 1.18rem); margin: 22px auto 0; max-width: 54ch; }
+    .closing__powered {
+      margin-top: 46px; display: inline-flex; align-items: center; gap: 14px;
+      padding: 14px 26px; border-radius: 999px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      color: rgba(255,255,255,.75); font-size: .88rem; font-weight: 600; letter-spacing: .04em;
+    }
+    .closing__powered img { height: 18px; width: auto; display: block; }
+
+    /* ------------------------------------------------------------ chrome */
+    .progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: linear-gradient(90deg, var(--blue), var(--violet));
+      z-index: 100; transition: width .35s ease;
+    }
+    .dots {
+      position: fixed; right: 22px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 12px; z-index: 100;
+    }
+    .dots button {
+      width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; cursor: pointer;
+      background: rgba(100, 116, 139, .38);
+      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+    .dots button:hover { transform: scale(1.35); }
+    .dots button.active { background: var(--blue); transform: scale(1.4); box-shadow: 0 0 12px rgba(37, 99, 235, .6); }
+    .on-dark .dots button { background: rgba(255, 255, 255, .35); }
+    .on-dark .dots button.active { background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.6); }
+
+    .counter {
+      position: fixed; left: 26px; bottom: 22px; z-index: 100;
+      font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+      color: var(--text-muted); font-variant-numeric: tabular-nums;
+      transition: color .3s ease;
+    }
+    .counter .sep { opacity: .4; margin: 0 3px; }
+    .on-dark .counter { color: rgba(255,255,255,.65); }
+
+    .brandline {
+      position: fixed; right: 60px; bottom: 22px; z-index: 100;
+      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
+      color: var(--text-muted); transition: color .3s ease;
+    }
+    .on-dark .brandline { color: rgba(255,255,255,.55); }
+
+    /* ------------------------------------------------------- lang switch */
+    .lang {
+      position: fixed; top: 20px; right: 22px; z-index: 110;
+      display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px;
+      background: rgba(15, 23, 42, 0.06); border: 1px solid var(--border-strong);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      transition: background .3s ease, border-color .3s ease;
+    }
+    .lang button {
+      font: inherit; font-size: .78rem; font-weight: 700; letter-spacing: .03em;
+      border: 0; background: transparent; color: var(--text-muted);
+      padding: 6px 11px; border-radius: 999px; cursor: pointer; transition: all .2s;
+    }
+    .lang button.active { background: #ffffff; color: var(--blue); box-shadow: var(--shadow-sm); }
+    .lang button:hover:not(.active) { color: var(--text-primary); }
+    .on-dark .lang { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.12); }
+    .on-dark .lang button { color: #94a3b8; }
+    .on-dark .lang button:hover:not(.active) { color: #fff; }
+
+    /* -------------------------------------------------------------- gate */
+    .gate {
+      position: fixed; inset: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: center;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 35%, rgba(37, 99, 235, 0.14), transparent 65%),
+        #070b16;
+      transition: opacity .45s ease;
+    }
+    .gate.gate--out { opacity: 0; pointer-events: none; }
+    .gate__box {
+      width: min(400px, calc(100vw - 48px));
+      text-align: center;
+      padding: 42px 34px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
+    }
+    .gate__logo { height: 34px; width: auto; margin: 0 auto 22px; display: block; filter: drop-shadow(0 6px 20px rgba(0,0,0,.5)); }
+    .gate__msg { color: rgba(255,255,255,.7); font-size: .92rem; margin: 0 0 22px; }
+    .gate__row { display: flex; gap: 10px; }
+    .gate input {
+      flex: 1; min-width: 0;
+      font: inherit; font-size: .95rem; color: #fff;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px; padding: 12px 16px; outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .gate input::placeholder { color: rgba(255,255,255,.4); }
+    .gate input:focus { border-color: rgba(96, 165, 250, .6); box-shadow: 0 0 0 3px rgba(96, 165, 250, .18); }
+    .gate button {
+      font: inherit; font-weight: 600; font-size: .95rem; cursor: pointer;
+      color: #fff; background: #2563eb; border: 0; border-radius: 12px; padding: 12px 22px;
+      box-shadow: 0 10px 24px -8px rgba(37, 99, 235, 0.55);
+      transition: background .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .gate button:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .gate__err { color: #fca5a5; font-size: .84rem; min-height: 1.3em; margin: 14px 0 0; visibility: hidden; }
+    .gate.gate--err .gate__err { visibility: visible; }
+    .gate.gate--err .gate__box { animation: gateShake .35s ease; }
+    @keyframes gateShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-9px); } 50% { transform: translateX(8px); } 75% { transform: translateX(-5px); } }
+    body.locked .deck { visibility: hidden; }
+    body.locked .dots, body.locked .counter, body.locked .brandline,
+    body.locked .lang, body.locked .progress { visibility: hidden; }
+
+    /* ------------------------------------------------------------ reveal */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .slide.active .reveal { opacity: 1; transform: translateY(0); }
+    .slide.active .reveal:nth-child(1), .slide.active [data-d="1"] { transition-delay: .05s; }
+    .slide.active [data-d="2"] { transition-delay: .16s; }
+    .slide.active [data-d="3"] { transition-delay: .27s; }
+    .slide.active [data-d="4"] { transition-delay: .38s; }
+    .slide.active [data-d="5"] { transition-delay: .49s; }
+    .slide.active [data-d="6"] { transition-delay: .6s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .blob, .grad, .scroll-hint svg { animation: none !important; }
+    }
+
+    /* -------------------------------------------------------- responsive */
+    @media (max-width: 1024px) {
+      .slide { height: auto; min-height: 100vh; min-height: 100dvh; padding: 84px 0; }
+      .arch-grid, .problem-grid, .pillars, .modes, .biz-grid, .outputs { grid-template-columns: 1fr 1fr; }
+      .phases { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .deck { scroll-snap-type: none; }
+      .arch-grid, .problem-grid, .pillars, .modes, .biz-grid, .outputs, .phases,
+      .solution__split, .edge-grid { grid-template-columns: 1fr; }
+      .dots { display: none; }
+      .brandline { display: none; }
+      .intro h1 { white-space: normal; font-size: clamp(1.9rem, 8vw, 2.6rem); }
+    }
+  </style>
+</head>
+<body class="locked">
+
+  <div class="gate" id="gate">
+    <form class="gate__box" id="gateForm">
+      <img class="gate__logo" src="../talens/assets/talens_logo_light.png" alt="TALENS" />
+      <p class="gate__msg">This presentation is private. Enter the password to continue.</p>
+      <div class="gate__row">
+        <input type="password" id="gateInput" placeholder="Password" autocomplete="off" autofocus />
+        <button type="submit">Unlock</button>
+      </div>
+      <p class="gate__err">Wrong password. Try again.</p>
+    </form>
+  </div>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <div class="lang" id="langSwitch" role="group" aria-label="Language">
+    <button data-lang="it">IT</button>
+    <button data-lang="en" class="active">EN</button>
+  </div>
+
+  <nav class="dots" id="dots" aria-label="Slides"></nav>
+  <div class="counter" id="counter" aria-hidden="true">01<span class="sep">/</span>11</div>
+  <div class="brandline" data-i18n="chrome.brand">TALENS &nbsp;·&nbsp; AI-Native Assessment Platform</div>
+
+  <main class="deck" id="deck">
+
+    <!-- ================================================== 1 · INTRO -->
+    <section class="slide slide--dark intro" data-title="Intro" data-title-it="Intro" data-theme="dark">
+      <div class="slide__bg">
+        <div class="slide__photo"></div>
+        <div class="slide__overlay"></div>
+        <div class="grid-overlay"></div>
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+      <div class="slide__inner intro__inner">
+        <img class="intro__logo reveal" src="../talens/assets/talens_logo_light.png" alt="TALENS" />
+        <h1 class="reveal" data-d="2" data-i18n="intro.title">
+          Next-generation HR assessment<br />
+          <span class="grad">harnessing the power of AI</span>
+        </h1>
+      </div>
+      <button class="scroll-hint" data-next aria-label="Next slide">
+        <span data-i18n="intro.scroll">Scroll</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </section>
+
+    <!-- ================================================== 2 · ARCHITECTURE -->
+    <section class="slide slide--dark" data-title="Architecture" data-title-it="Architettura" data-theme="dark">
+      <div class="slide__bg">
+        <div class="slide__photo"></div>
+        <div class="slide__overlay slide__overlay--deep"></div>
+        <div class="grid-overlay"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="arch.kicker">The foundation</span>
+          <h2 class="slide-title" style="color:#fff;" data-i18n="arch.title">Three Nexent pillars, one platform</h2>
+          <p class="slide-lead" data-i18n="arch.lead">TALENS is not built from scratch: it stands on the proven Nexent technology stack, purpose-hardened for high-stakes talent assessment.</p>
+        </div>
+        <div class="arch-grid">
+          <article class="arch-card arch-card--skills reveal" data-d="2">
+            <div class="arch-card__head">
+              <img class="arch-card__logo" src="../talens/assets/nexent_logo.png" alt="Nexent" />
+              <span class="arch-card__tag">AI Skills</span>
+            </div>
+            <p data-i18n="arch.skills">The cognitive core of the Nexent AI platform, expanded and reinforced for assessment. A library of orchestrated reasoning, generation and evaluation skills that designs scenarios, probes candidates and grades evidence with expert-level consistency.</p>
+          </article>
+          <article class="arch-card arch-card--avatar reveal" data-d="3">
+            <div class="arch-card__head">
+              <img class="arch-card__logo" src="../talens/assets/nexent_logo.png" alt="Nexent" />
+              <span class="arch-card__tag">AI Avatar</span>
+            </div>
+            <p data-i18n="arch.avatar">Digital humans with life-like behaviour, able to simulate any counterpart, from colleagues to clients and stakeholders, with configurable voices and personalities: scripted, randomized or fully situational, reacting in real time to whatever the candidate does.</p>
+          </article>
+          <article class="arch-card arch-card--systems reveal" data-d="4">
+            <div class="arch-card__head">
+              <img class="arch-card__logo" src="../talens/assets/nexent_logo.png" alt="Nexent" />
+              <span class="arch-card__tag">Systems</span>
+            </div>
+            <p data-i18n="arch.systems">An enterprise-grade web architecture behind it all: professionally hosted and monitored, continuously tested at every release, with security, backups and scalability engineered in from day one.</p>
+          </article>
+        </div>
+        <p class="arch-foot reveal" data-d="5" data-i18n="arch.foot">Skills <span class="plus">+</span> Avatars <span class="plus">+</span> Systems: the engine that makes AI-native assessment possible.</p>
+      </div>
+    </section>
+
+    <!-- ================================================== 3 · THE GAP -->
+    <section class="slide" data-title="The gap" data-title-it="Il problema" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="gap.kicker">The gap</span>
+          <h2 class="slide-title" data-i18n="gap.title">Talent assessment <span class="hl">hasn't kept up</span></h2>
+          <p class="slide-lead" data-i18n="gap.lead">Traditional assessment centers were designed for another era. Three structural limits hold them back.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="card problem-card reveal" data-d="2">
+            <span class="num">01</span>
+            <h3 data-i18n="gap.p1_t">It doesn't scale</h3>
+            <p data-i18n="gap.p1_d">Hundreds of assessor hours for a single hiring round. Every additional candidate multiplies cost and calendar time.</p>
+          </article>
+          <article class="card problem-card reveal" data-d="3">
+            <span class="num">02</span>
+            <h3 data-i18n="gap.p2_t">It's inconsistent</h3>
+            <p data-i18n="gap.p2_d">Inter-rater variability, fatigue and implicit bias mean two equally strong candidates can walk away with very different scores.</p>
+          </article>
+          <article class="card problem-card reveal" data-d="4">
+            <span class="num">03</span>
+            <h3 data-i18n="gap.p3_t">It uses generic content</h3>
+            <p data-i18n="gap.p3_d">Pre-written scenarios designed for broad applicability: the same case study for a fintech PM and a hospital director.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== 4 · SOLUTION -->
+    <section class="slide slide--surface" data-title="The solution" data-title-it="La soluzione" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="sol.kicker">The TALENS solution</span>
+          <h2 class="slide-title"><span class="hl">AI-native</span>, end to end</h2>
+          <p class="slide-lead" data-i18n="sol.lead">The entire pipeline is driven by AI: configuration, content, assessment and evaluation. No pre-written human content required.</p>
+        </div>
+        <div class="solution__split">
+          <div class="solution__cell human reveal" data-d="2">
+            <span class="tag">WHAT</span>
+            <h4 data-i18n="sol.human_t">You define the WHAT</h4>
+            <p data-i18n="sol.human_d">Industry, role, seniority and target competencies. Your judgement about what matters stays exactly where it belongs: with you.</p>
+          </div>
+          <div class="solution__cell ai reveal" data-d="3">
+            <span class="tag">HOW</span>
+            <h4 data-i18n="sol.ai_t">The AI handles the HOW</h4>
+            <p data-i18n="sol.ai_d">Generates tailored scenarios, runs adaptive assessments and produces evidence-based reports, at any scale, with total consistency.</p>
+          </div>
+        </div>
+        <p class="solution__note reveal" data-d="4" data-i18n="sol.note">Not AI bolted onto traditional assessment, but assessment reimagined from the ground up.</p>
+      </div>
+    </section>
+
+    <!-- ================================================== 5 · HOW IT WORKS -->
+    <section class="slide" data-title="How it works" data-title-it="Come funziona" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="how.kicker">How it works</span>
+          <h2 class="slide-title" data-i18n="how.title">A four-phase, <span class="hl">fully automated</span> pipeline</h2>
+        </div>
+        <div class="phases">
+          <article class="card phase phase--1 reveal" data-d="2">
+            <span class="phase__label" data-i18n="how.l1">PHASE 1</span>
+            <h3 data-i18n="how.t1">Configure</h3>
+            <p data-i18n="how.d1">An AI assistant guides campaign setup, suggesting modules, validating coherence and ensuring full competency coverage.</p>
+          </article>
+          <article class="card phase phase--2 reveal" data-d="3">
+            <span class="phase__label" data-i18n="how.l2">PHASE 2</span>
+            <h3 data-i18n="how.t2">Generate</h3>
+            <p data-i18n="how.d2">Scenarios, characters and dossiers generated in real time, tailored to sector, role and seniority. Never a recycled template.</p>
+          </article>
+          <article class="card phase phase--3 reveal" data-d="4">
+            <span class="phase__label" data-i18n="how.l3">PHASE 3</span>
+            <h3 data-i18n="how.t3">Assess</h3>
+            <p data-i18n="how.d3">The AI conducts adaptive sessions: probing, injecting complications and adjusting pressure in real time as the candidate responds.</p>
+          </article>
+          <article class="card phase phase--4 reveal" data-d="5">
+            <span class="phase__label" data-i18n="how.l4">PHASE 4</span>
+            <h3 data-i18n="how.t4">Evaluate</h3>
+            <p data-i18n="how.d4">Structured reports with per-competency ratings, narrative assessments, evidence quotes and clear recommendations.</p>
+          </article>
+        </div>
+        <div class="note-banner reveal" data-d="6" data-i18n="how.note">Human involvement: ~15 minutes on Day&nbsp;1. Everything else is fully automated.</div>
+      </div>
+    </section>
+
+    <!-- ================================================== 6 · COMPETENCIES -->
+    <section class="slide slide--surface" data-title="What it measures" data-title-it="Cosa misura" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="comp.kicker">What it measures</span>
+          <h2 class="slide-title" data-i18n="comp.title"><span class="hl">3 modules</span>, 6 competencies each</h2>
+          <div class="count-chips">
+            <span class="chip" data-i18n="comp.chip1">3 modules</span>
+            <span class="chip" data-i18n="comp.chip2">6 competencies each</span>
+            <span class="chip" data-i18n="comp.chip3">Seniority-calibrated</span>
+          </div>
+        </div>
+        <div class="pillars">
+          <article class="card pillar pillar--think reveal" data-d="2">
+            <div class="pillar__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.1-2.6 5.4-.8.8-1.4 1.9-1.4 3.1V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1.5c0-1.2-.6-2.3-1.4-3.1C6.2 13.1 5 11.4 5 9a7 7 0 0 1 7-7z"/></svg>
+            </div>
+            <span class="pillar__kick" data-i18n="comp.m1">Module 1</span>
+            <h3 data-i18n="comp.think_t">Thinking</h3>
+            <ul data-i18n="comp.think_l">
+              <li>Analytical Reasoning</li>
+              <li>Strategic Thinking</li>
+              <li>Decision Quality</li>
+              <li>Systems Thinking</li>
+              <li>Critical Analysis</li>
+              <li>Learning Agility</li>
+            </ul>
+          </article>
+          <article class="card pillar pillar--relate reveal" data-d="3">
+            <div class="pillar__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="pillar__kick" data-i18n="comp.m2">Module 2</span>
+            <h3 data-i18n="comp.relate_t">Relating</h3>
+            <ul data-i18n="comp.relate_l">
+              <li>Interpersonal Communication</li>
+              <li>Collaborative Teamwork</li>
+              <li>Conflict Resolution</li>
+              <li>Stakeholder Management</li>
+              <li>Emotional Intelligence</li>
+              <li>Influence &amp; Persuasion</li>
+            </ul>
+          </article>
+          <article class="card pillar pillar--exec reveal" data-d="4">
+            <div class="pillar__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <span class="pillar__kick" data-i18n="comp.m3">Module 3</span>
+            <h3 data-i18n="comp.exec_t">Executing</h3>
+            <ul data-i18n="comp.exec_l">
+              <li>Planning &amp; Organizing</li>
+              <li>Priority Management</li>
+              <li>Accountability</li>
+              <li>Proactive Initiative</li>
+              <li>Cognitive Flexibility</li>
+              <li>Resilience</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== 7 · MODULES -->
+    <section class="slide" data-title="Modules" data-title-it="Moduli" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="mod.kicker">How it measures</span>
+          <h2 class="slide-title" data-i18n="mod.title"><span class="hl">9 modules</span> across 3 interaction modes</h2>
+        </div>
+        <div class="modes">
+          <article class="card mode mode--conv reveal" data-d="2">
+            <div class="mode__head">
+              <div class="mode__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+              </div>
+              <h3 data-i18n="mod.conv_t">Conversation</h3>
+            </div>
+            <p class="mode__sub" data-i18n="mod.conv_s">Voice-based sessions with AI characters</p>
+            <ul data-i18n="mod.conv_l">
+              <li>Behavioral Interview</li>
+              <li>Problem Dialogue</li>
+              <li>Role Play</li>
+            </ul>
+          </article>
+          <article class="card mode mode--msg reveal" data-d="3">
+            <div class="mode__head">
+              <div class="mode__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3 data-i18n="mod.msg_t">Messaging</h3>
+            </div>
+            <p class="mode__sub" data-i18n="mod.msg_s">Multi-thread text chat under pressure</p>
+            <ul data-i18n="mod.msg_l">
+              <li>Team Dynamics</li>
+              <li>Priority Triage</li>
+              <li>Operational Coordination</li>
+            </ul>
+          </article>
+          <article class="card mode mode--reason reveal" data-d="4">
+            <div class="mode__head">
+              <div class="mode__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3 data-i18n="mod.reason_t">Reasoning</h3>
+            </div>
+            <p class="mode__sub" data-i18n="mod.reason_s">Structured multi-phase written tasks</p>
+            <ul data-i18n="mod.reason_l">
+              <li>Decision Canvas</li>
+              <li>Critical Analysis</li>
+              <li>Systems Thinking</li>
+            </ul>
+          </article>
+        </div>
+        <div class="matrix-note reveal" data-d="5" data-i18n="mod.note">Together they enable a <strong>cross-module competency matrix</strong>: the same competency measured across multiple interaction modes.</div>
+      </div>
+    </section>
+
+    <!-- ================================================== 8 · WHAT SETS IT APART -->
+    <section class="slide slide--surface" data-title="What sets it apart" data-title-it="Cosa lo distingue" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="edge.kicker">What sets it apart</span>
+          <h2 class="slide-title" data-i18n="edge.title">Unique, <span class="hl">adaptive</span>, evidence-based</h2>
+        </div>
+        <div class="edge-grid">
+          <article class="card edge-card edge--1 reveal" data-d="2">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3 data-i18n="edge.t1">Unique &amp; contextual</h3>
+              <p data-i18n="edge.d1">A Senior PM in fintech and one in healthcare get different scenarios: same competency, different manifestation.</p>
+            </div>
+          </article>
+          <article class="card edge-card edge--2 reveal" data-d="3">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div>
+              <h3 data-i18n="edge.t2">Real-time adaptation</h3>
+              <p data-i18n="edge.d2">Vague answer? It probes deeper. Exceptional depth? It escalates complexity. The assessment goes as deep as the candidate allows.</p>
+            </div>
+          </article>
+          <article class="card edge-card edge--3 reveal" data-d="4">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <h3 data-i18n="edge.t3">Evidence-based</h3>
+              <p data-i18n="edge.d3">Every rating anchored to direct evidence: specific quotes with contextual framing. Fully auditable and defensible.</p>
+            </div>
+          </article>
+          <article class="card edge-card edge--4 reveal" data-d="5">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            </div>
+            <div>
+              <h3 data-i18n="edge.t4">Seniority calibration</h3>
+              <p data-i18n="edge.d4">"Competent" for a Junior and for an Executive are different standards, and TALENS calibrates them automatically.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== 9 · WHAT IT PRODUCES -->
+    <section class="slide" data-title="What it produces" data-title-it="Cosa produce" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="out.kicker">What it produces</span>
+          <h2 class="slide-title" data-i18n="out.title">From session to <span class="hl">decision-ready</span> report</h2>
+        </div>
+        <div class="outputs">
+          <article class="card output-card reveal" data-d="2">
+            <h3><span class="diamond">◈</span><span data-i18n="out.t1">Overall rating</span></h3>
+            <p data-i18n="out.d1">A 1.0–5.0 score, calibrated to the candidate's seniority level.</p>
+          </article>
+          <article class="card output-card reveal" data-d="2">
+            <h3><span class="diamond">◈</span><span data-i18n="out.t2">Executive summary</span></h3>
+            <p data-i18n="out.d2">A standalone paragraph a decision-maker can read in one minute.</p>
+          </article>
+          <article class="card output-card reveal" data-d="3">
+            <h3><span class="diamond">◈</span><span data-i18n="out.t3">Per-competency detail</span></h3>
+            <p data-i18n="out.d3">Rating, narrative assessment and direct evidence quotes for each competency.</p>
+          </article>
+          <article class="card output-card reveal" data-d="3">
+            <h3><span class="diamond">◈</span><span data-i18n="out.t4">Cross-cutting patterns</span></h3>
+            <p data-i18n="out.d4">Behavioural signals that span multiple competencies, surfaced explicitly.</p>
+          </article>
+          <article class="card output-card reveal" data-d="4">
+            <h3><span class="diamond">◈</span><span data-i18n="out.t5">Recommendation</span></h3>
+            <p data-i18n="out.d5">A clear verdict: proceed, proceed with conditions, or do not proceed.</p>
+          </article>
+          <article class="card output-card reveal" data-d="4">
+            <h3><span class="diamond">◈</span><span data-i18n="out.t6">Full transcript</span></h3>
+            <p data-i18n="out.d6">The complete session record, available for human review at any time.</p>
+          </article>
+        </div>
+        <div class="matrix-note reveal" data-d="5" data-i18n="out.note">Plus a <strong>cross-module competency matrix</strong> for multi-exercise comparison.</div>
+      </div>
+    </section>
+
+    <!-- ================================================== 10 · BUSINESS MODEL -->
+    <section class="slide slide--surface" data-title="Business model" data-title-it="Modello di business" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="biz.kicker">How to work with TALENS</span>
+          <h2 class="slide-title" data-i18n="biz.title">Flexible solutions for <span class="hl">client companies</span></h2>
+        </div>
+        <div class="biz-grid">
+          <article class="card biz-card biz--1 reveal" data-d="2">
+            <span class="biz__kick" data-i18n="biz.k1">Model A</span>
+            <h3 data-i18n="biz.t1">Managed hosting</h3>
+            <p data-i18n="biz.d1">Nexent hosts the licenses for the client company, all external costs included. Typically priced per candidate or per individual test: zero infrastructure, immediate start.</p>
+          </article>
+          <article class="card biz-card biz--2 reveal" data-d="3">
+            <span class="biz__kick" data-i18n="biz.k2">Model B</span>
+            <h3 data-i18n="biz.t2">White-label licensing</h3>
+            <p data-i18n="biz.d2">The platform installed on the client's own cloud, under a private brand or co-branded identity. Flexible license terms, full data ownership.</p>
+          </article>
+          <article class="card biz-card biz--3 reveal" data-d="4">
+            <span class="biz__kick" data-i18n="biz.k3">Add-ons</span>
+            <h3 data-i18n="biz.t3">ATS integrations &amp; customization</h3>
+            <p data-i18n="biz.d3">Optional ATS integrations available for both models, plus custom modules and platform adaptations tailored to the client's process.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== 11 · CLOSING -->
+    <section class="slide slide--dark closing" data-title="Closing" data-title-it="Chiusura" data-theme="dark">
+      <div class="slide__bg">
+        <div class="slide__photo"></div>
+        <div class="slide__overlay"></div>
+        <div class="grid-overlay"></div>
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+      </div>
+      <div class="slide__inner closing__inner">
+        <img class="closing__logo reveal" src="../talens/assets/talens_logo_light.png" alt="TALENS" />
+        <h2 class="reveal" data-d="2" data-i18n="close.title">Assessment, <span class="grad">reimagined</span>.</h2>
+        <p class="reveal" data-d="3" data-i18n="close.sub">Unique scenarios for every candidate. Adaptive, evidence-based evaluation. Fully automated, endlessly scalable.</p>
+        <div class="closing__powered reveal" data-d="4">
+          <span>Powered by</span>
+          <img src="../talens/assets/nexent_logo.png" alt="Nexent" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    /* ------------------------------------------------------ password gate
+       Client-side only: keeps casual visitors out, not a real security
+       boundary. The password itself is not stored here, only its SHA-256. */
+    (function () {
+      const HASH = '34737ef103e8bb8f64f9ce424a67af8f8b6d93793d5f6716c79cd80cb75aa8df';
+      const gate = document.getElementById('gate');
+      const form = document.getElementById('gateForm');
+      const input = document.getElementById('gateInput');
+
+      function unlock() {
+        document.body.classList.remove('locked');
+        gate.classList.add('gate--out');
+        setTimeout(() => gate.remove(), 500);
+      }
+
+      async function sha256(text) {
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      let authed = false;
+      try { authed = sessionStorage.getItem('talens_deck_auth') === HASH.slice(0, 12); } catch (e) {}
+      if (authed) { unlock(); return; }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        gate.classList.remove('gate--err');
+        let ok = false;
+        try { ok = (await sha256(input.value)) === HASH; } catch (err) { ok = false; }
+        if (ok) {
+          try { sessionStorage.setItem('talens_deck_auth', HASH.slice(0, 12)); } catch (err) {}
+          unlock();
+        } else {
+          input.value = '';
+          requestAnimationFrame(() => gate.classList.add('gate--err'));
+          input.focus();
+        }
+      });
+      input.focus();
+    })();
+
+    (function () {
+      const deck = document.getElementById('deck');
+      const slides = Array.from(deck.querySelectorAll('.slide'));
+      const dotsNav = document.getElementById('dots');
+      const counter = document.getElementById('counter');
+      const progress = document.getElementById('progress');
+      const total = slides.length;
+      let current = 0;
+      let animating = false;
+
+      const pad = n => String(n + 1).padStart(2, '0');
+
+      /* ------------------------------------------------------------ i18n
+         English lives in the markup and is captured at load; the IT
+         dictionary below overrides innerHTML per data-i18n key. */
+      const IT = {
+        'chrome.brand': 'TALENS &nbsp;·&nbsp; Piattaforma di Assessment AI-Native',
+
+        'intro.title': 'HR assessment di nuova generazione<br /><span class="grad">sfruttando la potenza dell\'AI</span>',
+        'intro.scroll': 'Scorri',
+
+        'arch.kicker': 'Le fondamenta',
+        'arch.title': 'Tre pilastri Nexent, una piattaforma',
+        'arch.lead': "TALENS non nasce da zero: poggia sul collaudato stack tecnologico Nexent, potenziato appositamente per l'assessment dei talenti ad alto impatto.",
+        'arch.skills': "Il nucleo cognitivo della piattaforma AI di Nexent, ampliato e rinforzato per l'assessment. Una libreria di skill orchestrate di ragionamento, generazione e valutazione che progetta scenari, incalza i candidati e valuta le evidenze con la coerenza di un esperto.",
+        'arch.avatar': "Umani digitali dal comportamento realistico, in grado di simulare qualsiasi interlocutore, da colleghi a clienti e stakeholder, con voci e personalità configurabili: predefinite, casuali o completamente situazionali, reagendo in tempo reale alle azioni del candidato.",
+        'arch.systems': "Un'architettura web di livello enterprise dietro le quinte: hosting professionale e monitorato, test continui a ogni release, con sicurezza, backup e scalabilità progettati fin dal primo giorno.",
+        'arch.foot': 'Skills <span class="plus">+</span> Avatar <span class="plus">+</span> Systems: il motore che rende possibile l\'assessment AI-native.',
+
+        'gap.kicker': 'Il problema',
+        'gap.title': 'L\'assessment dei talenti <span class="hl">non ha tenuto il passo</span>',
+        'gap.lead': "Gli assessment center tradizionali sono stati progettati per un'altra epoca. Tre limiti strutturali li frenano.",
+        'gap.p1_t': 'Non scala',
+        'gap.p1_d': 'Centinaia di ore di assessor per un singolo ciclo di selezione. Ogni candidato in più moltiplica costi e tempi.',
+        'gap.p2_t': 'È incoerente',
+        'gap.p2_d': 'Variabilità tra valutatori, stanchezza e bias impliciti: due candidati ugualmente validi possono ottenere punteggi molto diversi.',
+        'gap.p3_t': 'Usa contenuti generici',
+        'gap.p3_d': 'Scenari preconfezionati pensati per essere applicabili a tutti: lo stesso case study per un PM fintech e un direttore ospedaliero.',
+
+        'sol.kicker': 'La soluzione TALENS',
+        'sol.lead': "L'intera pipeline è guidata dall'AI: configurazione, contenuti, assessment e valutazione. Nessun contenuto pre-scritto richiesto.",
+        'sol.human_t': 'Tu definisci il COSA',
+        'sol.human_d': 'Settore, ruolo, seniority e competenze target. Il giudizio su ciò che conta resta esattamente dove deve stare: nelle tue mani.',
+        'sol.ai_t': "L'AI gestisce il COME",
+        'sol.ai_d': 'Genera scenari su misura, conduce assessment adattivi e produce report basati su evidenze, su qualsiasi scala, con coerenza totale.',
+        'sol.note': "Non AI applicata all'assessment tradizionale, ma assessment ripensato dalle fondamenta.",
+
+        'how.kicker': 'Come funziona',
+        'how.title': 'Una pipeline in quattro fasi, <span class="hl">completamente automatizzata</span>',
+        'how.l1': 'FASE 1', 'how.l2': 'FASE 2', 'how.l3': 'FASE 3', 'how.l4': 'FASE 4',
+        'how.t1': 'Configura',
+        'how.d1': 'Un assistente AI guida la configurazione della campagna: suggerisce moduli, valida la coerenza e garantisce la piena copertura delle competenze.',
+        'how.t2': 'Genera',
+        'how.d2': 'Scenari, personaggi e dossier generati in tempo reale, su misura per settore, ruolo e seniority. Mai un template riciclato.',
+        'how.t3': 'Conduci',
+        'how.d3': "L'AI conduce sessioni adattive: approfondisce, introduce complicazioni e regola la pressione in tempo reale in base alle risposte del candidato.",
+        'how.t4': 'Valuta',
+        'how.d4': 'Report strutturati con valutazioni per competenza, giudizi narrativi, citazioni a supporto e raccomandazioni chiare.',
+        'how.note': 'Coinvolgimento umano: ~15 minuti il Giorno&nbsp;1. Tutto il resto è completamente automatizzato.',
+
+        'comp.kicker': 'Cosa misura',
+        'comp.title': '<span class="hl">3 moduli</span> da 6 competenze',
+        'comp.chip1': '3 moduli',
+        'comp.chip2': '6 competenze ciascuno',
+        'comp.chip3': 'Calibrate sulla seniority',
+        'comp.m1': 'Modulo 1',
+        'comp.m2': 'Modulo 2',
+        'comp.m3': 'Modulo 3',
+        'comp.think_t': 'Pensiero',
+        'comp.think_l': '<li>Ragionamento analitico</li><li>Pensiero strategico</li><li>Qualità decisionale</li><li>Pensiero sistemico</li><li>Analisi critica</li><li>Agilità di apprendimento</li>',
+        'comp.relate_t': 'Relazione',
+        'comp.relate_l': '<li>Comunicazione interpersonale</li><li>Lavoro di squadra collaborativo</li><li>Risoluzione dei conflitti</li><li>Gestione degli stakeholder</li><li>Intelligenza emotiva</li><li>Influenza e persuasione</li>',
+        'comp.exec_t': 'Esecuzione',
+        'comp.exec_l': '<li>Pianificazione e organizzazione</li><li>Gestione delle priorità</li><li>Accountability</li><li>Iniziativa proattiva</li><li>Flessibilità cognitiva</li><li>Resilienza</li>',
+
+        'mod.kicker': 'Come misura',
+        'mod.title': '<span class="hl">9 moduli</span> in 3 modalità di interazione',
+        'mod.conv_t': 'Conversazione',
+        'mod.conv_s': 'Sessioni vocali con personaggi AI',
+        'mod.conv_l': '<li>Intervista comportamentale</li><li>Dialogo su problema</li><li>Role Play</li>',
+        'mod.msg_t': 'Messaggistica',
+        'mod.msg_s': 'Chat testuali multi-thread sotto pressione',
+        'mod.msg_l': '<li>Dinamiche di team</li><li>Triage delle priorità</li><li>Coordinamento operativo</li>',
+        'mod.reason_t': 'Ragionamento',
+        'mod.reason_s': 'Task scritti strutturati multi-fase',
+        'mod.reason_l': '<li>Decision Canvas</li><li>Analisi critica</li><li>Pensiero sistemico</li>',
+        'mod.note': 'Insieme abilitano una <strong>matrice di competenze cross-modulo</strong>: la stessa competenza misurata in più modalità di interazione.',
+
+        'edge.kicker': 'Cosa lo distingue',
+        'edge.title': 'Unico, <span class="hl">adattivo</span>, basato su evidenze',
+        'edge.t1': 'Unico e contestuale',
+        'edge.d1': 'Un Senior PM nel fintech e uno nella sanità ricevono scenari diversi: stessa competenza, manifestazione diversa.',
+        'edge.t2': 'Adattamento in tempo reale',
+        'edge.d2': "Risposta vaga? Approfondisce. Profondità eccezionale? Alza la complessità. L'assessment va in profondità quanto il candidato consente.",
+        'edge.t3': 'Basato su evidenze',
+        'edge.d3': 'Ogni valutazione è ancorata a evidenze dirette: citazioni specifiche con il loro contesto. Tutto verificabile e difendibile.',
+        'edge.t4': 'Calibrazione sulla seniority',
+        'edge.d4': '"Competente" per un Junior e per un Executive sono standard diversi, e TALENS li calibra automaticamente.',
+
+        'out.kicker': 'Cosa produce',
+        'out.title': 'Dalla sessione a un report <span class="hl">pronto per la decisione</span>',
+        'out.t1': 'Valutazione complessiva',
+        'out.d1': 'Un punteggio 1.0–5.0, calibrato sul livello di seniority del candidato.',
+        'out.t2': 'Executive summary',
+        'out.d2': 'Un paragrafo autonomo che un decisore può leggere in un minuto.',
+        'out.t3': 'Dettaglio per competenza',
+        'out.d3': 'Valutazione, giudizio narrativo e citazioni dirette a supporto per ogni competenza.',
+        'out.t4': 'Pattern trasversali',
+        'out.d4': 'Segnali comportamentali che attraversano più competenze, resi espliciti.',
+        'out.t5': 'Raccomandazione',
+        'out.d5': 'Un verdetto chiaro: procedere, procedere con condizioni, o non procedere.',
+        'out.t6': 'Trascrizione completa',
+        'out.d6': 'La registrazione integrale della sessione, sempre disponibile per la revisione umana.',
+        'out.note': 'In più, una <strong>matrice di competenze cross-modulo</strong> per il confronto tra esercizi.',
+
+        'biz.kicker': 'Come lavorare con TALENS',
+        'biz.title': 'Soluzioni flessibili per le <span class="hl">aziende clienti</span>',
+        'biz.k1': 'Modello A',
+        'biz.t1': 'Hosting gestito',
+        'biz.d1': "Nexent ospita le licenze per l'azienda cliente, tutti i costi esterni inclusi. Tariffazione tipica per candidato o per singolo test: zero infrastruttura, partenza immediata.",
+        'biz.k2': 'Modello B',
+        'biz.t2': 'Licenza white-label',
+        'biz.d2': 'La piattaforma installata sul cloud del cliente, con brand privato o co-branded. Termini di licenza flessibili, piena proprietà dei dati.',
+        'biz.k3': 'Add-on',
+        'biz.t3': 'Integrazioni ATS e personalizzazioni',
+        'biz.d3': 'Integrazioni ATS opzionali per entrambi i modelli, più moduli custom e adattamenti della piattaforma su misura per il processo del cliente.',
+
+        'close.title': 'L\'assessment, <span class="grad">ripensato</span>.',
+        'close.sub': 'Scenari unici per ogni candidato. Valutazione adattiva e basata su evidenze. Completamente automatizzato, scalabile senza limiti.'
+      };
+
+      const i18nEls = Array.from(document.querySelectorAll('[data-i18n]'));
+      const EN = {};
+      i18nEls.forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
+
+      const langSwitch = document.getElementById('langSwitch');
+      let lang = 'en';
+      try { lang = localStorage.getItem('talens_deck_lang') || 'en'; } catch (e) {}
+      const urlLang = new URLSearchParams(location.search).get('lang');
+      if (urlLang) lang = urlLang;
+      if (lang !== 'it' && lang !== 'en') lang = 'en';
+
+      function setLang(l) {
+        lang = l;
+        const dict = l === 'it' ? IT : EN;
+        i18nEls.forEach(el => {
+          const k = el.dataset.i18n;
+          if (dict[k] !== undefined) el.innerHTML = dict[k];
+        });
+        document.documentElement.lang = l;
+        langSwitch.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+        dots.forEach((d, k) => {
+          const t = (l === 'it' && slides[k].dataset.titleIt) ? slides[k].dataset.titleIt : (slides[k].dataset.title || '');
+          d.title = t; d.setAttribute('aria-label', t || ('Slide ' + (k + 1)));
+        });
+        try { localStorage.setItem('talens_deck_lang', l); } catch (e) {}
+      }
+      langSwitch.querySelectorAll('button').forEach(b =>
+        b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+      /* ------------------------------------------------------- navigation */
+      // Build dots
+      slides.forEach((s, i) => {
+        const b = document.createElement('button');
+        b.setAttribute('aria-label', s.dataset.title || ('Slide ' + (i + 1)));
+        b.title = s.dataset.title || '';
+        b.addEventListener('click', () => goTo(i));
+        dotsNav.appendChild(b);
+      });
+      const dots = Array.from(dotsNav.children);
+
+      function setActive(i) {
+        current = i;
+        slides.forEach((s, k) => s.classList.toggle('active', k === i));
+        dots.forEach((d, k) => d.classList.toggle('active', k === i));
+        counter.innerHTML = pad(i) + '<span class="sep">/</span>' + pad(total - 1);
+        progress.style.width = ((i + 1) / total * 100) + '%';
+        document.body.classList.toggle('on-dark', slides[i].dataset.theme === 'dark');
+        history.replaceState(null, '', i === 0 ? location.pathname + location.search : '#' + (i + 1));
+      }
+
+      function goTo(i) {
+        i = Math.max(0, Math.min(total - 1, i));
+        if (i === current && slides[i].classList.contains('active')) return;
+        animating = true;
+        slides[i].scrollIntoView({ behavior: 'smooth' });
+        setActive(i);
+        clearTimeout(goTo._t);
+        goTo._t = setTimeout(() => { animating = false; }, 750);
+      }
+
+      // Wheel → one slide per gesture (PowerPoint feel)
+      let wheelLock = false;
+      deck.addEventListener('wheel', (e) => {
+        // Let pinch-zoom through
+        if (e.ctrlKey) return;
+        e.preventDefault();
+        if (wheelLock || animating) return;
+        if (Math.abs(e.deltaY) < 12) return;
+        wheelLock = true;
+        goTo(current + (e.deltaY > 0 ? 1 : -1));
+        setTimeout(() => { wheelLock = false; }, 700);
+      }, { passive: false });
+
+      // Keyboard
+      window.addEventListener('keydown', (e) => {
+        if (document.body.classList.contains('locked')) return;
+        if (['ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); goTo(current + 1); }
+        else if (['ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); goTo(current - 1); }
+        else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+        else if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
+      });
+
+      // Touch swipe (vertical)
+      let touchY = null;
+      deck.addEventListener('touchstart', (e) => { touchY = e.touches[0].clientY; }, { passive: true });
+      deck.addEventListener('touchend', (e) => {
+        if (touchY === null) return;
+        const dy = touchY - e.changedTouches[0].clientY;
+        if (Math.abs(dy) > 60) goTo(current + (dy > 0 ? 1 : -1));
+        touchY = null;
+      }, { passive: true });
+
+      // Keep state in sync on native scroll (scrollbar drag, snap, mobile)
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting && en.intersectionRatio >= 0.55) {
+            const i = slides.indexOf(en.target);
+            if (i !== -1 && i !== current && !animating) setActive(i);
+            else if (i !== -1 && !slides[i].classList.contains('active')) setActive(i);
+          }
+        });
+      }, { root: deck, threshold: [0.55] });
+      slides.forEach(s => io.observe(s));
+
+      // "Scroll" hint button
+      document.querySelectorAll('[data-next]').forEach(el =>
+        el.addEventListener('click', () => goTo(current + 1)));
+
+      setLang(lang);
+
+      // Deep link: #3 opens slide 3
+      const start = Math.max(0, Math.min(total - 1, (parseInt(location.hash.slice(1), 10) || 1) - 1));
+      if (start > 0) slides[start].scrollIntoView({ behavior: 'instant', block: 'start' });
+      setActive(start);
+    })();
+  </script>
+</body>
+</html>
