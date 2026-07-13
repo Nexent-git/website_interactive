@@ -332,11 +332,11 @@
   function start() {
     var saved;
     try { saved = localStorage.getItem("talens_lang"); } catch (e) {}
-    var lng = saved || "it";
+    var lng = saved || "en";
 
     i18next.init({
       lng: lng,
-      fallbackLng: "it",
+      fallbackLng: "en",
       resources: window.TALENS_I18N,
       interpolation: { escapeValue: false }
     }, function () {
