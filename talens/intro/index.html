@@ -370,6 +370,42 @@
     .edge--3 .edge-card__icon { background: linear-gradient(135deg, #10b981, #059669); }
     .edge--4 .edge-card__icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
 
+    /* --------------------------------------------------------- use cases */
+    .usecase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
+    .usecase-card { display: flex; flex-direction: column; }
+    .usecase-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--uc1), var(--uc2));
+    }
+    .uc--1 { --uc1: #2563eb; --uc2: #6366f1; }
+    .uc--2 { --uc1: #f97316; --uc2: #f59e0b; }
+    .uc--3 { --uc1: #10b981; --uc2: #059669; }
+    .uc--4 { --uc1: #7c3aed; --uc2: #a855f7; }
+    .usecase-card__head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+    .usecase-card__head h3 { margin: 0; }
+    .usecase-card__scale { font-size: .8rem; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+    .usecase-card__mods {
+      display: inline-block; align-self: flex-start; font-size: .74rem; font-weight: 700; letter-spacing: .01em;
+      color: var(--uc1); background: rgba(37, 99, 235, .07); border: 1px solid var(--border);
+      border-radius: 999px; padding: 6px 13px; margin-bottom: 14px;
+    }
+
+    /* -------------------------------------------------------------- team */
+    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
+    .team-card { display: flex; flex-direction: column; }
+    .team-card__head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .team-card__avatar {
+      flex: none; width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.05rem; letter-spacing: .02em; color: #fff;
+      background: linear-gradient(135deg, var(--tc1), var(--tc2));
+    }
+    .team-card--1 { --tc1: #2563eb; --tc2: #6366f1; }
+    .team-card--2 { --tc1: #0ea5e9; --tc2: #2563eb; }
+    .team-card__head h3 { margin: 0 0 4px; }
+    .team-card__role { font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--tc1); }
+    .team-card p { color: var(--text-secondary); font-size: clamp(.86rem, 1.05vw, .95rem); margin: 0; }
+
     /* ----------------------------------------------------------- outputs */
     .outputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
     .output-card { padding: clamp(18px, 2vw, 24px); }
@@ -532,7 +568,7 @@
     @media (max-width: 680px) {
       .deck { scroll-snap-type: none; }
       .arch-grid, .problem-grid, .pillars, .modes, .biz-grid, .outputs, .phases,
-      .solution__split, .edge-grid { grid-template-columns: 1fr; }
+      .solution__split, .edge-grid, .usecase-grid, .team-grid { grid-template-columns: 1fr; }
       .dots { display: none; }
       .brandline { display: none; }
       .intro h1 { white-space: normal; font-size: clamp(1.9rem, 8vw, 2.6rem); }
@@ -849,6 +885,51 @@
       </div>
     </section>
 
+    <!-- ================================================== · USE CASES -->
+    <section class="slide" data-title="Use cases" data-title-it="Casi d'uso" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="uc.kicker">Use cases</span>
+          <h2 class="slide-title" data-i18n="uc.title">Full range of <span class="hl">hiring &amp; promotion</span> decisions</h2>
+        </div>
+        <div class="usecase-grid">
+          <article class="card usecase-card uc--1 reveal" data-d="2">
+            <div class="usecase-card__head">
+              <h3 data-i18n="uc.t1">Technical Hiring</h3>
+              <span class="usecase-card__scale" data-i18n="uc.s1">50 developers &amp; data analysts</span>
+            </div>
+            <span class="usecase-card__mods" data-i18n="uc.m1">Behavioral Interview + Problem Dialogue + Team Dynamics</span>
+            <p data-i18n="uc.d1">Scenarios tailored to each candidate's technical domain. The cross-module matrix reveals whether strong problem-solvers also collaborate effectively.</p>
+          </article>
+          <article class="card usecase-card uc--2 reveal" data-d="3">
+            <div class="usecase-card__head">
+              <h3 data-i18n="uc.t2">Client-Facing Roles</h3>
+              <span class="usecase-card__scale" data-i18n="uc.s2">30 relationship managers</span>
+            </div>
+            <span class="usecase-card__mods" data-i18n="uc.m2">Behavioral Interview + Role Play + Priority Triage</span>
+            <p data-i18n="uc.d2">Role Play builds industry-specific client scenarios — not generic scripts. The contrast between stated behavior and live performance reveals the gaps.</p>
+          </article>
+          <article class="card usecase-card uc--3 reveal" data-d="4">
+            <div class="usecase-card__head">
+              <h3 data-i18n="uc.t3">Management Assessment</h3>
+              <span class="usecase-card__scale" data-i18n="uc.s3">Internal candidates for ops managers</span>
+            </div>
+            <span class="usecase-card__mods" data-i18n="uc.m3">Priority Triage + Operational Coordination + Decision Canvas</span>
+            <p data-i18n="uc.d3">Tests both reactive capability (triage under pressure) and proactive capability (coordination initiative). Scenarios match the operational context.</p>
+          </article>
+          <article class="card usecase-card uc--4 reveal" data-d="5">
+            <div class="usecase-card__head">
+              <h3 data-i18n="uc.t4">Leadership &amp; Executive</h3>
+              <span class="usecase-card__scale" data-i18n="uc.s4">Senior partners in consulting</span>
+            </div>
+            <span class="usecase-card__mods" data-i18n="uc.m4">Behavioral Interview + Systems Thinking + Role Play</span>
+            <p data-i18n="uc.d4">The deep interview probes meta-cognitive patterns. Systems Thinking reveals whether leaders can map complex interdependencies — not just talk about them.</p>
+          </article>
+        </div>
+        <div class="matrix-note reveal" data-d="5" data-i18n="uc.note">Mix and match any modules to fit the role — <strong>scenarios adapt to sector, role and seniority</strong> automatically.</div>
+      </div>
+    </section>
+
     <!-- ================================================== 9 · WHAT IT PRODUCES -->
     <section class="slide" data-title="What it produces" data-title-it="Cosa produce" data-theme="dark">
       <div class="slide__inner">
@@ -950,6 +1031,39 @@
             <span class="biz__kick" data-i18n="biz.k3">Add-ons</span>
             <h3 data-i18n="biz.t3">ATS integrations &amp; customization</h3>
             <p data-i18n="biz.d3">Optional ATS integrations available for both models, plus custom modules and platform adaptations tailored to the client's process.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== · THE TEAM -->
+    <section class="slide slide--surface" data-title="The team" data-title-it="Il team" data-theme="dark">
+      <div class="slide__inner">
+        <div class="reveal">
+          <span class="kicker" data-i18n="team.kicker">The team</span>
+          <h2 class="slide-title" data-i18n="team.title">The people <span class="hl">leading TALENS</span></h2>
+          <p class="slide-lead" data-i18n="team.lead">Deep expertise across research, design, engineering and product strategy — built to move fast and deliver real competitive advantage.</p>
+        </div>
+        <div class="team-grid">
+          <article class="card team-card team-card--1 reveal" data-d="2">
+            <div class="team-card__head">
+              <div class="team-card__avatar">GC</div>
+              <div>
+                <h3>Giuseppe Capozzo</h3>
+                <span class="team-card__role" data-i18n="team.r1">Framework Design &amp; Communication</span>
+              </div>
+            </div>
+            <p data-i18n="team.b1">PhD in Human-Computer Interaction with 20+ years across interaction design, UX and usability, blending technical depth, creative sensibility and product vision — from early ideation to market launch. At TALENS he designs the assessment framework that defines how AI evaluates competencies with scientific rigor, and leads the communication strategy that conveys the platform's value to every stakeholder.</p>
+          </article>
+          <article class="card team-card team-card--2 reveal" data-d="3">
+            <div class="team-card__head">
+              <div class="team-card__avatar">YD</div>
+              <div>
+                <h3>Yari D'areglia</h3>
+                <span class="team-card__role" data-i18n="team.r2">Platform Architecture &amp; Engineering</span>
+              </div>
+            </div>
+            <p data-i18n="team.b2">20+ years across the full spectrum of IT — from backend engineering and gaming to large-scale enterprise systems serving hundreds of thousands of concurrent users, where performance and reliability were non-negotiable. An early adopter of AI and immersive technologies, at TALENS he leads the platform architecture, engineering each component for speed, reliability and scale.</p>
           </article>
         </div>
       </div>
@@ -1105,6 +1219,34 @@
         'biz.k3': 'Add-on',
         'biz.t3': 'Integrazioni ATS e personalizzazioni',
         'biz.d3': 'Integrazioni ATS opzionali per entrambi i modelli, più moduli custom e adattamenti della piattaforma su misura per il processo del cliente.',
+
+        'uc.kicker': "Casi d'uso",
+        'uc.title': "L'intera gamma di decisioni di <span class=\"hl\">selezione e promozione</span>",
+        'uc.t1': 'Selezione tecnica',
+        'uc.s1': '50 sviluppatori e data analyst',
+        'uc.m1': 'Intervista comportamentale + Dialogo su problema + Dinamiche di team',
+        'uc.d1': 'Scenari su misura per il dominio tecnico di ciascun candidato. La matrice cross-modulo rivela se chi risolve bene i problemi sa anche collaborare con efficacia.',
+        'uc.t2': 'Ruoli a contatto col cliente',
+        'uc.s2': '30 relationship manager',
+        'uc.m2': 'Intervista comportamentale + Role Play + Triage delle priorità',
+        'uc.d2': 'Il Role Play costruisce scenari cliente specifici per settore, non copioni generici. Il contrasto tra comportamento dichiarato e performance dal vivo rivela le lacune.',
+        'uc.t3': 'Assessment manageriale',
+        'uc.s3': 'Candidati interni a ops manager',
+        'uc.m3': 'Triage delle priorità + Coordinamento operativo + Decision Canvas',
+        'uc.d3': "Verifica sia la capacità reattiva (triage sotto pressione) sia quella proattiva (iniziativa di coordinamento). Gli scenari rispecchiano il contesto operativo.",
+        'uc.t4': 'Leadership ed Executive',
+        'uc.s4': 'Senior partner nella consulenza',
+        'uc.m4': 'Intervista comportamentale + Pensiero sistemico + Role Play',
+        'uc.d4': "L'intervista approfondita sonda i pattern meta-cognitivi. Il Pensiero sistemico rivela se i leader sanno mappare interdipendenze complesse, non solo parlarne.",
+        'uc.note': 'Combina i moduli che servono al ruolo: <strong>gli scenari si adattano a settore, ruolo e seniority</strong> automaticamente.',
+
+        'team.kicker': 'Il team',
+        'team.title': 'Le persone <span class="hl">alla guida di TALENS</span>',
+        'team.lead': 'Competenza profonda tra ricerca, design, ingegneria e strategia di prodotto: costruita per muoversi in fretta e generare un reale vantaggio competitivo.',
+        'team.r1': 'Progettazione del framework e comunicazione',
+        'team.b1': "PhD in Human-Computer Interaction e oltre 20 anni tra interaction design, user experience e usabilità, unendo competenza tecnica, sensibilità creativa e visione di prodotto, dall'idea iniziale al lancio sul mercato. In TALENS progetta il framework di assessment che definisce come l'AI valuta le competenze con rigore scientifico, e guida la strategia di comunicazione che ne trasmette il valore a ogni stakeholder.",
+        'team.r2': 'Architettura e ingegneria della piattaforma',
+        'team.b2': "Oltre 20 anni lungo l'intero spettro dell'IT, dall'ingegneria backend e il gaming ai sistemi enterprise su larga scala con centinaia di migliaia di utenti simultanei, dove performance e affidabilità non erano negoziabili. Early adopter di AI e tecnologie immersive, in TALENS è responsabile dell'architettura della piattaforma e progetta ogni componente per velocità, affidabilità e scalabilità.",
 
         'close.title': 'L\'assessment, <span class="grad">ripensato</span>.',
         'close.sub': 'Scenari unici per ogni candidato. Valutazione adattiva e basata su evidenze. Completamente automatizzato, scalabile senza limiti.'
