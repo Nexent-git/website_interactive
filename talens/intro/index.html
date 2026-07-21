@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TALENS · Executive Overview</title>
-  <meta name="description" content="TALENS, the AI-native HR assessment platform. Executive overview deck." />
+  <title>TALENS · Assessment Basics</title>
+  <meta name="description" content="A plain-language introduction to AI-powered assessment, before the full TALENS overview." />
   <meta name="theme-color" content="#070b16" />
 
   <!-- Favicon (reuse talens) -->
@@ -19,8 +19,8 @@
 
   <style>
     /* ======================================================================
-       TALENS Executive Overview deck
-       Full-screen scroll deck. Design tokens mirrored from talens/css/talens.css
+       TALENS Assessment Basics deck
+       Full-screen scroll deck. Design tokens mirrored from talens/overview.
        ====================================================================== */
     :root {
       /* dark theme */
@@ -51,7 +51,7 @@
       --radius: 18px;
       --maxw: 1180px;
 
-      --hero-bg: url("/talens/assets/hero2.png");
+      --hero-bg: url("/talens/assets/hero_intro.png");
     }
 
     * { box-sizing: border-box; }
@@ -121,11 +121,6 @@
         radial-gradient(ellipse 78% 58% at 50% 38%, rgba(7,11,22,.74) 0%, rgba(7,11,22,.42) 52%, rgba(7,11,22,.12) 82%, transparent 100%),
         linear-gradient(180deg, rgba(7,11,22,.6) 0%, rgba(7,11,22,.45) 45%, rgba(7,11,22,.5) 100%);
     }
-    .slide__overlay--deep {
-      background:
-        radial-gradient(ellipse 90% 70% at 50% 40%, rgba(7,11,22,.86) 0%, rgba(7,11,22,.68) 55%, rgba(7,11,22,.45) 85%, rgba(7,11,22,.4) 100%),
-        linear-gradient(180deg, rgba(7,11,22,.7) 0%, rgba(7,11,22,.62) 50%, rgba(7,11,22,.7) 100%);
-    }
     .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; }
     .blob--1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(37,99,235,.32), transparent 65%); top: -160px; right: -120px; animation: float1 16s ease-in-out infinite; }
     .blob--2 { width: 460px; height: 460px; background: radial-gradient(circle, rgba(14,165,233,.26), transparent 65%); top: 120px; left: -160px; animation: float2 19s ease-in-out infinite; }
@@ -186,13 +181,6 @@
       font-size: clamp(1rem, 1.8vw, 1.25rem); color: rgba(255,255,255,.85);
       margin: 26px auto 0; max-width: 56ch; text-shadow: 0 1px 16px rgba(0,0,0,.4);
     }
-    .intro__tags { margin-top: 26px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-    .intro__tag {
-      font-size: .84rem; font-weight: 600; color: #e2e8f0;
-      padding: 8px 16px; border-radius: 999px;
-      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    }
 
     .scroll-hint {
       position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
@@ -202,40 +190,6 @@
     }
     .scroll-hint svg { animation: bounce 2s ease-in-out infinite; }
     @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
-
-    /* ------------------------------------------------------ architecture */
-    .arch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-    .arch-card {
-      position: relative;
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius);
-      padding: clamp(22px, 2.6vw, 34px);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.55);
-      transition: transform .3s ease, border-color .3s ease, background .3s ease;
-      overflow: hidden;
-    }
-    .arch-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.24); background: rgba(15, 23, 42, 0.62); }
-    .arch-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--ac1), var(--ac2));
-    }
-    .arch-card--skills { --ac1: #2563eb; --ac2: #7c3aed; }
-    .arch-card--avatar { --ac1: #0ea5e9; --ac2: #2563eb; }
-    .arch-card--systems { --ac1: #10b981; --ac2: #0ea5e9; }
-    .arch-card__head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
-    .arch-card__logo { height: 22px; width: auto; display: block; opacity: .95; }
-    .arch-card__tag {
-      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-      color: #fff; padding: 4px 11px; border-radius: 999px;
-      background: linear-gradient(90deg, var(--ac1), var(--ac2));
-      white-space: nowrap;
-    }
-    .arch-card p { color: rgba(255,255,255,.78); font-size: clamp(.88rem, 1.1vw, .97rem); margin: 0; }
-
-    .arch-foot { margin-top: 34px; text-align: center; color: rgba(255,255,255,.65); font-size: .92rem; }
-    .arch-foot .plus { color: #93c5fd; font-weight: 700; }
 
     /* -------------------------------------------------------------- card */
     .card {
@@ -248,34 +202,13 @@
     .card h3 { font-size: clamp(1.05rem, 1.5vw, 1.18rem); margin-bottom: 10px; }
     .card p { color: var(--text-secondary); font-size: clamp(.88rem, 1.1vw, .97rem); margin: 0; }
 
-    /* ----------------------------------------------------------- problem */
-    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-    .problem-card .num {
-      font-size: .85rem; font-weight: 800; letter-spacing: .1em; color: var(--red);
-      background: rgba(239, 68, 68, .09); border: 1px solid rgba(239, 68, 68, .18);
+    /* -------------------------------------------------- familiar (3 cards) */
+    .know-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .know-card .num {
+      font-size: .85rem; font-weight: 800; letter-spacing: .1em; color: var(--blue);
+      background: rgba(96, 165, 250, .09); border: 1px solid rgba(96, 165, 250, .2);
       padding: 5px 12px; border-radius: 999px; display: inline-block; margin-bottom: 14px;
     }
-
-    /* ---------------------------------------------------------- solution */
-    .solution__split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
-    .solution__cell { border-radius: var(--radius); padding: clamp(24px, 3vw, 38px); position: relative; overflow: hidden; }
-    .solution__cell .tag {
-      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .14em;
-      padding: 5px 13px; border-radius: 999px; margin-bottom: 16px;
-    }
-    .solution__cell h4 { font-size: clamp(1.15rem, 1.8vw, 1.45rem); margin-bottom: 10px; }
-    .solution__cell p { margin: 0; font-size: clamp(.92rem, 1.2vw, 1.02rem); }
-    .solution__cell.human { background: var(--card); border: 1px solid var(--border-strong); }
-    .solution__cell.human .tag { color: var(--text-secondary); background: var(--elevated); }
-    .solution__cell.human p { color: var(--text-secondary); }
-    .solution__cell.ai {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 55%, #4f46e5 100%);
-      color: #fff; border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 24px 60px -20px rgba(37, 99, 235, .55);
-    }
-    .solution__cell.ai .tag { color: #fff; background: rgba(255,255,255,.16); }
-    .solution__cell.ai p { color: rgba(255,255,255,.85); }
-    .solution__note { margin: 30px 0 0; text-align: center; color: var(--text-muted); font-size: .95rem; font-style: italic; }
 
     /* ------------------------------------------------------------ phases */
     .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px; }
@@ -297,59 +230,6 @@
       color: #6ee7b7; font-weight: 600; font-size: clamp(.9rem, 1.2vw, 1rem);
     }
 
-    /* ----------------------------------------------------------- pillars */
-    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-    .pillar__head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-    .pillar__head h3 { margin-bottom: 0; }
-    .pillar__icon {
-      width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
-      color: #fff; flex: none;
-    }
-    .pillar--think .pillar__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
-    .pillar--relate .pillar__icon { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
-    .pillar--exec .pillar__icon { background: linear-gradient(135deg, #10b981, #059669); }
-    .pillar__kick {
-      display: block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .pillar--think .pillar__kick { color: var(--blue); }
-    .pillar--relate .pillar__kick { color: var(--cyan); }
-    .pillar--exec .pillar__kick { color: var(--green); }
-    .pillar ul { list-style: none; margin: 0; padding: 0; }
-    .pillar li {
-      color: var(--text-secondary); font-size: clamp(.85rem, 1.05vw, .93rem);
-      padding: 7px 0 7px 20px; position: relative; border-bottom: 1px dashed var(--border);
-    }
-    .pillar li:last-child { border-bottom: 0; }
-    .pillar li::before { content: ""; position: absolute; left: 0; top: 15px; width: 7px; height: 7px; border-radius: 50%; }
-    .pillar--think li::before { background: var(--blue); }
-    .pillar--relate li::before { background: var(--cyan); }
-    .pillar--exec li::before { background: var(--green); }
-
-    .count-chips { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-    .chip {
-      font-size: .85rem; font-weight: 700; padding: 7px 16px; border-radius: 999px;
-      background: rgba(147,197,253,.10); border: 1px solid rgba(147,197,253,.22); color: #93c5fd;
-    }
-
-    /* ------------------------------------------------------------- modes */
-    .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-    .mode.card { padding: 0; }
-    .mode__media { overflow: hidden; line-height: 0; border-bottom: 1px solid var(--border); }
-    .mode__img { width: 100%; height: auto; display: block; }
-    .mode__body { padding: clamp(18px, 2vw, 26px); }
-    .mode__head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-    .mode__icon { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
-    .mode--conv .mode__icon { background: linear-gradient(135deg, #2563eb, #6366f1); }
-    .mode--msg .mode__icon { background: linear-gradient(135deg, #f97316, #f59e0b); }
-    .mode--reason .mode__icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
-    .mode__sub { color: var(--text-muted); font-size: .86rem; margin: 0 0 14px; }
-    .mode ul { list-style: none; margin: 0; padding: 0; }
-    .mode li {
-      font-size: clamp(.85rem, 1.05vw, .93rem); font-weight: 600; color: var(--text-primary);
-      background: rgba(255, 255, 255, .05); border: 1px solid var(--border);
-      border-radius: 10px; padding: 9px 14px; margin-top: 8px;
-    }
     .matrix-note {
       margin: 36px auto 0; max-width: 760px; text-align: center;
       padding: 16px 26px; border-radius: var(--radius);
@@ -369,77 +249,40 @@
     .edge--2 .edge-card__icon { background: linear-gradient(135deg, #f97316, #f59e0b); }
     .edge--3 .edge-card__icon { background: linear-gradient(135deg, #10b981, #059669); }
     .edge--4 .edge-card__icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
-
-    /* --------------------------------------------------------- use cases */
-    .usecase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
-    .usecase-card { display: flex; flex-direction: column; }
-    .usecase-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--uc1), var(--uc2));
+    .edge-card__ai {
+      margin: 12px 0 0; padding-top: 11px; border-top: 1px dashed var(--border);
+      font-size: clamp(.82rem, 1vw, .9rem); color: var(--text-secondary);
     }
-    .uc--1 { --uc1: #2563eb; --uc2: #6366f1; }
-    .uc--2 { --uc1: #f97316; --uc2: #f59e0b; }
-    .uc--3 { --uc1: #10b981; --uc2: #059669; }
-    .uc--4 { --uc1: #7c3aed; --uc2: #a855f7; }
-    .usecase-card__head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
-    .usecase-card__head h3 { margin: 0; }
-    .usecase-card__scale { font-size: .8rem; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
-    .usecase-card__mods {
-      display: inline-block; align-self: flex-start; font-size: .74rem; font-weight: 700; letter-spacing: .01em;
-      color: var(--uc1); background: rgba(37, 99, 235, .07); border: 1px solid var(--border);
-      border-radius: 999px; padding: 6px 13px; margin-bottom: 14px;
+    .edge-card__ai strong { color: #93c5fd; font-weight: 800; }
+    .evidence-link {
+      color: #93c5fd; text-decoration: underline dotted; text-underline-offset: 3px;
+      transition: color .2s ease;
     }
-
-    /* -------------------------------------------------------------- team */
-    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
-    .team-card { display: flex; flex-direction: column; }
-    .team-card__head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-    .team-card__avatar {
-      flex: none; width: 56px; height: 56px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 1.05rem; letter-spacing: .02em; color: #fff;
-      background: linear-gradient(135deg, var(--tc1), var(--tc2));
-    }
-    .team-card--1 { --tc1: #2563eb; --tc2: #6366f1; }
-    .team-card--2 { --tc1: #0ea5e9; --tc2: #2563eb; }
-    .team-card__head h3 { margin: 0 0 4px; }
-    .team-card__role { font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--tc1); }
-    .team-card p { color: var(--text-secondary); font-size: clamp(.86rem, 1.05vw, .95rem); margin: 0; }
-
-    /* ----------------------------------------------------------- outputs */
-    .outputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
-    .output-card { padding: clamp(18px, 2vw, 24px); }
-    .output-card .diamond { color: var(--blue); font-size: 1em; }
-    .output-card h3 { font-size: clamp(.98rem, 1.3vw, 1.08rem); display: flex; align-items: baseline; gap: 9px; }
-    .output-card p { font-size: clamp(.84rem, 1vw, .92rem); }
-
-    /* ---------------------------------------------------------- business */
-    .biz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-    .biz-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--bc1), var(--bc2));
-    }
-    .biz--1 { --bc1: #60a5fa; --bc2: #818cf8; }
-    .biz--2 { --bc1: #38bdf8; --bc2: #22d3ee; }
-    .biz--3 { --bc1: #34d399; --bc2: #2dd4bf; }
-    .biz-card .biz__kick {
-      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--bc1); margin-bottom: 12px;
-    }
+    .evidence-link:hover { color: #bfdbfe; text-decoration-style: solid; }
 
     /* ----------------------------------------------------------- closing */
     .closing__inner { text-align: center; max-width: 860px; margin: 0 auto; }
     .closing__logo { height: clamp(48px, 6.5vw, 78px); width: auto; display: block; margin: 0 auto 30px; filter: drop-shadow(0 8px 26px rgba(0,0,0,.5)); }
     .closing h2 { font-size: clamp(1.8rem, 4.2vw, 3.1rem); color: #fff; letter-spacing: -0.03em; }
     .closing p { color: rgba(255,255,255,.82); font-size: clamp(1rem, 1.6vw, 1.18rem); margin: 22px auto 0; max-width: 54ch; }
+    .closing__cta {
+      margin-top: 40px; display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 30px; border-radius: 999px;
+      background: #2563eb; color: #fff; font-weight: 700; font-size: .98rem; letter-spacing: .01em;
+      box-shadow: 0 14px 34px -10px rgba(37, 99, 235, .6);
+      transition: background .2s ease, transform .2s ease;
+    }
+    .closing__cta:hover { background: #1d4ed8; transform: translateY(-2px); }
+    .closing__cta svg { display: block; }
     .closing__powered {
-      margin-top: 46px; display: inline-flex; align-items: center; gap: 14px;
+      margin-top: 26px; display: inline-flex; align-items: center; gap: 14px;
       padding: 14px 26px; border-radius: 999px;
       background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       color: rgba(255,255,255,.75); font-size: .88rem; font-weight: 600; letter-spacing: .04em;
     }
     .closing__powered img { height: 18px; width: auto; display: block; }
+    .closing__actions { display: flex; flex-direction: column; align-items: center; }
 
     /* ------------------------------------------------------------ chrome */
     .progress {
@@ -496,55 +339,6 @@
     .on-dark .lang button { color: #94a3b8; }
     .on-dark .lang button:hover:not(.active) { color: #fff; }
 
-    /* -------------------------------------------------------------- gate */
-    .gate {
-      position: fixed; inset: 0; z-index: 200;
-      display: flex; align-items: center; justify-content: center;
-      background:
-        radial-gradient(ellipse 70% 60% at 50% 35%, rgba(37, 99, 235, 0.14), transparent 65%),
-        #070b16;
-      transition: opacity .45s ease;
-    }
-    .gate.gate--out { opacity: 0; pointer-events: none; }
-    .gate__box {
-      width: min(400px, calc(100vw - 48px));
-      text-align: center;
-      padding: 42px 34px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
-    }
-    .gate__logo { height: 34px; width: auto; margin: 0 auto 22px; display: block; filter: drop-shadow(0 6px 20px rgba(0,0,0,.5)); }
-    .gate__msg { color: rgba(255,255,255,.7); font-size: .92rem; margin: 0 0 22px; }
-    .gate__row { display: flex; gap: 10px; }
-    .gate input {
-      flex: 1; min-width: 0;
-      font: inherit; font-size: .95rem; color: #fff;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 12px; padding: 12px 16px; outline: none;
-      transition: border-color .2s ease, box-shadow .2s ease;
-    }
-    .gate input::placeholder { color: rgba(255,255,255,.4); }
-    .gate input:focus { border-color: rgba(96, 165, 250, .6); box-shadow: 0 0 0 3px rgba(96, 165, 250, .18); }
-    .gate button {
-      font: inherit; font-weight: 600; font-size: .95rem; cursor: pointer;
-      color: #fff; background: #2563eb; border: 0; border-radius: 12px; padding: 12px 22px;
-      box-shadow: 0 10px 24px -8px rgba(37, 99, 235, 0.55);
-      transition: background .2s ease, transform .2s ease;
-      white-space: nowrap;
-    }
-    .gate button:hover { background: #1d4ed8; transform: translateY(-1px); }
-    .gate__err { color: #fca5a5; font-size: .84rem; min-height: 1.3em; margin: 14px 0 0; visibility: hidden; }
-    .gate.gate--err .gate__err { visibility: visible; }
-    .gate.gate--err .gate__box { animation: gateShake .35s ease; }
-    @keyframes gateShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-9px); } 50% { transform: translateX(8px); } 75% { transform: translateX(-5px); } }
-    body.locked .deck { visibility: hidden; }
-    body.locked .dots, body.locked .counter, body.locked .brandline,
-    body.locked .lang, body.locked .progress { visibility: hidden; }
-
     /* ------------------------------------------------------------ reveal */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
     .slide.active .reveal { opacity: 1; transform: translateY(0); }
@@ -562,13 +356,12 @@
     /* -------------------------------------------------------- responsive */
     @media (max-width: 1024px) {
       .slide { height: auto; min-height: 100vh; min-height: 100dvh; padding: 84px 0; }
-      .arch-grid, .problem-grid, .pillars, .modes, .biz-grid, .outputs { grid-template-columns: 1fr 1fr; }
+      .know-grid { grid-template-columns: 1fr 1fr; }
       .phases { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 680px) {
       .deck { scroll-snap-type: none; }
-      .arch-grid, .problem-grid, .pillars, .modes, .biz-grid, .outputs, .phases,
-      .solution__split, .edge-grid, .usecase-grid, .team-grid { grid-template-columns: 1fr; }
+      .know-grid, .phases, .edge-grid { grid-template-columns: 1fr; }
       .dots { display: none; }
       .brandline { display: none; }
       .intro h1 { white-space: normal; font-size: clamp(1.9rem, 8vw, 2.6rem); }
@@ -585,8 +378,8 @@
   </div>
 
   <nav class="dots" id="dots" aria-label="Slides"></nav>
-  <div class="counter" id="counter" aria-hidden="true">01<span class="sep">/</span>11</div>
-  <div class="brandline" data-i18n="chrome.brand">TALENS &nbsp;·&nbsp; AI-Native Assessment Platform</div>
+  <div class="counter" id="counter" aria-hidden="true">01<span class="sep">/</span>06</div>
+  <div class="brandline" data-i18n="chrome.brand">TALENS &nbsp;·&nbsp; Assessment Basics</div>
 
   <main class="deck" id="deck">
 
@@ -603,9 +396,10 @@
       <div class="slide__inner intro__inner">
         <img class="intro__logo reveal" src="/talens/assets/talens_logo_light.png" alt="TALENS" />
         <h1 class="reveal" data-d="2" data-i18n="intro.title">
-          Next-generation HR assessment<br />
-          <span class="grad">harnessing the power of AI</span>
+          A guided introduction to<br />
+          <span class="grad">AI-powered assessment</span>
         </h1>
+        <p class="intro__sub reveal" data-d="3" data-i18n="intro.sub">The key concepts behind TALENS, from the assessment you know to the role of AI, before the full overview.</p>
       </div>
       <button class="scroll-hint" data-next aria-label="Next slide">
         <span data-i18n="intro.scroll">Scroll</span>
@@ -613,236 +407,42 @@
       </button>
     </section>
 
-    <!-- ================================================== 3 · THE GAP -->
-    <section class="slide" data-title="The gap" data-title-it="Il problema" data-theme="dark">
+    <!-- ================================================== 2 · WHAT YOU KNOW -->
+    <section class="slide" data-title="What you know" data-title-it="Ciò che conosci" data-theme="dark">
       <div class="slide__inner">
         <div class="reveal">
-          <span class="kicker" data-i18n="gap.kicker">The gap</span>
-          <h2 class="slide-title" data-i18n="gap.title">Talent assessment <span class="hl">hasn't kept up</span></h2>
-          <p class="slide-lead" data-i18n="gap.lead">Traditional assessment centers were designed for another era. Three structural limits hold them back.</p>
+          <span class="kicker" data-i18n="know.kicker">Start familiar</span>
+          <h2 class="slide-title" data-i18n="know.title">The assessment <span class="hl">you already know</span></h2>
+          <p class="slide-lead" data-i18n="know.lead">A traditional assessment center rests on three ingredients that have proven their value for decades.</p>
         </div>
-        <div class="problem-grid">
-          <article class="card problem-card reveal" data-d="2">
+        <div class="know-grid">
+          <article class="card know-card reveal" data-d="2">
             <span class="num">01</span>
-            <h3 data-i18n="gap.p1_t">It doesn't scale</h3>
-            <p data-i18n="gap.p1_d">Hundreds of assessor hours for a single hiring round. Every additional candidate multiplies cost and calendar time.</p>
+            <h3 data-i18n="know.t1">Realistic exercises</h3>
+            <p data-i18n="know.d1">Candidates step into situations that resemble the real job: interviews, role plays, case studies, simulations.</p>
           </article>
-          <article class="card problem-card reveal" data-d="3">
+          <article class="card know-card reveal" data-d="3">
             <span class="num">02</span>
-            <h3 data-i18n="gap.p2_t">It's inconsistent</h3>
-            <p data-i18n="gap.p2_d">Inter-rater variability, fatigue and implicit bias mean two equally strong candidates can walk away with very different scores.</p>
+            <h3 data-i18n="know.t2">Expert observers</h3>
+            <p data-i18n="know.d2">Trained assessors watch how people actually behave under pressure, not just what a CV claims.</p>
           </article>
-          <article class="card problem-card reveal" data-d="4">
+          <article class="card know-card reveal" data-d="4">
             <span class="num">03</span>
-            <h3 data-i18n="gap.p3_t">It uses generic content</h3>
-            <p data-i18n="gap.p3_d">Pre-written scenarios designed for broad applicability: the same case study for a fintech PM and a hospital director.</p>
+            <h3 data-i18n="know.t3">Structured evaluation</h3>
+            <p data-i18n="know.d3">Behaviour is rated against defined competencies and becomes a report that supports a real decision.</p>
           </article>
         </div>
+        <div class="matrix-note reveal" data-d="5" data-i18n="know.note">TALENS keeps this exact logic. What changes is <strong>how it gets done</strong>.</div>
       </div>
     </section>
 
-    <!-- ================================================== 4 · SOLUTION -->
-    <section class="slide slide--surface" data-title="The solution" data-title-it="La soluzione" data-theme="dark">
+    <!-- ================================================== 3 · E-ASSESSMENT -->
+    <section class="slide slide--surface" data-title="E-assessment" data-title-it="E-assessment" data-theme="dark">
       <div class="slide__inner">
         <div class="reveal">
-          <span class="kicker" data-i18n="sol.kicker">The TALENS solution</span>
-          <h2 class="slide-title"><span class="hl">AI-native</span>, end to end</h2>
-          <p class="slide-lead" data-i18n="sol.lead">The entire pipeline is driven by AI: configuration, content, assessment and evaluation. No pre-written human content required.</p>
-        </div>
-        <div class="solution__split">
-          <div class="solution__cell human reveal" data-d="2">
-            <span class="tag">WHAT</span>
-            <h4 data-i18n="sol.human_t">You define the WHAT</h4>
-            <p data-i18n="sol.human_d">Industry, role, seniority and target competencies. Your judgement about what matters stays exactly where it belongs: with you.</p>
-          </div>
-          <div class="solution__cell ai reveal" data-d="3">
-            <span class="tag">HOW</span>
-            <h4 data-i18n="sol.ai_t">The AI handles the HOW</h4>
-            <p data-i18n="sol.ai_d">Generates tailored scenarios, runs adaptive assessments and produces evidence-based reports, at any scale, with total consistency.</p>
-          </div>
-        </div>
-        <p class="solution__note reveal" data-d="4" data-i18n="sol.note">Not AI bolted onto traditional assessment, but assessment reimagined from the ground up.</p>
-      </div>
-    </section>
-
-    <!-- ================================================== 5 · HOW IT WORKS -->
-    <section class="slide" data-title="How it works" data-title-it="Come funziona" data-theme="dark">
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="how.kicker">How it works</span>
-          <h2 class="slide-title" data-i18n="how.title">A four-phase, <span class="hl">fully automated</span> pipeline</h2>
-        </div>
-        <div class="phases">
-          <article class="card phase phase--1 reveal" data-d="2">
-            <span class="phase__label" data-i18n="how.l1">PHASE 1</span>
-            <h3 data-i18n="how.t1">Configure</h3>
-            <p data-i18n="how.d1">An AI assistant guides campaign setup, suggesting modules, validating coherence and ensuring full competency coverage.</p>
-          </article>
-          <article class="card phase phase--2 reveal" data-d="3">
-            <span class="phase__label" data-i18n="how.l2">PHASE 2</span>
-            <h3 data-i18n="how.t2">Generate</h3>
-            <p data-i18n="how.d2">Scenarios, characters and dossiers generated in real time, tailored to sector, role and seniority. Never a recycled template.</p>
-          </article>
-          <article class="card phase phase--3 reveal" data-d="4">
-            <span class="phase__label" data-i18n="how.l3">PHASE 3</span>
-            <h3 data-i18n="how.t3">Assess</h3>
-            <p data-i18n="how.d3">The AI conducts adaptive sessions: probing, injecting complications and adjusting pressure in real time as the candidate responds.</p>
-          </article>
-          <article class="card phase phase--4 reveal" data-d="5">
-            <span class="phase__label" data-i18n="how.l4">PHASE 4</span>
-            <h3 data-i18n="how.t4">Evaluate</h3>
-            <p data-i18n="how.d4">Structured reports with per-competency ratings, narrative assessments, evidence quotes and clear recommendations.</p>
-          </article>
-        </div>
-        <div class="note-banner reveal" data-d="6" data-i18n="how.note">~15-minute setup on Day&nbsp;1. Everything else is fully automated.</div>
-      </div>
-    </section>
-
-    <!-- ================================================== 6 · COMPETENCIES -->
-    <section class="slide slide--surface" data-title="What it measures" data-title-it="Cosa misura" data-theme="dark">
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="comp.kicker">What it measures</span>
-          <h2 class="slide-title" data-i18n="comp.title"><span class="hl">3 groups</span> of competencies</h2>
-          <div class="count-chips">
-            <span class="chip" data-i18n="comp.chip1">3 groups</span>
-            <span class="chip" data-i18n="comp.chip2">6 competencies each</span>
-            <span class="chip" data-i18n="comp.chip3">Seniority-calibrated</span>
-          </div>
-        </div>
-        <div class="pillars">
-          <article class="card pillar pillar--think reveal" data-d="2">
-            <div class="pillar__head">
-              <div class="pillar__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.1-2.6 5.4-.8.8-1.4 1.9-1.4 3.1V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1.5c0-1.2-.6-2.3-1.4-3.1C6.2 13.1 5 11.4 5 9a7 7 0 0 1 7-7z"/></svg>
-              </div>
-              <div>
-                <span class="pillar__kick" data-i18n="comp.m1">Group 1</span>
-                <h3 data-i18n="comp.think_t">Thinking</h3>
-              </div>
-            </div>
-            <ul data-i18n="comp.think_l">
-              <li>Analytical Reasoning</li>
-              <li>Strategic Thinking</li>
-              <li>Decision Quality</li>
-              <li>Systems Thinking</li>
-              <li>Critical Analysis</li>
-              <li>Learning Agility</li>
-            </ul>
-          </article>
-          <article class="card pillar pillar--relate reveal" data-d="3">
-            <div class="pillar__head">
-              <div class="pillar__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <div>
-                <span class="pillar__kick" data-i18n="comp.m2">Group 2</span>
-                <h3 data-i18n="comp.relate_t">Relating</h3>
-              </div>
-            </div>
-            <ul data-i18n="comp.relate_l">
-              <li>Interpersonal Communication</li>
-              <li>Collaborative Teamwork</li>
-              <li>Conflict Resolution</li>
-              <li>Stakeholder Management</li>
-              <li>Emotional Intelligence</li>
-              <li>Influence &amp; Persuasion</li>
-            </ul>
-          </article>
-          <article class="card pillar pillar--exec reveal" data-d="4">
-            <div class="pillar__head">
-              <div class="pillar__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <div>
-                <span class="pillar__kick" data-i18n="comp.m3">Group 3</span>
-                <h3 data-i18n="comp.exec_t">Executing</h3>
-              </div>
-            </div>
-            <ul data-i18n="comp.exec_l">
-              <li>Planning &amp; Organizing</li>
-              <li>Priority Management</li>
-              <li>Accountability</li>
-              <li>Proactive Initiative</li>
-              <li>Cognitive Flexibility</li>
-              <li>Resilience</li>
-            </ul>
-          </article>
-        </div>
-        <div class="matrix-note reveal" data-d="5" data-i18n="comp.note">TALENS can also assess <strong>any other competency</strong> you need, even outside these groups.</div>
-      </div>
-    </section>
-
-    <!-- ================================================== 7 · MODULES -->
-    <section class="slide" data-title="Modules" data-title-it="Moduli" data-theme="dark">
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="mod.kicker">How it measures</span>
-          <h2 class="slide-title" data-i18n="mod.title"><span class="hl">9 modules</span> across 3 interaction modes</h2>
-        </div>
-        <div class="modes">
-          <article class="card mode mode--conv reveal" data-d="2">
-            <div class="mode__media"><img class="mode__img" src="/talens/assets/conversation.png" alt="" loading="lazy" /></div>
-            <div class="mode__body">
-              <div class="mode__head">
-                <div class="mode__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
-                </div>
-                <h3 data-i18n="mod.conv_t">Conversation</h3>
-              </div>
-              <p class="mode__sub" data-i18n="mod.conv_s">Voice-based sessions with AI characters</p>
-              <ul data-i18n="mod.conv_l">
-                <li>Behavioral Interview</li>
-                <li>Problem Dialogue</li>
-                <li>Role Play</li>
-              </ul>
-            </div>
-          </article>
-          <article class="card mode mode--msg reveal" data-d="3">
-            <div class="mode__media"><img class="mode__img" src="/talens/assets/messages.png" alt="" loading="lazy" /></div>
-            <div class="mode__body">
-              <div class="mode__head">
-                <div class="mode__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </div>
-                <h3 data-i18n="mod.msg_t">Messaging</h3>
-              </div>
-              <p class="mode__sub" data-i18n="mod.msg_s">Multi-thread text chat under pressure</p>
-              <ul data-i18n="mod.msg_l">
-                <li>Team Dynamics</li>
-                <li>Priority Triage</li>
-                <li>Operational Coordination</li>
-              </ul>
-            </div>
-          </article>
-          <article class="card mode mode--reason reveal" data-d="4">
-            <div class="mode__media"><img class="mode__img" src="/talens/assets/task.png" alt="" loading="lazy" /></div>
-            <div class="mode__body">
-              <div class="mode__head">
-                <div class="mode__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </div>
-                <h3 data-i18n="mod.reason_t">Reasoning</h3>
-              </div>
-              <p class="mode__sub" data-i18n="mod.reason_s">Structured multi-phase written tasks</p>
-              <ul data-i18n="mod.reason_l">
-                <li>Decision Canvas</li>
-                <li>Critical Analysis</li>
-                <li>Systems Thinking</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <div class="matrix-note reveal" data-d="5" data-i18n="mod.note">Together they enable a <strong>cross-module competency matrix</strong>: the same competency measured across multiple interaction modes.</div>
-      </div>
-    </section>
-
-    <!-- ================================================== 8 · WHAT SETS IT APART -->
-    <section class="slide slide--surface" data-title="What sets it apart" data-title-it="Cosa lo distingue" data-theme="dark">
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="edge.kicker">What sets it apart</span>
-          <h2 class="slide-title" data-i18n="edge.title">Unique, <span class="hl">adaptive</span>, evidence-based</h2>
+          <span class="kicker" data-i18n="ea.kicker">E-assessment</span>
+          <h2 class="slide-title" data-i18n="ea.title">From meeting rooms <span class="hl">to a browser</span></h2>
+          <p class="slide-lead" data-i18n="ea.lead">E-assessment simply means running those same exercises online. It solves the logistics, and it is the foundation TALENS builds on: AI takes each of these gains further.</p>
         </div>
         <div class="edge-grid">
           <article class="card edge-card edge--1 reveal" data-d="2">
@@ -850,17 +450,19 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div>
-              <h3 data-i18n="edge.t1">Unique &amp; contextual</h3>
-              <p data-i18n="edge.d1">A Senior PM in fintech and one in healthcare get different scenarios: same competency, different manifestation.</p>
+              <h3 data-i18n="ea.t1">Anywhere, anytime</h3>
+              <p data-i18n="ea.d1">Candidates join from home or from the office, when it suits them. No travel, no venues, no scheduling puzzles.</p>
+              <p class="edge-card__ai" data-i18n="ea.ai1"><strong>Plus, with AI:</strong> no assessor needs to be on the other side, so a session can start the moment the candidate is ready.</p>
             </div>
           </article>
           <article class="card edge-card edge--2 reveal" data-d="3">
             <div class="edge-card__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div>
-              <h3 data-i18n="edge.t2">Real-time adaptation</h3>
-              <p data-i18n="edge.d2">Vague answer? It probes deeper. Exceptional depth? It escalates complexity. The assessment goes as deep as the candidate allows.</p>
+              <h3 data-i18n="ea.t2">The same process for everyone</h3>
+              <p data-i18n="ea.d2">Every candidate goes through the same steps and is measured against the same standard, from the first of the day to the hundredth.</p>
+              <p class="edge-card__ai" data-i18n="ea.ai2"><strong>Plus, with AI:</strong> the standard stays identical, but the content comes alive: scenarios adapt to each person's role, seniority and answers.</p>
             </div>
           </article>
           <article class="card edge-card edge--3 reveal" data-d="4">
@@ -868,209 +470,110 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
             <div>
-              <h3 data-i18n="edge.t3">Evidence-based</h3>
-              <p data-i18n="edge.d3">Every rating anchored to direct evidence: specific quotes with contextual framing. Fully auditable and defensible.</p>
+              <h3 data-i18n="ea.t3">Everything on record</h3>
+              <p data-i18n="ea.d3">Each answer and interaction is captured, so any evaluation can be reviewed and verified later.</p>
+              <p class="edge-card__ai" data-i18n="ea.ai3"><strong>Plus, with AI:</strong> recordings become evidence: every rating is linked to the exact words that justify it.</p>
             </div>
           </article>
           <article class="card edge-card edge--4 reveal" data-d="5">
             <div class="edge-card__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
             </div>
             <div>
-              <h3 data-i18n="edge.t4">Seniority calibration</h3>
-              <p data-i18n="edge.d4">"Competent" for a Junior and for an Executive are different standards, and TALENS calibrates them automatically.</p>
+              <h3 data-i18n="ea.t4">Ready to scale</h3>
+              <p data-i18n="ea.d4">Reaching more candidates becomes far easier: sessions run in parallel, with no venues or travel multiplying costs and timelines.</p>
+              <p class="edge-card__ai" data-i18n="ea.ai4"><strong>Plus, with AI:</strong> content and evaluation are generated automatically, so effort stays flat at any scale.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================================================== · USE CASES -->
-    <section class="slide" data-title="Use cases" data-title-it="Casi d'uso" data-theme="dark">
+    <!-- ================================================== 4 · WHERE AI COMES IN -->
+    <section class="slide" data-title="Where AI comes in" data-title-it="Dove entra l'AI" data-theme="dark">
       <div class="slide__inner">
         <div class="reveal">
-          <span class="kicker" data-i18n="uc.kicker">Use cases</span>
-          <h2 class="slide-title" data-i18n="uc.title">Full range of <span class="hl">hiring &amp; promotion</span> decisions</h2>
+          <span class="kicker" data-i18n="ai.kicker">Where AI comes in</span>
+          <h2 class="slide-title" data-i18n="ai.title">What the AI <span class="hl">actually does</span></h2>
+          <p class="slide-lead" data-i18n="ai.lead">Modern AI can hold a natural conversation, write realistic scenarios and evaluate answers against clear criteria. TALENS uses these abilities to cover four roles that used to require a whole team.</p>
         </div>
-        <div class="usecase-grid">
-          <article class="card usecase-card uc--1 reveal" data-d="2">
-            <div class="usecase-card__head">
-              <h3 data-i18n="uc.t1">Technical Hiring</h3>
-              <span class="usecase-card__scale" data-i18n="uc.s1">50 developers &amp; data analysts</span>
-            </div>
-            <span class="usecase-card__mods" data-i18n="uc.m1">Behavioral Interview + Problem Dialogue + Team Dynamics</span>
-            <p data-i18n="uc.d1">Scenarios tailored to each candidate's technical domain. The cross-module matrix reveals whether strong problem-solvers also collaborate effectively.</p>
+        <div class="phases">
+          <article class="card phase phase--1 reveal" data-d="2">
+            <span class="phase__label" data-i18n="ai.l1">THE AUTHOR</span>
+            <h3 data-i18n="ai.t1">Writes the scenario</h3>
+            <p data-i18n="ai.d1">A fresh, realistic case for each candidate, tuned to sector, role and seniority. Never a recycled template.</p>
           </article>
-          <article class="card usecase-card uc--2 reveal" data-d="3">
-            <div class="usecase-card__head">
-              <h3 data-i18n="uc.t2">Client-Facing Roles</h3>
-              <span class="usecase-card__scale" data-i18n="uc.s2">30 relationship managers</span>
-            </div>
-            <span class="usecase-card__mods" data-i18n="uc.m2">Behavioral Interview + Role Play + Priority Triage</span>
-            <p data-i18n="uc.d2">Role Play builds industry-specific client scenarios — not generic scripts. The contrast between stated behavior and live performance reveals the gaps.</p>
+          <article class="card phase phase--2 reveal" data-d="3">
+            <span class="phase__label" data-i18n="ai.l2">THE ACTOR</span>
+            <h3 data-i18n="ai.t2">Plays the characters</h3>
+            <p data-i18n="ai.d2">Gives voice and personality to the people in the exercise: a colleague, a client, a stakeholder who reacts naturally to what the candidate says.</p>
           </article>
-          <article class="card usecase-card uc--3 reveal" data-d="4">
-            <div class="usecase-card__head">
-              <h3 data-i18n="uc.t3">Management Assessment</h3>
-              <span class="usecase-card__scale" data-i18n="uc.s3">Internal candidates for ops managers</span>
-            </div>
-            <span class="usecase-card__mods" data-i18n="uc.m3">Priority Triage + Operational Coordination + Decision Canvas</span>
-            <p data-i18n="uc.d3">Tests both reactive capability (triage under pressure) and proactive capability (coordination initiative). Scenarios match the operational context.</p>
+          <article class="card phase phase--3 reveal" data-d="4">
+            <span class="phase__label" data-i18n="ai.l3">THE INTERVIEWER</span>
+            <h3 data-i18n="ai.t3">Runs the session</h3>
+            <p data-i18n="ai.d3">Asks questions, listens, follows up and adapts the difficulty in real time, the way a skilled assessor would.</p>
           </article>
-          <article class="card usecase-card uc--4 reveal" data-d="5">
-            <div class="usecase-card__head">
-              <h3 data-i18n="uc.t4">Leadership &amp; Executive</h3>
-              <span class="usecase-card__scale" data-i18n="uc.s4">Senior partners in consulting</span>
-            </div>
-            <span class="usecase-card__mods" data-i18n="uc.m4">Behavioral Interview + Systems Thinking + Role Play</span>
-            <p data-i18n="uc.d4">The deep interview probes meta-cognitive patterns. Systems Thinking reveals whether leaders can map complex interdependencies — not just talk about them.</p>
+          <article class="card phase phase--4 reveal" data-d="5">
+            <span class="phase__label" data-i18n="ai.l4">THE EVALUATOR</span>
+            <h3 data-i18n="ai.t4">Drafts the report</h3>
+            <p data-i18n="ai.d4">Reads everything, rates each competency and quotes the exact moments that justify every score.</p>
           </article>
         </div>
-        <div class="matrix-note reveal" data-d="5" data-i18n="uc.note">Mix and match any modules to fit the role — <strong>scenarios adapt to sector, role and seniority</strong> automatically.</div>
+        <div class="note-banner reveal" data-d="6" data-i18n="ai.note">The AI prepares the evidence. The decision stays with people.</div>
       </div>
     </section>
 
-    <!-- ================================================== 9 · WHAT IT PRODUCES -->
-    <section class="slide" data-title="What it produces" data-title-it="Cosa produce" data-theme="dark">
+    <!-- ================================================== 5 · FAIR QUESTIONS -->
+    <section class="slide slide--surface" data-title="Fair questions" data-title-it="Domande legittime" data-theme="dark">
       <div class="slide__inner">
         <div class="reveal">
-          <span class="kicker" data-i18n="out.kicker">What it produces</span>
-          <h2 class="slide-title" data-i18n="out.title">From session to <span class="hl">decision-ready</span> report</h2>
+          <span class="kicker" data-i18n="faq.kicker">Fair questions</span>
+          <h2 class="slide-title" data-i18n="faq.title">The questions <span class="hl">everyone asks</span></h2>
+          <p class="slide-lead" data-i18n="faq.lead">Reasonable doubts deserve straight answers.</p>
         </div>
-        <div class="outputs">
-          <article class="card output-card reveal" data-d="2">
-            <h3><span class="diamond">◈</span><span data-i18n="out.t1">Overall rating</span></h3>
-            <p data-i18n="out.d1">A 1.0–5.0 score, calibrated to the candidate's seniority level.</p>
-          </article>
-          <article class="card output-card reveal" data-d="2">
-            <h3><span class="diamond">◈</span><span data-i18n="out.t2">Executive summary</span></h3>
-            <p data-i18n="out.d2">A standalone paragraph a decision-maker can read in one minute.</p>
-          </article>
-          <article class="card output-card reveal" data-d="3">
-            <h3><span class="diamond">◈</span><span data-i18n="out.t3">Per-competency detail</span></h3>
-            <p data-i18n="out.d3">Rating, narrative assessment and direct evidence quotes for each competency.</p>
-          </article>
-          <article class="card output-card reveal" data-d="3">
-            <h3><span class="diamond">◈</span><span data-i18n="out.t4">Cross-cutting patterns</span></h3>
-            <p data-i18n="out.d4">Behavioural signals that span multiple competencies, surfaced explicitly.</p>
-          </article>
-          <article class="card output-card reveal" data-d="4">
-            <h3><span class="diamond">◈</span><span data-i18n="out.t5">Recommendation</span></h3>
-            <p data-i18n="out.d5">A clear verdict: proceed, proceed with conditions, or do not proceed.</p>
-          </article>
-          <article class="card output-card reveal" data-d="4">
-            <h3><span class="diamond">◈</span><span data-i18n="out.t6">Full transcript</span></h3>
-            <p data-i18n="out.d6">The complete session record, available for human review at any time.</p>
-          </article>
-        </div>
-        <div class="matrix-note reveal" data-d="5" data-i18n="out.note">Plus a <strong>cross-module competency matrix</strong> for multi-exercise comparison.</div>
-      </div>
-    </section>
-
-    <!-- ================================================== · ARCHITECTURE -->
-    <section class="slide slide--dark" data-title="Architecture" data-title-it="Architettura" data-theme="dark">
-      <div class="slide__bg">
-        <div class="slide__photo"></div>
-        <div class="slide__overlay slide__overlay--deep"></div>
-        <div class="grid-overlay"></div>
-        <div class="blob blob--2"></div>
-        <div class="blob blob--3"></div>
-      </div>
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="arch.kicker">The foundation</span>
-          <h2 class="slide-title" style="color:#fff;" data-i18n="arch.title">Three Nexent pillars, one platform</h2>
-          <p class="slide-lead" data-i18n="arch.lead">TALENS is not built from scratch: it stands on the proven Nexent technology stack, purpose-hardened for high-stakes talent assessment.</p>
-        </div>
-        <div class="arch-grid">
-          <article class="arch-card arch-card--skills reveal" data-d="2">
-            <div class="arch-card__head">
-              <img class="arch-card__logo" src="/talens/assets/nexent_logo.png" alt="Nexent" />
-              <span class="arch-card__tag">AI Skills</span>
+        <div class="edge-grid">
+          <article class="card edge-card edge--1 reveal" data-d="2">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l7-4 7 4"/><path d="M5 7v4a7 7 0 0 0 14 0V7"/></svg>
             </div>
-            <p data-i18n="arch.skills">The cognitive core of the Nexent AI platform, expanded and reinforced for assessment. A library of orchestrated reasoning, generation and evaluation skills that designs scenarios, probes candidates and grades evidence with expert-level consistency.</p>
-          </article>
-          <article class="arch-card arch-card--avatar reveal" data-d="3">
-            <div class="arch-card__head">
-              <img class="arch-card__logo" src="/talens/assets/nexent_logo.png" alt="Nexent" />
-              <span class="arch-card__tag">AI Avatar</span>
+            <div>
+              <h3 data-i18n="faq.t1">"Is it fair?"</h3>
+              <p data-i18n="faq.d1">The AI applies the same standard to everyone: it never gets tired and never has a bad day. And every score comes with quotes you can check yourself.</p>
             </div>
-            <p data-i18n="arch.avatar">Digital humans with life-like behaviour, able to simulate any counterpart, from colleagues to clients and stakeholders, with configurable voices and personalities: scripted, randomized or fully situational, reacting in real time to whatever the candidate does.</p>
           </article>
-          <article class="arch-card arch-card--systems reveal" data-d="4">
-            <div class="arch-card__head">
-              <img class="arch-card__logo" src="/talens/assets/nexent_logo.png" alt="Nexent" />
-              <span class="arch-card__tag">Systems</span>
+          <article class="card edge-card edge--2 reveal" data-d="3">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
-            <p data-i18n="arch.systems">An enterprise-grade web architecture behind it all: professionally hosted and monitored, continuously tested at every release, with security, backups and scalability engineered in from day one.</p>
+            <div>
+              <h3 data-i18n="faq.t2">"Does it replace people?"</h3>
+              <p data-i18n="faq.d2">No. It removes the repetitive work: writing cases, running sessions, drafting reports. Your expertise moves to where it matters, the decision.</p>
+            </div>
           </article>
-        </div>
-        <p class="arch-foot reveal" data-d="5" data-i18n="arch.foot">Skills <span class="plus">+</span> Avatars <span class="plus">+</span> Systems: the engine that makes AI-native assessment possible.</p>
-      </div>
-    </section>
-
-    <!-- ================================================== · THE TEAM -->
-    <section class="slide" data-title="The team" data-title-it="Il team" data-theme="dark">
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="team.kicker">The team</span>
-          <h2 class="slide-title" data-i18n="team.title">The people <span class="hl">leading TALENS</span></h2>
-          <p class="slide-lead" data-i18n="team.lead">Deep expertise across research, design, engineering and product strategy — built to move fast and deliver real competitive advantage.</p>
-        </div>
-        <div class="team-grid">
-          <article class="card team-card team-card--1 reveal" data-d="2">
-            <div class="team-card__head">
-              <div class="team-card__avatar">GC</div>
-              <div>
-                <h3>Giuseppe Capozzo</h3>
-                <span class="team-card__role" data-i18n="team.r1">Framework Design &amp; Communication</span>
-              </div>
+          <article class="card edge-card edge--3 reveal" data-d="4">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
-            <p data-i18n="team.b1">PhD in Human-Computer Interaction with 20+ years across interaction design, UX and usability, blending technical depth, creative sensibility and product vision — from early ideation to market launch. At TALENS he designs the assessment framework that defines how AI evaluates competencies with scientific rigor, and leads the communication strategy that conveys the platform's value to every stakeholder.</p>
+            <div>
+              <h3 data-i18n="faq.t3">"Is it a black box?"</h3>
+              <p data-i18n="faq.d3">The opposite: every rating shows what was asked, what the candidate answered and why it was scored that way, with the full transcript attached.</p>
+            </div>
           </article>
-          <article class="card team-card team-card--2 reveal" data-d="3">
-            <div class="team-card__head">
-              <div class="team-card__avatar">YD</div>
-              <div>
-                <h3>Yari D'areglia</h3>
-                <span class="team-card__role" data-i18n="team.r2">Platform Architecture &amp; Engineering</span>
-              </div>
+          <article class="card edge-card edge--4 reveal" data-d="5">
+            <div class="edge-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
-            <p data-i18n="team.b2">20+ years across the full spectrum of IT — from backend engineering and gaming to large-scale enterprise systems serving hundreds of thousands of concurrent users, where performance and reliability were non-negotiable. An early adopter of AI and immersive technologies, at TALENS he leads the platform architecture, engineering each component for speed, reliability and scale.</p>
+            <div>
+              <h3 data-i18n="faq.t4">"How do candidates take it?"</h3>
+              <p data-i18n="faq.d4">Natural conversations and exercises built around the candidate's world and role, with a light touch that puts them at ease: no panel across the table, no batteries of multiple-choice questions. And the numbers back it up: in <a class="evidence-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5395709" target="_blank" rel="noopener">a field experiment with 70,000 applicants</a>, when given the choice, 78% picked the AI interviewer over the human recruiter.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================================================== 10 · BUSINESS MODEL -->
-    <section class="slide slide--surface" data-title="Business model" data-title-it="Modello di business" data-theme="dark">
-      <div class="slide__inner">
-        <div class="reveal">
-          <span class="kicker" data-i18n="biz.kicker">How to work with TALENS</span>
-          <h2 class="slide-title" data-i18n="biz.title">Flexible solutions for <span class="hl">client companies</span></h2>
-        </div>
-        <div class="biz-grid">
-          <article class="card biz-card biz--1 reveal" data-d="2">
-            <span class="biz__kick" data-i18n="biz.k1">Model A</span>
-            <h3 data-i18n="biz.t1">Managed hosting</h3>
-            <p data-i18n="biz.d1">Nexent hosts the licenses for the client company, all external costs included. Typically priced per candidate or per individual test: zero infrastructure, immediate start.</p>
-          </article>
-          <article class="card biz-card biz--2 reveal" data-d="3">
-            <span class="biz__kick" data-i18n="biz.k2">Model B</span>
-            <h3 data-i18n="biz.t2">White-label licensing</h3>
-            <p data-i18n="biz.d2">The platform installed on the client's own cloud, under a private brand or co-branded identity. Flexible license terms, full data ownership.</p>
-          </article>
-          <article class="card biz-card biz--3 reveal" data-d="4">
-            <span class="biz__kick" data-i18n="biz.k3">Add-ons</span>
-            <h3 data-i18n="biz.t3">ATS integrations &amp; customization</h3>
-            <p data-i18n="biz.d3">Optional ATS integrations available for both models, plus custom modules and platform adaptations tailored to the client's process.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================== 11 · CLOSING -->
-    <section class="slide slide--dark closing" data-title="Closing" data-title-it="Chiusura" data-theme="dark">
+    <!-- ================================================== 6 · CLOSING -->
+    <section class="slide slide--dark closing" data-title="Next step" data-title-it="Prossimo passo" data-theme="dark">
       <div class="slide__bg">
         <div class="slide__photo"></div>
         <div class="slide__overlay"></div>
@@ -1080,11 +583,16 @@
       </div>
       <div class="slide__inner closing__inner">
         <img class="closing__logo reveal" src="/talens/assets/talens_logo_light.png" alt="TALENS" />
-        <h2 class="reveal" data-d="2" data-i18n="close.title">Assessment, <span class="grad">reimagined</span>.</h2>
-        <p class="reveal" data-d="3" data-i18n="close.sub">Unique scenarios for every candidate. Adaptive, evidence-based evaluation. Fully automated, endlessly scalable.</p>
-        <div class="closing__powered reveal" data-d="4">
-          <span>Powered by</span>
-          <img src="/talens/assets/nexent_logo.png" alt="Nexent" />
+        <h2 class="reveal" data-d="2" data-i18n="close.title">Ready for <span class="grad">the full picture</span>?</h2>
+        <p class="reveal" data-d="3" data-i18n="close.sub">You now have the context. The complete overview shows how TALENS turns these ideas into a working platform: modules, competencies, reports and more.</p>
+        <div class="closing__actions">
+          <a class="closing__cta reveal" data-d="4" href="../overview/" data-i18n="close.cta">Open the full overview
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="closing__powered reveal" data-d="5">
+            <span>Powered by</span>
+            <img src="/talens/assets/nexent_logo.png" alt="Nexent" />
+          </div>
         </div>
       </div>
     </section>
@@ -1108,148 +616,68 @@
          English lives in the markup and is captured at load; the IT
          dictionary below overrides innerHTML per data-i18n key. */
       const IT = {
-        'chrome.brand': 'TALENS &nbsp;·&nbsp; Piattaforma di Assessment AI-Native',
+        'chrome.brand': 'TALENS &nbsp;·&nbsp; Le basi dell\'assessment',
 
-        'intro.title': 'HR assessment di nuova generazione<br /><span class="grad">sfruttando la potenza dell\'AI</span>',
+        'intro.title': 'Un\'introduzione guidata<br /><span class="grad">all\'assessment con l\'AI</span>',
+        'intro.sub': 'I concetti chiave dietro TALENS, dall\'assessment che conosci al ruolo dell\'AI, prima della presentazione completa.',
         'intro.scroll': 'Scorri',
 
-        'arch.kicker': 'Le fondamenta',
-        'arch.title': 'Tre pilastri Nexent, una piattaforma',
-        'arch.lead': "TALENS non nasce da zero: poggia sul collaudato stack tecnologico Nexent, potenziato appositamente per l'assessment dei talenti ad alto impatto.",
-        'arch.skills': "Il nucleo cognitivo della piattaforma AI di Nexent, ampliato e rinforzato per l'assessment. Una libreria di skill orchestrate di ragionamento, generazione e valutazione che progetta scenari, incalza i candidati e valuta le evidenze con la coerenza di un esperto.",
-        'arch.avatar': "Umani digitali dal comportamento realistico, in grado di simulare qualsiasi interlocutore, da colleghi a clienti e stakeholder, con voci e personalità configurabili: predefinite, casuali o completamente situazionali, reagendo in tempo reale alle azioni del candidato.",
-        'arch.systems': "Un'architettura web di livello enterprise dietro le quinte: hosting professionale e monitorato, test continui a ogni release, con sicurezza, backup e scalabilità progettati fin dal primo giorno.",
-        'arch.foot': 'Skills <span class="plus">+</span> Avatar <span class="plus">+</span> Systems: il motore che rende possibile l\'assessment AI-native.',
+        'know.kicker': 'Partiamo dal noto',
+        'know.title': 'L\'assessment <span class="hl">che già conosci</span>',
+        'know.lead': 'Un assessment center tradizionale poggia su tre ingredienti che hanno dimostrato il loro valore per decenni.',
+        'know.t1': 'Esercizi realistici',
+        'know.d1': 'I candidati affrontano situazioni simili al lavoro reale: interviste, role play, casi di studio, simulazioni.',
+        'know.t2': 'Osservatori esperti',
+        'know.d2': 'Assessor preparati osservano come le persone si comportano davvero sotto pressione, non solo ciò che dichiara un CV.',
+        'know.t3': 'Valutazione strutturata',
+        'know.d3': 'Il comportamento viene valutato su competenze definite e diventa un report che supporta una decisione concreta.',
+        'know.note': 'TALENS mantiene esattamente questa logica. Ciò che cambia è <strong>come viene realizzata</strong>.',
 
-        'gap.kicker': 'Il problema',
-        'gap.title': 'L\'assessment dei talenti <span class="hl">non ha tenuto il passo</span>',
-        'gap.lead': "Gli assessment center tradizionali sono stati progettati per un'altra epoca. Tre limiti strutturali li frenano.",
-        'gap.p1_t': 'Non scala',
-        'gap.p1_d': 'Centinaia di ore di assessor per un singolo ciclo di selezione. Ogni candidato in più moltiplica costi e tempi.',
-        'gap.p2_t': 'È incoerente',
-        'gap.p2_d': 'Variabilità tra valutatori, stanchezza e bias impliciti: due candidati ugualmente validi possono ottenere punteggi molto diversi.',
-        'gap.p3_t': 'Usa contenuti generici',
-        'gap.p3_d': 'Scenari preconfezionati pensati per essere applicabili a tutti: lo stesso case study per un PM fintech e un direttore ospedaliero.',
+        'ea.kicker': 'E-assessment',
+        'ea.title': 'Dalle sale riunioni <span class="hl">a un browser</span>',
+        'ea.lead': 'E-assessment significa semplicemente svolgere quegli stessi esercizi online. Risolve la logistica, ed è la base su cui TALENS costruisce: l\'AI porta ognuno di questi vantaggi ancora più avanti.',
+        'ea.t1': 'Ovunque, in qualsiasi momento',
+        'ea.d1': 'I candidati partecipano da casa o dall\'ufficio, quando preferiscono. Niente trasferte, niente sale, niente incastri di agenda.',
+        'ea.ai1': '<strong>In più, con l\'AI:</strong> non serve un assessor dall\'altra parte, quindi la sessione può iniziare nel momento in cui il candidato è pronto.',
+        'ea.t2': 'Lo stesso processo per tutti',
+        'ea.d2': 'Ogni candidato attraversa gli stessi passaggi ed è misurato sullo stesso standard, dal primo della giornata al centesimo.',
+        'ea.ai2': '<strong>In più, con l\'AI:</strong> lo standard resta identico, ma i contenuti prendono vita: gli scenari si adattano a ruolo, seniority e risposte di ciascuno.',
+        'ea.t3': 'Tutto documentato',
+        'ea.d3': 'Ogni risposta e interazione viene registrata, così ogni valutazione può essere riesaminata e verificata in seguito.',
+        'ea.ai3': '<strong>In più, con l\'AI:</strong> le registrazioni diventano evidenze: ogni valutazione è collegata alle parole esatte che la giustificano.',
+        'ea.t4': 'Pronto a scalare',
+        'ea.d4': 'Raggiungere più candidati diventa molto più facile: le sessioni si svolgono in parallelo, senza sale o trasferte che moltiplicano costi e tempi.',
+        'ea.ai4': '<strong>In più, con l\'AI:</strong> contenuti e valutazioni sono generati automaticamente, e lo sforzo resta piatto su qualsiasi scala.',
 
-        'sol.kicker': 'La soluzione TALENS',
-        'sol.lead': "L'intera pipeline è guidata dall'AI: configurazione, contenuti, assessment e valutazione. Nessun contenuto pre-scritto richiesto.",
-        'sol.human_t': 'Tu definisci il COSA',
-        'sol.human_d': 'Settore, ruolo, seniority e competenze target. Il giudizio su ciò che conta resta esattamente dove deve stare: nelle tue mani.',
-        'sol.ai_t': "L'AI gestisce il COME",
-        'sol.ai_d': 'Genera scenari su misura, conduce assessment adattivi e produce report basati su evidenze, su qualsiasi scala, con coerenza totale.',
-        'sol.note': "Non AI applicata all'assessment tradizionale, ma assessment ripensato dalle fondamenta.",
+        'ai.kicker': 'Dove entra l\'AI',
+        'ai.title': 'Cosa fa <span class="hl">davvero l\'AI</span>',
+        'ai.lead': 'L\'AI moderna sa sostenere una conversazione naturale, scrivere scenari realistici e valutare risposte su criteri chiari. TALENS usa queste capacità per coprire quattro ruoli che prima richiedevano un intero team.',
+        'ai.l1': 'L\'AUTORE', 'ai.l2': 'L\'ATTORE', 'ai.l3': 'L\'INTERVISTATORE', 'ai.l4': 'IL VALUTATORE',
+        'ai.t1': 'Scrive lo scenario',
+        'ai.d1': 'Un caso nuovo e realistico per ogni candidato, calibrato su settore, ruolo e seniority. Mai un template riciclato.',
+        'ai.t2': 'Interpreta i personaggi',
+        'ai.d2': 'Dà voce e personalità alle persone dell\'esercizio: un collega, un cliente, uno stakeholder che reagisce in modo naturale a ciò che dice il candidato.',
+        'ai.t3': 'Conduce la sessione',
+        'ai.d3': 'Fa domande, ascolta, approfondisce e adatta la difficoltà in tempo reale, come farebbe un assessor esperto.',
+        'ai.t4': 'Redige il report',
+        'ai.d4': 'Rilegge tutto, valuta ogni competenza e cita i momenti esatti che giustificano ciascun punteggio.',
+        'ai.note': 'L\'AI prepara le evidenze. La decisione resta alle persone.',
 
-        'how.kicker': 'Come funziona',
-        'how.title': 'Una pipeline in quattro fasi, <span class="hl">completamente automatizzata</span>',
-        'how.l1': 'FASE 1', 'how.l2': 'FASE 2', 'how.l3': 'FASE 3', 'how.l4': 'FASE 4',
-        'how.t1': 'Configura',
-        'how.d1': 'Un assistente AI guida la configurazione della campagna: suggerisce moduli, valida la coerenza e garantisce la piena copertura delle competenze.',
-        'how.t2': 'Genera',
-        'how.d2': 'Scenari, personaggi e dossier generati in tempo reale, su misura per settore, ruolo e seniority. Mai un template riciclato.',
-        'how.t3': 'Conduci',
-        'how.d3': "L'AI conduce sessioni adattive: approfondisce, introduce complicazioni e regola la pressione in tempo reale in base alle risposte del candidato.",
-        'how.t4': 'Valuta',
-        'how.d4': 'Report strutturati con valutazioni per competenza, giudizi narrativi, citazioni a supporto e raccomandazioni chiare.',
-        'how.note': 'Setup di ~15 minuti al Day&nbsp;1. Tutto il resto è completamente automatizzato.',
+        'faq.kicker': 'Domande legittime',
+        'faq.title': 'Le domande <span class="hl">che fanno tutti</span>',
+        'faq.lead': 'I dubbi legittimi meritano risposte chiare.',
+        'faq.t1': '"È equo?"',
+        'faq.d1': 'L\'AI applica lo stesso standard a tutti: non si stanca mai e non ha giornate storte. E ogni punteggio è accompagnato da citazioni che puoi verificare tu stesso.',
+        'faq.t2': '"Sostituisce le persone?"',
+        'faq.d2': 'No. Elimina il lavoro ripetitivo: scrivere casi, condurre sessioni, redigere report. La tua competenza si sposta dove conta, sulla decisione.',
+        'faq.t3': '"È una scatola nera?"',
+        'faq.d3': 'Il contrario: ogni valutazione mostra cosa è stato chiesto, cosa ha risposto il candidato e perché ha ricevuto quel punteggio, con la trascrizione completa allegata.',
+        'faq.t4': '"Come la prendono i candidati?"',
+        'faq.d4': 'Conversazioni naturali ed esercizi costruiti sul mondo e sul ruolo del candidato, con uno stile leggero che lo mette a proprio agio: niente commissioni dall\'altra parte del tavolo, niente batterie di domande a crocette. E i numeri lo confermano: in <a class="evidence-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5395709" target="_blank" rel="noopener">un esperimento sul campo su 70.000 candidati</a>, potendo scegliere, il 78% ha preferito l\'intervistatore AI al recruiter umano.',
 
-        'comp.kicker': 'Cosa misura',
-        'comp.title': '<span class="hl">3 gruppi</span> di competenze',
-        'comp.chip1': '3 gruppi',
-        'comp.chip2': '6 competenze ciascuno',
-        'comp.chip3': 'Calibrate sulla seniority',
-        'comp.m1': 'Gruppo 1',
-        'comp.m2': 'Gruppo 2',
-        'comp.m3': 'Gruppo 3',
-        'comp.note': 'TALENS può inoltre valutare <strong>qualsiasi altra competenza</strong> di cui hai bisogno, anche non presente in questi gruppi.',
-        'comp.think_t': 'Pensiero',
-        'comp.think_l': '<li>Ragionamento analitico</li><li>Pensiero strategico</li><li>Qualità decisionale</li><li>Pensiero sistemico</li><li>Analisi critica</li><li>Agilità di apprendimento</li>',
-        'comp.relate_t': 'Relazione',
-        'comp.relate_l': '<li>Comunicazione interpersonale</li><li>Lavoro di squadra collaborativo</li><li>Risoluzione dei conflitti</li><li>Gestione degli stakeholder</li><li>Intelligenza emotiva</li><li>Influenza e persuasione</li>',
-        'comp.exec_t': 'Esecuzione',
-        'comp.exec_l': '<li>Pianificazione e organizzazione</li><li>Gestione delle priorità</li><li>Accountability</li><li>Iniziativa proattiva</li><li>Flessibilità cognitiva</li><li>Resilienza</li>',
-
-        'mod.kicker': 'Come misura',
-        'mod.title': '<span class="hl">9 moduli</span> in 3 modalità di interazione',
-        'mod.conv_t': 'Conversazione',
-        'mod.conv_s': 'Sessioni vocali con personaggi AI',
-        'mod.conv_l': '<li>Intervista comportamentale</li><li>Dialogo su problema</li><li>Role Play</li>',
-        'mod.msg_t': 'Messaggistica',
-        'mod.msg_s': 'Chat testuali multi-thread sotto pressione',
-        'mod.msg_l': '<li>Dinamiche di team</li><li>Triage delle priorità</li><li>Coordinamento operativo</li>',
-        'mod.reason_t': 'Ragionamento',
-        'mod.reason_s': 'Task scritti strutturati multi-fase',
-        'mod.reason_l': '<li>Decision Canvas</li><li>Analisi critica</li><li>Pensiero sistemico</li>',
-        'mod.note': 'Insieme abilitano una <strong>matrice di competenze cross-modulo</strong>: la stessa competenza misurata in più modalità di interazione.',
-
-        'edge.kicker': 'Cosa lo distingue',
-        'edge.title': 'Unico, <span class="hl">adattivo</span>, basato su evidenze',
-        'edge.t1': 'Unico e contestuale',
-        'edge.d1': 'Un Senior PM nel fintech e uno nella sanità ricevono scenari diversi: stessa competenza, manifestazione diversa.',
-        'edge.t2': 'Adattamento in tempo reale',
-        'edge.d2': "Risposta vaga? Approfondisce. Profondità eccezionale? Alza la complessità. L'assessment va in profondità quanto il candidato consente.",
-        'edge.t3': 'Basato su evidenze',
-        'edge.d3': 'Ogni valutazione è ancorata a evidenze dirette: citazioni specifiche con il loro contesto. Tutto verificabile e difendibile.',
-        'edge.t4': 'Calibrazione sulla seniority',
-        'edge.d4': '"Competente" per un Junior e per un Executive sono standard diversi, e TALENS li calibra automaticamente.',
-
-        'out.kicker': 'Cosa produce',
-        'out.title': 'Dalla sessione a un report <span class="hl">pronto per la decisione</span>',
-        'out.t1': 'Valutazione complessiva',
-        'out.d1': 'Un punteggio 1.0–5.0, calibrato sul livello di seniority del candidato.',
-        'out.t2': 'Executive summary',
-        'out.d2': 'Un paragrafo autonomo che un decisore può leggere in un minuto.',
-        'out.t3': 'Dettaglio per competenza',
-        'out.d3': 'Valutazione, giudizio narrativo e citazioni dirette a supporto per ogni competenza.',
-        'out.t4': 'Pattern trasversali',
-        'out.d4': 'Segnali comportamentali che attraversano più competenze, resi espliciti.',
-        'out.t5': 'Raccomandazione',
-        'out.d5': 'Un verdetto chiaro: procedere, procedere con condizioni, o non procedere.',
-        'out.t6': 'Trascrizione completa',
-        'out.d6': 'La registrazione integrale della sessione, sempre disponibile per la revisione umana.',
-        'out.note': 'In più, una <strong>matrice di competenze cross-modulo</strong> per il confronto tra esercizi.',
-
-        'biz.kicker': 'Come lavorare con TALENS',
-        'biz.title': 'Soluzioni flessibili per le <span class="hl">aziende clienti</span>',
-        'biz.k1': 'Modello A',
-        'biz.t1': 'Hosting gestito',
-        'biz.d1': "Nexent ospita le licenze per l'azienda cliente, tutti i costi esterni inclusi. Tariffazione tipica per candidato o per singolo test: zero infrastruttura, partenza immediata.",
-        'biz.k2': 'Modello B',
-        'biz.t2': 'Licenza white-label',
-        'biz.d2': 'La piattaforma installata sul cloud del cliente, con brand privato o co-branded. Termini di licenza flessibili, piena proprietà dei dati.',
-        'biz.k3': 'Add-on',
-        'biz.t3': 'Integrazioni ATS e personalizzazioni',
-        'biz.d3': 'Integrazioni ATS opzionali per entrambi i modelli, più moduli custom e adattamenti della piattaforma su misura per il processo del cliente.',
-
-        'uc.kicker': "Casi d'uso",
-        'uc.title': "L'intera gamma di decisioni di <span class=\"hl\">selezione e promozione</span>",
-        'uc.t1': 'Selezione tecnica',
-        'uc.s1': '50 sviluppatori e data analyst',
-        'uc.m1': 'Intervista comportamentale + Dialogo su problema + Dinamiche di team',
-        'uc.d1': 'Scenari su misura per il dominio tecnico di ciascun candidato. La matrice cross-modulo rivela se chi risolve bene i problemi sa anche collaborare con efficacia.',
-        'uc.t2': 'Ruoli a contatto col cliente',
-        'uc.s2': '30 relationship manager',
-        'uc.m2': 'Intervista comportamentale + Role Play + Triage delle priorità',
-        'uc.d2': 'Il Role Play costruisce scenari cliente specifici per settore, non copioni generici. Il contrasto tra comportamento dichiarato e performance dal vivo rivela le lacune.',
-        'uc.t3': 'Assessment manageriale',
-        'uc.s3': 'Candidati interni a ops manager',
-        'uc.m3': 'Triage delle priorità + Coordinamento operativo + Decision Canvas',
-        'uc.d3': "Verifica sia la capacità reattiva (triage sotto pressione) sia quella proattiva (iniziativa di coordinamento). Gli scenari rispecchiano il contesto operativo.",
-        'uc.t4': 'Leadership ed Executive',
-        'uc.s4': 'Senior partner nella consulenza',
-        'uc.m4': 'Intervista comportamentale + Pensiero sistemico + Role Play',
-        'uc.d4': "L'intervista approfondita sonda i pattern meta-cognitivi. Il Pensiero sistemico rivela se i leader sanno mappare interdipendenze complesse, non solo parlarne.",
-        'uc.note': 'Combina i moduli che servono al ruolo: <strong>gli scenari si adattano a settore, ruolo e seniority</strong> automaticamente.',
-
-        'team.kicker': 'Il team',
-        'team.title': 'Le persone <span class="hl">alla guida di TALENS</span>',
-        'team.lead': 'Competenza profonda tra ricerca, design, ingegneria e strategia di prodotto: costruita per muoversi in fretta e generare un reale vantaggio competitivo.',
-        'team.r1': 'Progettazione del framework e comunicazione',
-        'team.b1': "PhD in Human-Computer Interaction e oltre 20 anni tra interaction design, user experience e usabilità, unendo competenza tecnica, sensibilità creativa e visione di prodotto, dall'idea iniziale al lancio sul mercato. In TALENS progetta il framework di assessment che definisce come l'AI valuta le competenze con rigore scientifico, e guida la strategia di comunicazione che ne trasmette il valore a ogni stakeholder.",
-        'team.r2': 'Architettura e ingegneria della piattaforma',
-        'team.b2': "Oltre 20 anni lungo l'intero spettro dell'IT, dall'ingegneria backend e il gaming ai sistemi enterprise su larga scala con centinaia di migliaia di utenti simultanei, dove performance e affidabilità non erano negoziabili. Early adopter di AI e tecnologie immersive, in TALENS è responsabile dell'architettura della piattaforma e progetta ogni componente per velocità, affidabilità e scalabilità.",
-
-        'close.title': 'L\'assessment, <span class="grad">ripensato</span>.',
-        'close.sub': 'Scenari unici per ogni candidato. Valutazione adattiva e basata su evidenze. Completamente automatizzato, scalabile senza limiti.'
+        'close.title': 'Pronto per <span class="grad">il quadro completo</span>?',
+        'close.sub': 'Ora hai il contesto. La presentazione completa mostra come TALENS trasforma queste idee in una piattaforma concreta: moduli, competenze, report e altro ancora.',
+        'close.cta': 'Apri la presentazione completa <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>'
       };
 
       const i18nEls = Array.from(document.querySelectorAll('[data-i18n]'));
@@ -1327,7 +755,6 @@
 
       // Keyboard
       window.addEventListener('keydown', (e) => {
-        if (document.body.classList.contains('locked')) return;
         if (['ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); goTo(current + 1); }
         else if (['ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); goTo(current - 1); }
         else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
